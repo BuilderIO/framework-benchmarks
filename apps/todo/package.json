@@ -29,7 +29,6 @@
     "solid-styled-components": "^0.28.4",
     "vue": "^2.6.12"
   },
-  "type": "module",
   "exports": {
     "./vue/nuxt": "./output/vue/nuxt.js",
     "./vue2": "./output/vue/vue2/src/index.js",
