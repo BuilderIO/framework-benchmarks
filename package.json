@@ -2,9 +2,10 @@
   "name": "@builder.io/framework-weight",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "scripts": {
-    "start": "ts-node --transpileOnly ./src/index",
-    "build": "tsc ."
+    "start": "ts-node-esm --transpileOnly ./src/index",
+    "build": "tsc"
   },
   "author": "Steve Sewell (steve@builder.io)",
   "dependencies": {

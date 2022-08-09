@@ -1,8 +1,8 @@
-import lighthouse from "lighthouse";
-import * as puppeteer from "puppeteer";
+import lighthouse from 'lighthouse';
+import * as puppeteer from 'puppeteer';
 
-import * as chromeLauncher from "chrome-launcher";
-import { generateReport } from "lighthouse/lighthouse-core/report/report-generator";
+import * as chromeLauncher from 'chrome-launcher';
+import { generateReport } from 'lighthouse/lighthouse-core/report/report-generator';
 
 // Original source: https://addyosmani.com/blog/puppeteer-recipes/#lighthouse-metrics
 export async function lighthouseFromPuppeteer(
@@ -27,12 +27,12 @@ export async function lighthouseFromPuppeteer(
   await browser.disconnect();
   await chrome.kill();
 
-  const json = generateReport(lhr, "json");
+  const json = generateReport(lhr, 'json');
 
   const audits = (JSON.parse(json) as LH.Result).audits; // Lighthouse audits
-  const first_contentful_paint = audits["first-contentful-paint"].displayValue;
-  const total_blocking_time = audits["total-blocking-time"].displayValue;
-  const time_to_interactive = audits["interactive"].displayValue;
+  const first_contentful_paint = audits['first-contentful-paint'].displayValue;
+  const total_blocking_time = audits['total-blocking-time'].displayValue;
+  const time_to_interactive = audits['interactive'].displayValue;
 
   console.log(`\n
      Lighthouse metrics: 
