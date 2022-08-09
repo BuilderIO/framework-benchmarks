@@ -1,6 +1,7 @@
-import 'zx/globals';
+import { $, fs } from 'zx';
+import { build } from './build.js';
 
 const frameworks = await fs.readdir('./frameworks');
-await Promise.all(
-  frameworks.map((framework) => $`cd frameworks/${framework} && npm run build`)
-);
+
+const results = await build(frameworks);
+console.log('Done', results);
