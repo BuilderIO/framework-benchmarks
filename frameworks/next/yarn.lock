@@ -17,6 +17,13 @@
   dependencies:
     "regenerator-runtime" "^0.13.4"
 
+"@builder.io/hello-world@../../apps/hello-world":
+  "resolved" "file:../../apps/hello-world"
+  "version" "0.0.1"
+  dependencies:
+    "@builder.io/mitosis" "dev"
+    "@builder.io/mitosis-cli" "dev"
+
 "@builder.io/todo-app@../../apps/todo":
   "resolved" "file:../../apps/todo"
   "version" "0.0.1"

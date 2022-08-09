@@ -1,3 +1,3 @@
-export default function HelloWorld(props: { frameworkName?: string }) {
-  return <h1>Hello {props.frameworkName || 'world'}</h1>;
+export default function HelloWorld(props: { name?: string }) {
+  return <h1>Hello {props.name || 'world'}</h1>;
 }

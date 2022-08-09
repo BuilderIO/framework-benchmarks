@@ -7,7 +7,7 @@ export interface State {
   addItem: any;
 }
 
-export default function ToDoApp(props: any) {
+export default function ToDoApp() {
   const state = useStore<State>({
     list: ['hello', 'world'],
     newItemName: '',
