@@ -1,0 +1,24 @@
+{
+  "name": "@builder.io/framework-weight",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "ts-node --transpileOnly ./src/index",
+    "build": "tsc ."
+  },
+  "author": "Steve Sewell (steve@builder.io)",
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "chrome-launcher": "^0.15.1",
+    "lighthouse": "^9.6.5",
+    "puppeteer": "^16.1.0",
+    "ts-node": "^10.9.1",
+    "zx": "^7.0.8"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.2.224",
+    "@swc/helpers": "^0.4.3",
+    "prettier": "2.7.1",
+    "regenerator-runtime": "^0.13.9"
+  }
+}
