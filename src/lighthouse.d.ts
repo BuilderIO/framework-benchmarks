@@ -8,7 +8,7 @@ declare module 'lighthouse' {
   export default lighthouse;
 }
 
-declare module 'lighthouse/lighthouse-core/report/report-generator' {
+declare module 'lighthouse/report/generator/report-generator.js' {
   function generateReport(lhr: LH.LHResult, type: string): string;
 
   export { generateReport };

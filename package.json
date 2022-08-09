@@ -12,6 +12,7 @@
     "chalk": "^5.0.1",
     "chrome-launcher": "^0.15.1",
     "lighthouse": "^9.6.5",
+    "node-fetch": "^3.2.10",
     "puppeteer": "^16.1.0",
     "ts-node": "^10.9.1",
     "zx": "^7.0.8"
