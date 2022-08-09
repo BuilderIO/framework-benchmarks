@@ -4,5 +4,5 @@ import { getFrameworks } from '../helpers/get-frameworks.js';
 
 const frameworks = await getFrameworks();
 
-console.info(chalk.green(`Buildingg frameworks...`));
+console.info(chalk.green(`Building frameworks...`));
 await build(frameworks);

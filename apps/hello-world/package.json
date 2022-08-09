@@ -1,5 +1,5 @@
 {
-  "name": "@builder.io/todo-app",
+  "name": "@builder.io/hello-world",
   "private": true,
   "version": "0.0.1",
   "scripts": {
@@ -33,7 +33,6 @@
     "./vue/nuxt": "./output/vue/nuxt.js",
     "./vue2": "./output/vue/vue2/src/index.js",
     "./vue3": "./output/vue/vue3/src/index.js",
-    "./react": "./output/react/src/index.js",
     "./*": "./output/*/src/index.js"
   }
 }

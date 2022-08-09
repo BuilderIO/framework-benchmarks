@@ -10,14 +10,13 @@ export interface State {
 export default function ToDoApp(props: any) {
   const state = useStore<State>({
     list: ['hello', 'world'],
-    newItemName: 'New item',
-
+    newItemName: '',
     setItemName(event: Event) {
       state.newItemName = (event.target as any).value;
     },
-
     addItem() {
       state.list = [...state.list, state.newItemName];
+      state.newItemName = '';
     },
   });
 
@@ -32,21 +31,28 @@ export default function ToDoApp(props: any) {
         rel="stylesheet"
       />
 
-      <input
-        class="shadow-md rounded w-full px-4 py-2"
-        value={state.newItemName}
-        onChange={(event) => state.setItemName(event)}
-      />
-
-      <button
-        class="bg-blue-500 rounded w-full text-white font-bold py-2 px-4"
-        css={{
-          margin: '10px 0',
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          state.addItem();
         }}
-        onClick={() => state.addItem()}
       >
-        Add list item
-      </button>
+        <input
+          placeholder="Add new item..."
+          class="shadow-md rounded w-full px-4 py-2"
+          value={state.newItemName}
+          onChange={(event) => state.setItemName(event)}
+        />
+
+        <button
+          class="bg-blue-500 rounded w-full text-white font-bold py-2 px-4"
+          css={{
+            margin: '10px 0',
+          }}
+        >
+          Add list item
+        </button>
+      </form>
 
       <ul class="shadow-md rounded">
         {state.list.map((item) => (
