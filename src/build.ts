@@ -1,5 +1,8 @@
 import { $ } from 'zx';
 
+/**
+ * Build a list of frameworks
+ */
 export async function build(frameworks: string[], parallel = true) {
   const buildResults: Record<string, number> = {};
 
@@ -18,6 +21,9 @@ export async function build(frameworks: string[], parallel = true) {
   return buildResults;
 }
 
+/**
+ * Build a single framework
+ */
 export async function buildFramework(framework: string) {
   const start = Date.now();
   await $`cd frameworks/${framework} && npm run build`;
