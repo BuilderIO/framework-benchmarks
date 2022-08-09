@@ -8,6 +8,9 @@
     "build": "ts-node-esm --transpileOnly ./src/scripts/build",
     "measure": "ts-node-esm --transpileOnly ./src/scripts/measure"
   },
+  "engines": {
+    "node": ">=16.14.0"
+  },
   "author": "Steve Sewell (steve@builder.io)",
   "dependencies": {
     "chalk": "^5.0.1",

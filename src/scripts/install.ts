@@ -1,3 +1,3 @@
-import { installAll } from '../helpers/install';
+import { installAll } from '../helpers/install.js';
 
 await installAll();

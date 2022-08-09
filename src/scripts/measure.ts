@@ -23,7 +23,7 @@ for (const framework of frameworks) {
   frameworkKbMap[framework] = jsSize;
   console.info(chalk.green(`${framework}:`, jsSize + 'kb'));
 
-  if (process.env.DEBUG === 'true') {
+  if (global.process.env.DEBUG === 'true') {
     await fs.writeFile('debug.json', JSON.stringify(report, null, 2));
   }
 
