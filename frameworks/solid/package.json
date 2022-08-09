@@ -1,9 +1,11 @@
 {
   "name": "solid",
+  "port": 3000,
   "scripts": {
     "dev": "solid-start dev",
     "build": "solid-start build",
-    "start": "solid-start start"
+    "start": "solid-start start",
+    "preview": "npm start"
   },
   "type": "module",
   "devDependencies": {

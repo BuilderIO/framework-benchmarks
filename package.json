@@ -4,8 +4,9 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "start": "ts-node-esm --transpileOnly ./src/index",
-    "build": "tsc"
+    "install": "ts-node-esm --transpileOnly ./src/scripts/install",
+    "build": "ts-node-esm --transpileOnly ./src/scripts/build",
+    "measure": "ts-node-esm --transpileOnly ./src/scripts/measure"
   },
   "author": "Steve Sewell (steve@builder.io)",
   "dependencies": {

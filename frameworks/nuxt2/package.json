@@ -2,11 +2,13 @@
   "name": "nuxt2",
   "version": "1.0.0",
   "private": true,
+  "port": 3000,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
+    "preview": "npm start",
     "lint:prettier": "prettier --check .",
     "lint": "npm run lint:prettier",
     "lintfix": "prettier --write --list-different ."

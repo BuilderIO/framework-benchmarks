@@ -1,5 +1,6 @@
 {
   "name": "qwik",
+  "port": 8080,
   "description": "File based routing and MDX support Vite.js tooling. Express.js server. Prettier code formatter.",
   "scripts": {
     "build": "npm run typecheck && npm run build.client && npm run build.ssr",
@@ -14,7 +15,8 @@
     "lint": "eslint \"src/**/*.ts*\"",
     "serve": "node server/entry.express",
     "start": "npm run dev",
-    "typecheck": "tsc --incremental --noEmit"
+    "typecheck": "tsc --incremental --noEmit",
+    "preview": "npm run serve"
   },
   "devDependencies": {
     "@builder.io/qwik": "0.0.39",

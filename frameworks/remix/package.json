@@ -4,8 +4,10 @@
   "scripts": {
     "build": "remix build",
     "dev": "remix dev",
-    "start": "remix-serve build"
+    "start": "remix-serve build",
+    "preview": "npm start"
   },
+  "port": 3000,
   "dependencies": {
     "@remix-run/node": "^1.6.7",
     "@remix-run/react": "^1.6.7",

@@ -4,9 +4,7 @@ import type { DocumentHead } from '@builder.io/qwik-city';
 export default component$(() => {
   return (
     <Host>
-      <h1 onClick$={() => console.warn('hola')}>Welcome to Qwik City</h1>
-
-      <p>The meta-framework for Qwik.</p>
+      <h1>Hello Qwik</h1>
     </Host>
   );
 });

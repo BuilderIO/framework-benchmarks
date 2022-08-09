@@ -1,6 +1,7 @@
 {
 	"name": "svelte",
 	"version": "0.0.1",
+	"port": 4173,
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
