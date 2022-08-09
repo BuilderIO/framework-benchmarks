@@ -6,7 +6,7 @@ Test each framework for it's performance cost
 
 We created a basic starting point for each framework in the `frameworks/` folder.
 
-We then build and serve each project, and run Lighthouse on each project with puppeteer, and measure the amoutn of JS kb used for various tests (e.g. a simple `<h1>Hello World</h1>` page).
+We then build and serve each project, and run Lighthouse on each project with puppeteer, and measure the amount of JS downloaded on the main thread for various examples (e.g. a simple `<h1>Hello World</h1>` page).
 
 ### Sample output
 
@@ -26,7 +26,6 @@ The below numbers are the kb of JS downloaded with main thread script tags for e
   svelte: 15
 }
 ```
-
 
 ## Running locally
 
@@ -61,4 +60,3 @@ To measure the weight of each framework (after you ran `install` and `build`):
 ```sh
 npm run measure
 ```
-
