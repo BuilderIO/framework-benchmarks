@@ -8,7 +8,7 @@ const vueConfig = {
  */
 module.exports = {
   files: 'src/**',
-  targets: ['angular', 'react', 'solid', 'svelte', 'vue2', 'vue3', 'qwik'],
+  targets: ['angular', 'react', 'solid', 'svelte', 'vue2', 'vue3', 'marko', 'qwik'],
   options: {
     react: { transpiler: { format: 'esm', languages: ['ts'] } },
     solid: { transpiler: { languages: ['ts'] } },

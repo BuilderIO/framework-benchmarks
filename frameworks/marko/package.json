@@ -5,7 +5,8 @@
   "port": 3000,
   "dependencies": {
     "marko": "^5",
-    "@builder.io/todo-app": "../../apps/todo"
+    "@builder.io/todo-app": "../../apps/todo",
+    "@builder.io/hello-world": "../../apps/hello-world/output/marko"
   },
   "devDependencies": {
     "@marko/build": "^4",
