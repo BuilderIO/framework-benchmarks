@@ -42,7 +42,7 @@ The below numbers are the kb of JS downloaded with main thread script tags for e
 
 ```js
 {
-  angular: 2403,
+  angular: 124,
   astro: 0,
   marko: 0,
   next: 87,
