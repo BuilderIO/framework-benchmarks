@@ -19,7 +19,8 @@
     "vue": "^2.6.14",
     "vue-server-renderer": "^2.6.14",
     "vue-template-compiler": "^2.6.14",
-    "webpack": "^4.46.0"
+    "webpack": "^4.46.0",
+    "@builder.io/todo-app": "../../apps/todo"
   },
   "devDependencies": {
     "eslint-config-prettier": "^8.3.0",

@@ -7,6 +7,9 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview"
   },
+  "dependencies": {
+    "@builder.io/todo-app": "../../apps/todo"
+  },
   "devDependencies": {
     "nuxt": "3.0.0-rc.6"
   }

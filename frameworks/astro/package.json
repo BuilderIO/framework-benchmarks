@@ -9,6 +9,9 @@
     "build": "astro build",
     "preview": "astro preview"
   },
+  "dependencies": {
+    "@builder.io/todo-app": "../../apps/todo"
+  },
   "devDependencies": {
     "astro": "^1.0.0-rc.3"
   }
