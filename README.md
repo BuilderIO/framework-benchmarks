@@ -2,6 +2,32 @@
 
 Test each framework for it's performance cost
 
+## How it works
+
+We created a basic starting point for each framework in the `frameworks/` folder.
+
+We then build and serve each project, and run Lighthouse on each project with puppeteer, and measure the amoutn of JS kb used for various tests (e.g. a simple `<h1>Hello World</h1>` page).
+
+### Sample output
+
+The below numbers are the kb of JS downloaded with main thread script tags for each framework:
+
+```js
+{
+  angular: 124,
+  astro: 0,
+  marko: 0,
+  next: 87,
+  nuxt2: 93,
+  nuxt3: 97,
+  qwik: 0,
+  remix: 62,
+  solid: 13,
+  svelte: 15
+}
+```
+
+
 ## Running locally
 
 After cloning this repo, install dependencies:
@@ -36,21 +62,3 @@ To measure the weight of each framework (after you ran `install` and `build`):
 npm run measure
 ```
 
-## Sample output
-
-The below numbers are the kb of JS downloaded with main thread script tags for each framework:
-
-```js
-{
-  angular: 124,
-  astro: 0,
-  marko: 0,
-  next: 87,
-  nuxt2: 93,
-  nuxt3: 97,
-  qwik: 0,
-  remix: 62,
-  solid: 13,
-  svelte: 15
-}
-```
