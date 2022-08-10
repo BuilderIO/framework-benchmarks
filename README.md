@@ -1,6 +1,6 @@
-# Framework Weight
+# Framework Performance
 
-Test each framework for it's performance cost
+Test each framework for it's performance, particularly common Lighthouse and CWV metrics as applications scale
 
 ## How it works
 
