@@ -2,7 +2,7 @@
   "name": "@example/basics",
   "version": "0.0.1",
   "private": true,
-  "port": 3000,
+  "port": 6001,
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

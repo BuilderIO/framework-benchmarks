@@ -1,13 +1,13 @@
 {
-  "name": "@builder.io/hello-world",
+  "name": "@builder.io/components",
   "private": true,
   "version": "0.0.1",
   "scripts": {
     "build": "mitosis build"
   },
   "dependencies": {
-    "@builder.io/mitosis": "^0.0.56-39",
-    "@builder.io/mitosis-cli": "^0.0.17-36"
+    "@builder.io/mitosis": "^0.0.56-43",
+    "@builder.io/mitosis-cli": "^0.0.17-40"
   },
   "devDependencies": {
     "@builder.io/qwik": "0.0.38",
@@ -34,8 +34,8 @@
     "./vue2": "./output/vue/vue2/src/index.js",
     "./vue3": "./output/vue/vue3/src/index.js",
     "./react": "./output/react/src/index.js",
-    "./angular": "./output/angular/src/index.js",
     "./qwik": "./output/qwik/src/index.js",
+    "./angular": "./output/angular/src/index.js",
     "./*": "./output/*/src/index.js"
   }
 }

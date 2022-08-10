@@ -26,11 +26,6 @@ export default function ToDoApp() {
         padding: '10px',
       }}
     >
-      <link
-        href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
-        rel="stylesheet"
-      />
-
       <form
         onSubmit={(e) => {
           e.preventDefault();

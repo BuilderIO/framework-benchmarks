@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HelloWorld } from '@builder.io/hello-world/angular';
-import { ToDoApp } from '@builder.io/todo-app/angular';
+import { HelloWorld } from '@builder.io/components/angular';
+import { ToDoApp } from '@builder.io/components/angular';
 
 const routes: Routes = [
   { path: '', component: HelloWorld },
