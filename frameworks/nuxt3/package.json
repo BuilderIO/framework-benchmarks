@@ -8,7 +8,8 @@
     "preview": "nuxt preview"
   },
   "dependencies": {
-    "@builder.io/todo-app": "../../apps/todo"
+    "@builder.io/mitosis-app-todo": "../../apps/todo",
+    "@builder.io/mitosis-app-hello-world": "../../apps/hello-world"
   },
   "devDependencies": {
     "nuxt": "3.0.0-rc.6"

@@ -1,15 +1,11 @@
 <script>
-// TO-DO: not working due to import issues
-import { TodoApp } from '@builder.io/todo-app/vue2'
+import { ToDoApp } from '@builder.io/todo-app/vue2'
 
 export default {
-  name: 'Todo',
-  components: {
-    TodoApp,
-  },
+  components: { ToDoApp },
 }
 </script>
 
 <template>
-  <TodoApp></TodoApp>
+  <ToDoApp></ToDoApp>
 </template>

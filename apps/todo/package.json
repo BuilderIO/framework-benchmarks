@@ -6,8 +6,8 @@
     "build": "mitosis build"
   },
   "dependencies": {
-    "@builder.io/mitosis": "^0.0.56-37",
-    "@builder.io/mitosis-cli": "^0.0.17-34"
+    "@builder.io/mitosis": "^0.0.56-39",
+    "@builder.io/mitosis-cli": "^0.0.17-36"
   },
   "devDependencies": {
     "@builder.io/qwik": "0.0.38",
