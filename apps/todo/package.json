@@ -34,6 +34,7 @@
     "./vue2": "./output/vue/vue2/src/index.js",
     "./vue3": "./output/vue/vue3/src/index.js",
     "./react": "./output/react/src/index.js",
+    "./qwik": "./output/qwik/src/index.js",
     "./angular": "./output/angular/src/index.js",
     "./*": "./output/*/src/index.js"
   }

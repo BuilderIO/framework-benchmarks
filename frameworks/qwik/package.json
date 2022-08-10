@@ -35,6 +35,10 @@
     "vite": "3.0.2",
     "vite-tsconfig-paths": "3.5.0"
   },
+  "dependencies": {
+    "@builder.io/mitosis-app-todo": "../../apps/todo",
+    "@builder.io/mitosis-app-hello-world": "../../apps/hello-world"
+  },
   "engines": {
     "node": ">=14"
   },
