@@ -24,7 +24,8 @@
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4",
-    "@builder.io/todo-app": "../../apps/todo"
+    "@builder.io/todo-app": "../../apps/todo",
+    "@builder.io/hello-world": "../../apps/hello-world"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.1.1",

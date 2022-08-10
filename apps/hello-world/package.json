@@ -6,8 +6,8 @@
     "build": "mitosis build"
   },
   "dependencies": {
-    "@builder.io/mitosis": "^0.0.56-35",
-    "@builder.io/mitosis-cli": "^0.0.17-32"
+    "@builder.io/mitosis": "^0.0.56-37",
+    "@builder.io/mitosis-cli": "^0.0.17-34"
   },
   "devDependencies": {
     "@builder.io/qwik": "0.0.38",
@@ -34,6 +34,7 @@
     "./vue2": "./output/vue/vue2/src/index.js",
     "./vue3": "./output/vue/vue3/src/index.js",
     "./react": "./output/react/src/index.js",
+    "./angular": "./output/angular/src/index.js",
     "./*": "./output/*/src/index.js"
   }
 }

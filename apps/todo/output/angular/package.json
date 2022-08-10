@@ -1,0 +1,6 @@
+{
+  "name": "angular",
+  "dependencies": {
+    "@angular/core": "^14.1.1"
+  }
+}

@@ -14,5 +14,6 @@ module.exports = {
     solid: { transpiler: { languages: ['ts'] } },
     vue2: vueConfig,
     vue3: vueConfig,
+    angular: { standalone: true },
   },
 };
