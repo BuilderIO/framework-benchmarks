@@ -3,11 +3,13 @@
   "private": true,
   "version": "0.0.1",
   "scripts": {
-    "build": "mitosis build"
+    "build": "mitosis build",
+    "start": "watch 'npm run build' ./src"
   },
   "dependencies": {
-    "@builder.io/mitosis": "^0.0.56-43",
-    "@builder.io/mitosis-cli": "^0.0.17-40"
+    "@builder.io/mitosis": "^0.0.56-45",
+    "@builder.io/mitosis-cli": "^0.0.17-41",
+    "watch": "^1.0.2"
   },
   "devDependencies": {
     "@builder.io/qwik": "0.0.38",
