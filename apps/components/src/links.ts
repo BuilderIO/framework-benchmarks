@@ -15,15 +15,15 @@ function getUrl(port: number) {
 
 export const frameworks: Framework[] = [
   // TODO: add back when get working
-  // {
-  //   name: 'angular',
-  //   url: getUrl(4200),
-  // },
+  {
+    name: 'angular',
+    url: getUrl(4200),
+  },
   // TODO: add back when get working
-  // {
-  //   name: 'astro',
-  //   url: getUrl(6001),
-  // },
+  {
+    name: 'astro',
+    url: getUrl(6001),
+  },
   {
     name: 'marko',
     url: getUrl(6002),

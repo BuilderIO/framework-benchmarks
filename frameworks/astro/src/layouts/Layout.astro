@@ -1,8 +1,8 @@
 ---
-import { Header } from '@builder.io/components/solid'
+import { AppHeader } from '../generated-components';
 
 export interface Props {
-	title: string;
+	title?: string;
 }
 
 const { title } = Astro.props as Props;
@@ -15,11 +15,11 @@ const { title } = Astro.props as Props;
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width" />
 	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-	<title>{title}</title>
+	<title>{title || 'Hello Astro'}</title>
 </head>
 
 <body>
-	<Header framework="Astro" path={Astro.url.pathname}>{title}</Header>
+	<AppHeader framework="astro" path={Astro.url.pathname}>{title}</AppHeader>
 	<slot />
 </body>
 

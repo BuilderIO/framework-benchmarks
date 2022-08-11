@@ -5,7 +5,7 @@
   </div>
 </template>
 <script>
-import { AppHeader } from '@builder.io/components/vue3';
+import { AppHeader } from '../components/generated-components';
 export default {
   components: { AppHeader },
 };

@@ -2,7 +2,7 @@
   <HelloWorld name="Nuxt3" />
 </template>
 <script>
-import { HelloWorld } from '@builder.io/components/vue3';
+import { HelloWorld } from '../components/generated-components';
 export default {
   components: { HelloWorld },
 };

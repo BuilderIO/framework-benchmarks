@@ -2,7 +2,7 @@
   <ToDoApp />
 </template>
 <script>
-import { ToDoApp } from '@builder.io/components/vue3';
+import { ToDoApp } from '../components/generated-components';
 export default {
   components: { ToDoApp },
 };
