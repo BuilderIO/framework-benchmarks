@@ -6,7 +6,7 @@ export interface HeaderProps {
   path: string;
 }
 
-export default function Header(props: HeaderProps) {
+export default function AppHeader(props: HeaderProps) {
   const state = useStore({
     getClassForFrameworkLink(link: Framework) {
       return `p-2 text-base font-medium capitalize ${

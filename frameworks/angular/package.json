@@ -1,12 +1,13 @@
 {
   "name": "angular",
   "version": "0.0.0",
-  "port": 6000,
+  "port": 4200,
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port 4200",
+    "dev": "npm start",
     "build": "ng build",
-    "preview": "http-server dist/angular --port 6000",
+    "preview": "http-server dist/angular --port 4200",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

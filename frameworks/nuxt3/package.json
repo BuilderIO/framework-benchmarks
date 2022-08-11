@@ -1,15 +1,14 @@
 {
   "private": true,
-  "port": 3000,
+  "port": 6005,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev -p 6005",
     "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview -p 6005"
   },
   "dependencies": {
-    "@builder.io/mitosis-app-todo": "../../apps/todo",
-    "@builder.io/mitosis-app-hello-world": "../../apps/hello-world"
+    "@builder.io/components": "../../apps/components"
   },
   "devDependencies": {
     "nuxt": "3.0.0-rc.6"

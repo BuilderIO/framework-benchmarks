@@ -15,12 +15,13 @@ function getUrl(port: number) {
 export const frameworks: Framework[] = [
   {
     name: 'angular',
-    url: getUrl(6000),
+    url: getUrl(4200),
   },
-  {
-    name: 'astro',
-    url: getUrl(6001),
-  },
+  // Removing for now, given doesn't support interactivity
+  // {
+  //   name: 'astro',
+  //   url: getUrl(6001),
+  // },
   {
     name: 'marko',
     url: getUrl(6002),
@@ -28,6 +29,15 @@ export const frameworks: Framework[] = [
   {
     name: 'next',
     url: getUrl(6003),
+  },
+  // Removing for now, weird things happening with imports
+  // {
+  //   name: 'nuxt2',
+  //   url: getUrl(6004),
+  // },
+  {
+    name: 'nuxt3',
+    url: getUrl(6005),
   },
 ];
 

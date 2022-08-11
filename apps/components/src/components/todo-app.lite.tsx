@@ -1,14 +1,7 @@
 import { useStore } from '@builder.io/mitosis';
 
-export interface State {
-  list: string[];
-  newItemName: string;
-  setItemName: any;
-  addItem: any;
-}
-
 export default function ToDoApp() {
-  const state = useStore<State>({
+  const state = useStore({
     list: ['hello', 'world'],
     newItemName: '',
     setItemName(event: Event) {
@@ -17,6 +10,9 @@ export default function ToDoApp() {
     addItem() {
       state.list = [...state.list, state.newItemName];
       state.newItemName = '';
+    },
+    clear() {
+      state.list = [];
     },
   });
 
@@ -61,6 +57,9 @@ export default function ToDoApp() {
           </li>
         ))}
       </ul>
+      {state.list.length && (
+        <button class="m-4 text-gray-500 w-full" onClick={() => state.clear()}>Clear</button>
+      )}
     </div>
   );
 }

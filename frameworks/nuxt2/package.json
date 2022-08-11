@@ -2,11 +2,11 @@
   "name": "nuxt2",
   "version": "1.0.0",
   "private": true,
-  "port": 3000,
+  "port": 6004,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nuxt -p 6004",
     "build": "nuxt build",
-    "start": "nuxt start",
+    "start": "nuxt start -p 6004",
     "generate": "nuxt generate",
     "preview": "npm start",
     "lint:prettier": "prettier --check .",
@@ -20,8 +20,7 @@
     "vue-server-renderer": "^2.6.14",
     "vue-template-compiler": "^2.6.14",
     "webpack": "^4.46.0",
-    "@builder.io/todo-app": "../../apps/todo",
-    "@builder.io/hello-world": "../../apps/hello-world"
+    "@builder.io/components": "../../apps/components"
   },
   "devDependencies": {
     "eslint-config-prettier": "^8.3.0",
