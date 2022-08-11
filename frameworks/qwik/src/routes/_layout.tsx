@@ -1,15 +1,11 @@
 import { component$, Host, Slot } from '@builder.io/qwik';
-import Footer from '../components/footer/footer';
-import Header from '../components/header/header';
+import { AppHeader } from '@builder.io/components/qwik';
 
 export default component$(() => {
   return (
     <Host>
-      <Header />
-      <main>
-        <Slot />
-      </main>
-      <Footer />
+      <AppHeader />
+      <Slot />
     </Host>
   );
 });

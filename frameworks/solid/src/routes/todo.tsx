@@ -1,9 +1,10 @@
-import { ToDoApp } from '@builder.io/todo-app/solid';
+import { ToDoApp, AppHeader } from '@builder.io/components/solid';
 
 export default function Home() {
   return (
-    <main>
+    <>
+      <AppHeader framework="solid" path="/todo" />
       <ToDoApp />
-    </main>
+    </>
   );
 }

@@ -1,15 +1,15 @@
 {
   "name": "solid",
-  "port": 3000,
+  "port": 6008,
   "scripts": {
-    "dev": "solid-start dev",
+    "dev": "solid-start dev --port 6008",
     "build": "solid-start build",
-    "start": "solid-start start",
+    "start": "solid-start start --port 6008",
     "preview": "npm start"
   },
   "type": "module",
   "dependencies": {
-    "@builder.io/todo-app": "../../apps/todo"
+    "@builder.io/components": "../../apps/components"
   },
   "devDependencies": {
     "@solidjs/meta": "^0.28.0",

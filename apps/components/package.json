@@ -37,6 +37,8 @@
     "./vue3": "./output/vue/vue3/src/index.js",
     "./react": "./output/react/src/index.js",
     "./qwik": "./output/qwik/src/index.js",
+    "./solid": "./output/solid/src/index.js",
+    "./svelte": "./output/svelte/src/index.js",
     "./angular": "./output/angular/src/index.js",
     "./*": "./output/*/src/index.js"
   }

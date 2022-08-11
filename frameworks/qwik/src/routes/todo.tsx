@@ -1,6 +1,6 @@
 import { component$, Host } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
-import { ToDoApp } from '@builder.io/mitosis-app-todo/qwik';
+import { ToDoApp } from '@builder.io/components/qwik';
 
 export default component$(() => {
   return (

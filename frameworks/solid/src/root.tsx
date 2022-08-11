@@ -1,5 +1,5 @@
 // @refresh reload
-import { Suspense } from "solid-js";
+import { Suspense } from 'solid-js';
 import {
   Body,
   ErrorBoundary,
@@ -9,8 +9,8 @@ import {
   Meta,
   Routes,
   Scripts,
-} from "solid-start";
-import "./root.css";
+} from 'solid-start';
+import './root.css';
 
 export default function Root() {
   return (
@@ -18,17 +18,16 @@ export default function Root() {
       <Head>
         <Meta charset="utf-8" />
         <Meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+          href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+          rel="stylesheet"
+        />
       </Head>
       <Body>
-        <Suspense>
-          <ErrorBoundary>
-            <a href="/">Index</a>
-            <a href="/about">About</a>
-            <Routes>
-              <FileRoutes />
-            </Routes>
-          </ErrorBoundary>
-        </Suspense>
+        <Routes>
+          <FileRoutes />
+        </Routes>
+
         <Scripts />
       </Body>
     </Html>

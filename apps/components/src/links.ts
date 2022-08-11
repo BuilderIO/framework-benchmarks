@@ -13,10 +13,11 @@ function getUrl(port: number) {
 }
 
 export const frameworks: Framework[] = [
-  {
-    name: 'angular',
-    url: getUrl(4200),
-  },
+  // Removing for now, weird routing errors with no clear direction to resolve
+  // {
+  //   name: 'angular',
+  //   url: getUrl(4200),
+  // },
   // Removing for now, given doesn't support interactivity
   // {
   //   name: 'astro',
@@ -39,15 +40,32 @@ export const frameworks: Framework[] = [
     name: 'nuxt3',
     url: getUrl(6005),
   },
+  {
+    name: 'qwik',
+    url: getUrl(6006),
+  },
+  // Removing for now: can't get it to work
+  // {
+  //   name: 'remix',
+  //   url: getUrl(6007),
+  // },
+  {
+    name: 'solid',
+    url: getUrl(6008),
+  },
+  {
+    name: 'svelte',
+    url: getUrl(6009),
+  },
 ];
 
 export const examples: Example[] = [
   {
-    name: 'hello world',
+    name: 'Hello World',
     url: '/',
   },
   {
-    name: 'simple todo',
+    name: 'Simple Todo',
     url: '/todo',
   },
 ];

@@ -1,17 +1,17 @@
 {
 	"name": "svelte",
 	"version": "0.0.1",
-	"port": 4173,
+	"port": 6009,
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "vite dev --port 6009",
 		"build": "vite build",
 		"package": "svelte-kit package",
-		"preview": "vite preview",
+		"preview": "vite preview --port 6009",
 		"lint": "prettier --check --plugin-search-dir=. .",
 		"format": "prettier --write --plugin-search-dir=. ."
 	},
 	"dependencies": {
-		"@builder.io/todo-app": "../../apps/todo"
+		"@builder.io/components": "../../apps/components"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",
