@@ -1,22 +1,25 @@
-import favicon from "./favicon.png";
-
+import favicon from './favicon.png';
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <link rel="icon" type="image/png" sizes="32x32" href=favicon>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A basic Marko app.">
-  <title>${input.title}</title>
-</head>
-<body>
-  <header></header>
-  <${input.renderBody}/>
-</body>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8'>
+    <link rel='icon' type='image/png' sizes='32x32' href=favicon>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='description' content='A basic Marko app.'>
+    <title>${input.title}</title>
+    <link
+      href='https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css'
+      rel='stylesheet'
+    >
+  </head>
+  <body>
+    <app-header framework='marko' path=(out.stream.req.url)/>
+    <${input.renderBody}/>
+  </body>
 </html>
-
 style {
-  html, body {
+  html,
+  body {
     font-family: system-ui;
     padding: 0;
     margin: 0;

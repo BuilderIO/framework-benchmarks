@@ -2,7 +2,7 @@
   "name": "marko",
   "description": "The default Marko starter app",
   "version": "1.0.0",
-  "port": 3000,
+  "port": 6002,
   "dependencies": {
     "marko": "^5",
     "@builder.io/components": "../../apps/components/output/marko"
@@ -14,8 +14,8 @@
   "private": true,
   "scripts": {
     "build": "marko-build ./src/pages",
-    "dev": "marko-serve ./src/pages",
-    "start": "NODE_ENV=production node ./build/index.js",
+    "dev": "marko-serve ./src/pages --port 6002",
+    "start": "NODE_ENV=production node ./build/index.js --port 6002",
     "preview": "npm run start"
   }
 }

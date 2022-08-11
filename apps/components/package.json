@@ -7,8 +7,8 @@
     "start": "watch 'npm run build' ./src"
   },
   "dependencies": {
-    "@builder.io/mitosis": "^0.0.56-46",
-    "@builder.io/mitosis-cli": "^0.0.17-42",
+    "@builder.io/mitosis": "^0.0.56-48",
+    "@builder.io/mitosis-cli": "^0.0.17-44",
     "watch": "^1.0.2"
   },
   "devDependencies": {
