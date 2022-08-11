@@ -4,6 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "build": "mitosis build",
+    "copy": "cd ../../ && npm run copy",
+    "postbuild": "npm run copy",
     "start": "watch 'npm run build' ./src"
   },
   "dependencies": {

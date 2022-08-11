@@ -6,6 +6,7 @@
   "scripts": {
     "install": "ts-node-esm --transpileOnly ./src/scripts/install",
     "build": "ts-node-esm --transpileOnly ./src/scripts/build",
+    "copy": "ts-node-esm --transpileOnly ./src/scripts/copy",
     "measure": "ts-node-esm --transpileOnly ./src/scripts/measure"
   },
   "engines": {

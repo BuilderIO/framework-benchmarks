@@ -1,5 +1,5 @@
 import { component$, Host, Slot } from '@builder.io/qwik';
-import { AppHeader } from '@builder.io/components/qwik';
+import { AppHeader } from '../components/generated-components';
 import { useLocation } from '@builder.io/qwik-city';
 
 export default component$(() => {
