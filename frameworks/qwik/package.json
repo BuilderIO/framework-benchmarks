@@ -16,7 +16,7 @@
     "serve": "node server/entry.express",
     "start": "npm run dev",
     "typecheck": "tsc --incremental --noEmit",
-    "preview": "npm run serve --port 6006"
+    "preview": "PORT=6006 npm run serve --port 6006"
   },
   "devDependencies": {
     "@builder.io/qwik": "0.0.39",
@@ -36,7 +36,7 @@
     "vite-tsconfig-paths": "3.5.0"
   },
   "dependencies": {
-    "@builder.io/components": "../../apps/components"
+    "@builder.io/components": "../../apps/components/output"
   },
   "engines": {
     "node": ">=14"

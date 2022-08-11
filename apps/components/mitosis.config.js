@@ -8,7 +8,7 @@ const vueConfig = {
 };
 
 /**
- * @type {import('@builder.io/mitosis').MitbosisConfig}
+ * @type {import('@builder.io/mitosis').MitosisConfig}
  */
 module.exports = {
   files: 'src/**',
@@ -28,7 +28,7 @@ module.exports = {
     vue2: vueConfig,
     vue3: vueConfig,
     angular: { standalone: true, transpiler: transpilerOptions },
-    qwik: { transpiler: { ...transpilerOptions } },
+    qwik: { transpiler: { ...transpilerOptions }, },
     marko: { transpiler: { ...transpilerOptions } },
   },
 };

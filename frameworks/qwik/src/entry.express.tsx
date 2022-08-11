@@ -7,6 +7,8 @@ import render from './entry.ssr';
 
 const app = express();
 
+const port = Number(process.env.PORT || 8080);
+
 app.use(
   qwikCity(render, {
     ...cityPlan,
@@ -14,7 +16,7 @@ app.use(
   })
 );
 
-app.listen(8080, () => {
+app.listen(port, () => {
   /* eslint-disable */
-  console.log(`http://localhost:8080/`);
+  console.log(`http://localhost:${port}/`);
 });

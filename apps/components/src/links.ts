@@ -14,15 +14,16 @@ function getUrl(port: number) {
 }
 
 export const frameworks: Framework[] = [
+  // TODO: add back when get working
   // {
   //   name: 'angular',
   //   url: getUrl(4200),
   // },
-  // Removing for now, given doesn't support interactivity
-  {
-    name: 'astro',
-    url: getUrl(6001),
-  },
+  // TODO: add back when get working
+  // {
+  //   name: 'astro',
+  //   url: getUrl(6001),
+  // },
   {
     name: 'marko',
     url: getUrl(6002),
@@ -31,21 +32,23 @@ export const frameworks: Framework[] = [
     name: 'next',
     url: getUrl(6003),
   },
-  // Removing for now, weird things happening with imports
+  // TODO: add back when get working
   // {
   //   name: 'nuxt2',
   //   url: getUrl(6004),
   // },
-  {
-    text: 'nuxt',
-    name: 'nuxt3',
-    url: getUrl(6005),
-  },
+  // TODO: add back when get working
+  // {
+  //   text: 'nuxt',
+  //   name: 'nuxt3',
+  //   url: getUrl(6005),
+  // },
+  // TODO: add back when get working
   {
     name: 'qwik',
     url: getUrl(6006),
   },
-  // Removing for now: can't get it to work
+  // TODO: add back when get working
   // {
   //   name: 'remix',
   //   url: getUrl(6007),

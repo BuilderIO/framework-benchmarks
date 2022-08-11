@@ -3,7 +3,7 @@ import { fs } from 'zx';
 const IGNORE_FRAMEWORKS = process.env.IGNORE_FRAMEWORKS
   ? process.env.IGNORE_FRAMEWORKS.split(',')
   : // These are currently not working
-    ['angular', 'fresh', 'nuxt2', 'nuxt3', 'astro', 'remix', 'qwik'];
+    ['angular', 'fresh', 'nuxt2', 'nuxt3', 'astro', 'remix'];
 
 /**
  * Get the list of frameworks to test

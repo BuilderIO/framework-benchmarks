@@ -15,7 +15,7 @@
   "scripts": {
     "build": "marko-build ./src/pages",
     "dev": "marko-serve ./src/pages --port 6002",
-    "start": "NODE_ENV=production node ./build/index.js --port 6002",
+    "start": "PORT=6002 NODE_ENV=production node ./build/index.js --port 6002",
     "preview": "npm run start"
   }
 }
