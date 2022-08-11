@@ -1,4 +1,5 @@
 import { useStore } from '@builder.io/mitosis';
+import TodoItem from './todo-item.lite';
 
 export default function ToDoApp() {
   const state = useStore({
@@ -50,14 +51,7 @@ export default function ToDoApp() {
 
         <ul class="shadow-md rounded">
           {state.list.map((item) => (
-            <li
-              class="border-gray-200 border-b"
-              css={{
-                padding: '10px',
-              }}
-            >
-              {item}
-            </li>
+            <TodoItem item={item} />
           ))}
         </ul>
         {state.list.length && (

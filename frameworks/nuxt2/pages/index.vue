@@ -3,9 +3,6 @@
 </template>
 
 <script>
-import { HelloWorld } from '@builder.io/hello-world/vue2'
-export default {
-  name: 'IndexPage',
-  components: { HelloWorld },
-}
+import { HelloWorld } from '../components/generated-components'
+export default { components: { HelloWorld } }
 </script>

@@ -5,15 +5,18 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "@remix-run/react";
+  useLocation,
+} from '@remix-run/react';
+import { AppHeader } from '../components/generated-components';
 
 export const meta = () => ({
-  charset: "utf-8",
-  title: "New Remix App",
-  viewport: "width=device-width,initial-scale=1",
+  charset: 'utf-8',
+  title: 'New Remix App',
+  viewport: 'width=device-width,initial-scale=1',
 });
 
 export default function App() {
+  const { pathname } = useLocation();
   return (
     <html lang="en">
       <head>
@@ -23,6 +26,7 @@ export default function App() {
       </head>
 
       <body>
+        <AppHeader framework="remix" path={pathname} />
         <Outlet />
 
         <ScrollRestoration />

@@ -48,16 +48,12 @@ const paths: Path[] = [
   },
 ];
 
-async function main() {
-  await Promise.all(
-    paths.map(async (path) => {
-      await fs.copy(path.src, path.dest, {
-        overwrite: true,
-        recursive: true,
-      });
-      console.info(chalk.green(`Copied ${path.src} -> ${path.dest}`));
-    })
-  );
-}
-
-main();
+await Promise.all(
+  paths.map(async (path) => {
+    await fs.copy(path.src, path.dest, {
+      overwrite: true,
+      recursive: true,
+    });
+    console.info(chalk.green(`Copied ${path.src} -> ${path.dest}`));
+  })
+);

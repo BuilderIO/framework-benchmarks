@@ -18,7 +18,7 @@ export function getJsSize(report: LH.Result) {
     )
       .filter((item) => item.resourceType === 'Script')
       .reduce((acc, item) => acc + item.transferSize, 0);
-    return Math.round(jsBytes / 1000);
+    return Math.round(jsBytes / 1024);
   } catch (err) {
     console.warn('Could not get JS size', err);
     return 'ERR';

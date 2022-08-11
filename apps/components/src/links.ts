@@ -33,26 +33,25 @@ export const frameworks: Framework[] = [
     url: getUrl(6003),
   },
   // TODO: add back when get working
-  // {
-  //   name: 'nuxt2',
-  //   url: getUrl(6004),
-  // },
+  {
+    name: 'nuxt2',
+    url: getUrl(6004),
+  },
   // TODO: add back when get working
-  // {
-  //   text: 'nuxt',
-  //   name: 'nuxt3',
-  //   url: getUrl(6005),
-  // },
+  {
+    name: 'nuxt3',
+    url: getUrl(6005),
+  },
   // TODO: add back when get working
   {
     name: 'qwik',
     url: getUrl(6006),
   },
   // TODO: add back when get working
-  // {
-  //   name: 'remix',
-  //   url: getUrl(6007),
-  // },
+  {
+    name: 'remix',
+    url: getUrl(6007),
+  },
   {
     name: 'solid',
     url: getUrl(6008),

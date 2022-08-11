@@ -1,10 +1,5 @@
-// TO-DO: not working due to ESM issues
-import { ToDoApp } from '@builder.io/todo-app/react';
+import { ToDoApp } from '../../components/generated-components';
 
 export default function Index() {
-  return (
-    <>
-      <ToDoApp />
-    </>
-  );
+  return <ToDoApp />;
 }

@@ -25,7 +25,7 @@ export default function AppHeader(props: HeaderProps) {
   });
 
   return (
-    <>
+    <div>
       <link
         href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
         rel="stylesheet"
@@ -49,6 +49,6 @@ export default function AppHeader(props: HeaderProps) {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }

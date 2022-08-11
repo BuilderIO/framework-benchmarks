@@ -23,9 +23,7 @@
 
       <ul class="shadow-md rounded">
         <template :key="index" v-for="(item, index) in list">
-          <li class="border-gray-200 border-b li">
-            {{ item }}
-          </li>
+          <todo-item :item="item"></todo-item>
         </template>
       </ul>
 
@@ -38,8 +36,11 @@
 <script>
 import { defineAsyncComponent } from "vue";
 
+const TodoItem = () => import("./todo-item.vue");
+
 export default {
   name: "to-do-app",
+  components: { "todo-item": defineAsyncComponent(TodoItem) },
 
   data: () => ({ list: ["hello", "world"], newItemName: "" }),
 
@@ -70,8 +71,5 @@ export default {
 }
 .button {
   margin: 10px 0;
-}
-.li {
-  padding: 10px;
 }
 </style>

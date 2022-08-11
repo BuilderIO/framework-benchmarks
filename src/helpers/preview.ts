@@ -1,4 +1,4 @@
-import { $, sleep } from 'zx';
+import { $ } from 'zx';
 import { getPort } from './get-port.js';
 
 export async function preview(framework: string) {
@@ -10,9 +10,6 @@ export async function preview(framework: string) {
   }
 
   const process = $`cd frameworks/${framework} && npm run preview`;
-
-  // Give the server a sec to start up
-  await sleep(2000);
 
   return {
     process,

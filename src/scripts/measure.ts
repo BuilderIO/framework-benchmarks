@@ -1,4 +1,4 @@
-import { fs, chalk } from 'zx';
+import { fs, chalk, sleep } from 'zx';
 import { getFrameworks } from '../helpers/get-frameworks.js';
 import { getJsSize } from '../helpers/get-js-size.js';
 import { getLighthouseReport } from '../helpers/get-lighthouse-report.js';
@@ -15,6 +15,9 @@ await killAll(frameworks);
 const frameworkKbMap: Record<string, number | string> = {};
 for (const framework of frameworks) {
   const { process, port } = await preview(framework);
+  // Give the server a sec to start up
+  await sleep(2000);
+  
   const measureUrl = `http://localhost:${port}${path}`;
   console.info(
     `Getting lighthouse report for ${chalk.green(framework)} on ${measureUrl}`

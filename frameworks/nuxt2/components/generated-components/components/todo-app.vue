@@ -22,13 +22,11 @@
       </form>
 
       <ul class="shadow-md rounded">
-        <li
-          class="border-gray-200 border-b li"
+        <todo-item
           v-for="(item, index) in list"
+          :item="item"
           :key="index"
-        >
-          {{ item }}
-        </li>
+        ></todo-item>
       </ul>
 
       <button
@@ -42,8 +40,11 @@
   </div>
 </template>
 <script>
+const TodoItem = () => import("./todo-item.vue");
+
 export default {
   name: "to-do-app",
+  components: { "todo-item": TodoItem },
 
   data: () => ({ list: ["hello", "world"], newItemName: "" }),
 
@@ -74,8 +75,5 @@ export default {
 }
 .button {
   margin: 10px 0;
-}
-.li {
-  padding: 10px;
 }
 </style>

@@ -7,6 +7,8 @@
     "install": "ts-node-esm --transpileOnly ./src/scripts/install",
     "build": "ts-node-esm --transpileOnly ./src/scripts/build",
     "copy": "ts-node-esm --transpileOnly ./src/scripts/copy",
+    "serve": "ts-node-esm --transpileOnly ./src/scripts/serve",
+    "dev": "ts-node-esm --transpileOnly ./src/scripts/dev",
     "measure": "ts-node-esm --transpileOnly ./src/scripts/measure"
   },
   "engines": {

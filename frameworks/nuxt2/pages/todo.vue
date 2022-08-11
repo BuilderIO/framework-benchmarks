@@ -1,5 +1,5 @@
 <script>
-import { ToDoApp } from '@builder.io/todo-app/vue2'
+import { ToDoApp } from '../components/generated-components'
 
 export default {
   components: { ToDoApp },
