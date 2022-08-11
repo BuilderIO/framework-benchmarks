@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve --port 4200",
     "dev": "npm start",
-    "build": "ng build",
+    "build": "ng build && cp dist/angular/index.html dist/angular/404.html",
     "preview": "http-server dist/angular --port 4200",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

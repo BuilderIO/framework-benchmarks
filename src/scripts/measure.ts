@@ -12,7 +12,7 @@ const path = process.env.MEASURE_PATH || '/todo';
 // Kill any currently running servers
 await killAll(frameworks);
 
-const frameworkKbMap: Record<string, number> = {};
+const frameworkKbMap: Record<string, number | string> = {};
 for (const framework of frameworks) {
   const { process, port } = await preview(framework);
   const measureUrl = `http://localhost:${port}${path}`;

@@ -30,22 +30,24 @@ export default function AppHeader(props: HeaderProps) {
         href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
         rel="stylesheet"
       />
-      <div class="flex flex-row justify-center">
-        {frameworks.map((link) => (
-          <a
-            href={link.url + (props.path || '/')}
-            class={state.getClassForFrameworkLink(link)}
-          >
-            {link.text || link.name}
-          </a>
-        ))}
-      </div>
-      <div class="flex flex-row justify-center">
-        {examples.map((example) => (
-          <a href={example.url} class={state.getclassForExampleLink(example)}>
-            {example.name}
-          </a>
-        ))}
+      <div class="bg-gray-100 border-gray-200 border-b-2 flex flex-col md:flex-row p-2 mb-8">
+        <div class="flex flex-row justify-center">
+          {frameworks.map((link) => (
+            <a
+              href={link.url + (props.path || '/')}
+              class={state.getClassForFrameworkLink(link)}
+            >
+              {link.text || link.name}
+            </a>
+          ))}
+        </div>
+        <div class="flex flex-row justify-center md:ml-auto">
+          {examples.map((example) => (
+            <a href={example.url} class={state.getclassForExampleLink(example)}>
+              {example.name}
+            </a>
+          ))}
+        </div>
       </div>
     </>
   );

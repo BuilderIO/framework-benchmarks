@@ -4,26 +4,29 @@
     rel="stylesheet"
   />
 
-  <div class="flex flex-row justify-center">
-    <template :key="index" v-for="(link, index) in frameworks">
-      <a
-        :href="link.url + (path || '/')"
-        :class="_classStringToObject(this.getClassForFrameworkLink(link))"
-      >
-        {{ link.text || link.name }}
-      </a>
-    </template>
-  </div>
-
-  <div class="flex flex-row justify-center">
-    <template :key="index" v-for="(example, index) in examples">
-      <a
-        :href="example.url"
-        :class="_classStringToObject(this.getclassForExampleLink(example))"
-      >
-        {{ example.name }}
-      </a>
-    </template>
+  <div
+    class="bg-gray-100 border-gray-200 border-b-2 flex flex-col md:flex-row p-2 mb-8"
+  >
+    <div class="flex flex-row justify-center">
+      <template :key="index" v-for="(link, index) in frameworks">
+        <a
+          :href="link.url + (path || '/')"
+          :class="_classStringToObject(this.getClassForFrameworkLink(link))"
+        >
+          {{ link.text || link.name }}
+        </a>
+      </template>
+    </div>
+    <div class="flex flex-row justify-center md:ml-auto">
+      <template :key="index" v-for="(example, index) in examples">
+        <a
+          :href="example.url"
+          :class="_classStringToObject(this.getclassForExampleLink(example))"
+        >
+          {{ example.name }}
+        </a>
+      </template>
+    </div>
   </div>
 </template>
 <script>

@@ -11,12 +11,16 @@ export type NetworkRequestItem = {
  * @returns {number} - size of all JS requested in kb
  */
 export function getJsSize(report: LH.Result) {
-  const jsBytes = (
-    (report.audits['network-requests'] as any).details
-      .items as NetworkRequestItem[]
-  )
-    .filter((item) => item.resourceType === 'Script')
-    .reduce((acc, item) => acc + item.transferSize, 0);
-
-  return Math.round(jsBytes / 1000);
+  try {
+    const jsBytes = (
+      (report.audits['network-requests'] as any).details
+        .items as NetworkRequestItem[]
+    )
+      .filter((item) => item.resourceType === 'Script')
+      .reduce((acc, item) => acc + item.transferSize, 0);
+    return Math.round(jsBytes / 1000);
+  } catch (err) {
+    console.warn('Could not get JS size', err);
+    return 'ERR';
+  }
 }

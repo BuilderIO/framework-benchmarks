@@ -5,7 +5,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev -p 6005",
     "generate": "nuxt generate",
-    "preview": "nuxt preview -p 6005"
+    "preview": "PORT=6005 nuxt preview -p 6005"
   },
   "dependencies": {
     "@builder.io/components": "../../apps/components"

@@ -1,36 +1,38 @@
 <template>
   <div class="div">
-    <form
-      @submit="
-        $event.preventDefault();
-        addItem();
-      "
-    >
-      <input
-        placeholder="Add new item..."
-        class="shadow-md rounded w-full px-4 py-2"
-        :value="newItemName"
-        @input="setItemName($event)"
-      />
-
-      <button
-        class="bg-blue-500 rounded w-full text-white font-bold py-2 px-4 button"
+    <div class="div-2">
+      <form
+        @submit="
+          $event.preventDefault();
+          addItem();
+        "
       >
-        Add list item
-      </button>
-    </form>
+        <input
+          placeholder="Add new item..."
+          class="shadow-md rounded w-full px-4 py-2"
+          :value="newItemName"
+          @input="setItemName($event)"
+        />
 
-    <ul class="shadow-md rounded">
-      <template :key="index" v-for="(item, index) in list">
-        <li class="border-gray-200 border-b li">
-          {{ item }}
-        </li>
+        <button
+          class="bg-blue-500 rounded w-full text-white font-bold py-2 px-4 button"
+        >
+          Add list item
+        </button>
+      </form>
+
+      <ul class="shadow-md rounded">
+        <template :key="index" v-for="(item, index) in list">
+          <li class="border-gray-200 border-b li">
+            {{ item }}
+          </li>
+        </template>
+      </ul>
+
+      <template v-if="list.length">
+        <button class="m-4 text-gray-500 w-full" @click="clear()">Clear</button>
       </template>
-    </ul>
-
-    <template v-if="list.length">
-      <button class="m-4 text-gray-500 w-full" @click="clear()">Clear</button>
-    </template>
+    </div>
   </div>
 </template>
 <script>
@@ -58,6 +60,13 @@ export default {
 <style scoped>
 .div {
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.div-2 {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
 }
 .button {
   margin: 10px 0;
