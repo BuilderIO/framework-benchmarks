@@ -3,10 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { AppHeader } from '@builder.io/components/angular';
 
 @NgModule({
-  declarations: [AppComponent, AppHeader],
+  declarations: [AppComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

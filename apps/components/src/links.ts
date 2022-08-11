@@ -6,6 +6,7 @@ export type Example = {
 export type Framework = {
   name: string;
   url: string;
+  text?: string;
 };
 
 function getUrl(port: number) {
@@ -13,16 +14,15 @@ function getUrl(port: number) {
 }
 
 export const frameworks: Framework[] = [
-  // Removing for now, weird routing errors with no clear direction to resolve
   // {
   //   name: 'angular',
   //   url: getUrl(4200),
   // },
   // Removing for now, given doesn't support interactivity
-  // {
-  //   name: 'astro',
-  //   url: getUrl(6001),
-  // },
+  {
+    name: 'astro',
+    url: getUrl(6001),
+  },
   {
     name: 'marko',
     url: getUrl(6002),
@@ -37,6 +37,7 @@ export const frameworks: Framework[] = [
   //   url: getUrl(6004),
   // },
   {
+    text: 'nuxt',
     name: 'nuxt3',
     url: getUrl(6005),
   },

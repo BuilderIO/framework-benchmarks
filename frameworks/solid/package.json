@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "solid-start dev --port 6008",
     "build": "solid-start build",
-    "start": "solid-start start --port 6008",
+    "start": "PORT=6008 solid-start start --port 6008",
     "preview": "npm start"
   },
   "type": "module",

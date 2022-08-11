@@ -1,11 +1,18 @@
-import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HelloWorld } from '@builder.io/components/angular';
-import { ToDoApp } from '@builder.io/components/angular';
+import { HelloWorld, AppHeader, ToDoApp } from '@builder.io/components/angular';
+
+@Component({
+  standalone: true,
+  imports: [CommonModule, AppHeader],
+  template: ` <app-header></app-header> `,
+})
+class TodoRoute {}
 
 const routes: Routes = [
   { path: '', component: HelloWorld },
-  { path: 'todo', component: ToDoApp },
+  { path: 'todo', component: TodoRoute },
 ];
 
 @NgModule({

@@ -1,4 +1,6 @@
 import favicon from './favicon.png';
+import AppHeader from '../../../../../apps/components/output/marko/src/components/app-header.marko'
+
 <!doctype html>
 <html lang='en'>
   <head>
@@ -13,7 +15,7 @@ import favicon from './favicon.png';
     >
   </head>
   <body>
-    <app-header framework='marko' path=(out.stream.req.url)/>
+    <AppHeader framework='marko' path=(out.stream.req.url)/>
     <${input.renderBody}/>
   </body>
 </html>

@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "port": 6001,
+  "type": "module",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -10,9 +11,11 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@builder.io/todo-app": "../../apps/todo"
+    "@builder.io/components": "../../apps/components"
   },
   "devDependencies": {
-    "astro": "^1.0.0-rc.3"
+    "@astrojs/solid-js": "^1.0.0",
+    "astro": "^1.0.0-rc.3",
+    "solid-js": "^1.4.8"
   }
 }

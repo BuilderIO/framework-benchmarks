@@ -36,7 +36,7 @@ export default function AppHeader(props: HeaderProps) {
             href={link.url + (props.path || '/')}
             class={state.getClassForFrameworkLink(link)}
           >
-            {link.name}
+            {link.text || link.name}
           </a>
         ))}
       </div>

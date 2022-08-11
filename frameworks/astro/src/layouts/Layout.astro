@@ -1,4 +1,6 @@
 ---
+import { Header } from '@builder.io/components/solid'
+
 export interface Props {
 	title: string;
 }
@@ -8,15 +10,19 @@ const { title } = Astro.props as Props;
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<title>{title}</title>
+</head>
+
+<body>
+	<Header framework="Astro" path={Astro.url.pathname}>{title}</Header>
+	<slot />
+</body>
+
 </html>
 <style>
 	:root {
