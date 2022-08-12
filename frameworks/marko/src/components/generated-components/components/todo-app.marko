@@ -35,8 +35,8 @@ style {
 <div class="div">
   <div class="div-2">
     <form
-      on-submit(e => {
-  e.preventDefault();
+      on-submit(event => {
+  event.preventDefault();
   component.addItem();
 })
     >

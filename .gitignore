@@ -1,8 +1,4 @@
 .DS_Store
 node_modules
 debug.json
-**/generated-components/**/*.js
-**/generated-components/**/*.ts
-**/generated-components/**/*.jsx
-**/generated-components/**/*.tsx
-!**/generated-components/**/*.d.ts
+**/generated-components/**

@@ -26,10 +26,10 @@ export default function AppHeader(props: HeaderProps) {
 
   return (
     <div>
-      <link
+      {/* <link
         href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
         rel="stylesheet"
-      />
+      /> */}
       <div class="bg-gray-100 border-gray-200 border-b-2 flex flex-col md:flex-row mb-8">
         <div class="flex flex-row justify-center flex-wrap border-gray-200 border-b-2 md:border-b-0 p-2">
           {frameworks.map((link) => (

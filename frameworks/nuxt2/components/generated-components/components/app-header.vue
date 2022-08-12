@@ -1,9 +1,5 @@
 <template>
   <div>
-    <link
-      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
     <div
       class="bg-gray-100 border-gray-200 border-b-2 flex flex-col md:flex-row mb-8"
     >

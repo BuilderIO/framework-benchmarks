@@ -27,8 +27,8 @@ export default function ToDoApp() {
     >
       <div css={{ margin: '0 auto', width: '100%', maxWidth: '800px' }}>
         <form
-          onSubmit={(e) => {
-            e.preventDefault();
+          onSubmit={(event) => {
+            event.preventDefault();
             state.addItem();
           }}
         >
