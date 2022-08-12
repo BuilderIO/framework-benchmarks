@@ -1,15 +1,29 @@
 import { useStore } from '@builder.io/mitosis';
 import TodoItem from './todo-item.lite';
 
+export type Todo = {
+  text: string;
+  completed: boolean;
+};
+
 export default function ToDoApp() {
   const state = useStore({
-    list: ['hello', 'world'],
+    list: [
+      { text: 'hello', completed: false },
+      { text: 'world', completed: false },
+    ],
     newItemName: '',
     setItemName(event: Event) {
       state.newItemName = (event.target as any).value;
     },
     addItem() {
-      state.list = [...state.list, state.newItemName];
+      state.list = [
+        ...state.list,
+        {
+          text: state.newItemName,
+          completed: false,
+        },
+      ];
       state.newItemName = '';
     },
     clear() {

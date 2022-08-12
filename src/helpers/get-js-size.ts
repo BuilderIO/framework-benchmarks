@@ -21,6 +21,6 @@ export function getJsSize(report: LH.Result) {
     return Math.round(jsBytes / 1024);
   } catch (err) {
     console.warn('Could not get JS size', err);
-    return 'ERR';
+    return undefined;
   }
 }

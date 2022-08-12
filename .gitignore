@@ -1,4 +1,5 @@
 .DS_Store
 node_modules
 debug.json
+report.json
 **/generated-components/**

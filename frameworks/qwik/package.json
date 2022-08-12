@@ -3,7 +3,7 @@
   "port": 6006,
   "description": "File based routing and MDX support Vite.js tooling. Express.js server. Prettier code formatter.",
   "scripts": {
-    "build": "npm run typecheck && npm run build.client && npm run build.ssr",
+    "build": "npm run build.client && npm run build.ssr",
     "build.client": "vite build",
     "build.ssr": "vite build --ssr src/entry.express.tsx",
     "dev": "npm run dev.ssr",
