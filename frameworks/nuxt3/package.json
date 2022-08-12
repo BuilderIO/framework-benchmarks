@@ -8,7 +8,8 @@
     "preview": "PORT=6005 nuxt preview -p 6005"
   },
   "dependencies": {
-    "@builder.io/components": "../../apps/components"
+    "@builder.io/components": "../../apps/components",
+    "highlight.js": "^11.6.0"
   },
   "devDependencies": {
     "nuxt": "3.0.0-rc.6"

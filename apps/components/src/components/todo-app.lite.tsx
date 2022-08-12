@@ -29,6 +29,15 @@ export default function ToDoApp() {
     clear() {
       state.list = [];
     },
+    clearDone() {
+      state.list = state.list.filter((item) => !item.completed);
+    },
+    markAllDone() {
+      state.list = state.list.map((item) => ({
+        ...item,
+        completed: true,
+      }));
+    },
   });
 
   return (
@@ -50,7 +59,7 @@ export default function ToDoApp() {
             placeholder="Add new item..."
             class="shadow-md rounded w-full px-4 py-2"
             value={state.newItemName}
-            onChange={(event) => state.setItemName(event)}
+            onInput={(event) => state.setItemName(event)}
           />
 
           <button
@@ -69,12 +78,30 @@ export default function ToDoApp() {
           ))}
         </ul>
         {state.list.length && (
-          <button
-            class="m-4 text-gray-500 w-full"
-            onClick={() => state.clear()}
+          <div
+            css={{
+              display: 'flex',
+            }}
           >
-            Clear
-          </button>
+            <button
+              class="m-4 text-gray-500 w-full"
+              onClick={() => state.clear()}
+            >
+              Clear All
+            </button>
+            <button
+              class="m-4 text-gray-500 w-full"
+              onClick={() => state.clearDone()}
+            >
+              Clear Done
+            </button>
+            <button
+              class="m-4 text-gray-500 w-full"
+              onClick={() => state.markAllDone()}
+            >
+              Mark all as done
+            </button>
+          </div>
         )}
       </div>
     </div>

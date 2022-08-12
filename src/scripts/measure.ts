@@ -99,7 +99,8 @@ function getTable(results: Record<string, Measurement>) {
       'JS kb': item.jsKb,
       FCP: item.fcpDisplay,
       TBT: item.tbtDisplay,
-      LCP: item.lcpDisplay,
+      // Getting really weird results for LCP, commenting out for now
+      // LCP: item.lcpDisplay,
     }));
 
   return table;

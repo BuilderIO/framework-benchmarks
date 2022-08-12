@@ -4,8 +4,9 @@
   "version": "1.0.0",
   "port": 6002,
   "dependencies": {
-    "marko": "^5",
-    "@builder.io/components": "../../apps/components/output/marko"
+    "@builder.io/components": "../../apps/components/output/marko",
+    "highlight.js": "^11.6.0",
+    "marko": "^5"
   },
   "devDependencies": {
     "@marko/build": "^4",

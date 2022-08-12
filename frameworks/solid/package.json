@@ -9,7 +9,8 @@
   },
   "type": "module",
   "dependencies": {
-    "@builder.io/components": "../../apps/components"
+    "@builder.io/components": "../../apps/components",
+    "highlight.js": "^11.6.0"
   },
   "devDependencies": {
     "@solidjs/meta": "^0.28.0",

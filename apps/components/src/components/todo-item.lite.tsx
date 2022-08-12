@@ -18,14 +18,14 @@ export default function TodoItem(props: TodoItemProps) {
       <input
         type="checkbox"
         checked={props.item.completed}
-        onChange={(event) => {
-          props.item.completed = (event.target as any).checked;
+        onInput={(event) => {
+          props.item.completed = event.target.checked;
         }}
       />
       <input
         value={props.item.text}
-        onChange={(event) => {
-          props.item.text = (event.target as any).value;
+        onInput={(event) => {
+          props.item.text = event.target.value;
         }}
       />
     </li>

@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@builder.io/components": "../../apps/components",
+    "highlight.js": "^11.6.0",
     "solid-styled-components": "^0.28.4"
   },
   "devDependencies": {
