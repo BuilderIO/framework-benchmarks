@@ -18,12 +18,12 @@ const paths: Path[] = [
   },
   // Fresh
   {
-    src: 'apps/components/output/react/src',
+    src: 'apps/components/output/preact/src',
     dest: 'frameworks/fresh/components/generated-components',
   },
   // Marko
   {
-    src: 'apps/components/output/react/src',
+    src: 'apps/components/output/marko/src',
     dest: 'frameworks/marko/src/components/generated-components',
   },
   // Nuxt2

@@ -60,6 +60,10 @@ export const frameworks: Framework[] = [
     name: 'svelte',
     url: getUrl(6009),
   },
+  {
+    name: 'fresh',
+    url: getUrl(8000),
+  },
 ];
 
 export const examples: Example[] = [

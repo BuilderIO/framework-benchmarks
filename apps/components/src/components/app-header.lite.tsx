@@ -1,5 +1,5 @@
 import { useStore } from '@builder.io/mitosis';
-import { frameworks, Framework, examples, Example } from '../links';
+import { frameworks, Framework, examples, Example } from '../links.js';
 
 export interface HeaderProps {
   framework: string;
@@ -30,8 +30,8 @@ export default function AppHeader(props: HeaderProps) {
         href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
         rel="stylesheet"
       />
-      <div class="bg-gray-100 border-gray-200 border-b-2 flex flex-col md:flex-row p-2 mb-8">
-        <div class="flex flex-row justify-center">
+      <div class="bg-gray-100 border-gray-200 border-b-2 flex flex-col md:flex-row mb-8">
+        <div class="flex flex-row justify-center flex-wrap border-gray-200 border-b-2 md:border-b-0 p-2">
           {frameworks.map((link) => (
             <a
               href={link.url + (props.path || '/')}
@@ -41,7 +41,7 @@ export default function AppHeader(props: HeaderProps) {
             </a>
           ))}
         </div>
-        <div class="flex flex-row justify-center md:ml-auto">
+        <div class="flex flex-row justify-center md:ml-auto flex-wrap p-2">
           {examples.map((example) => (
             <a href={example.url} class={state.getclassForExampleLink(example)}>
               {example.name}

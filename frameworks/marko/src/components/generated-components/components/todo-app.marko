@@ -1,0 +1,71 @@
+import TodoItem from "./todo-item.marko";
+
+class {
+  setItemName(event) {
+    this.state.newItemName = event.target.value;
+  }
+  addItem() {
+    this.state.list = [...this.state.list, this.state.newItemName];
+    this.state.newItemName = "";
+  }
+  clear() {
+    this.state.list = [];
+  }
+
+  onCreate() {
+    this.state = { list: ["hello", "world"], newItemName: "" };
+  }
+}
+
+style { 
+  .div {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  .div-2 {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+  }
+  .button {
+    margin: 10px 0;
+  }
+}
+<div class="div">
+  <div class="div-2">
+    <form
+      on-submit(e => {
+  e.preventDefault();
+  component.addItem();
+})
+    >
+      <input
+        placeholder="Add new item..."
+        class="shadow-md rounded w-full px-4 py-2"
+        value=(state.newItemName)
+        on-input(event => component.setItemName(event))
+      />
+
+      <button
+        class="bg-blue-500 rounded w-full text-white font-bold py-2 px-4 button"
+      >
+        Add list item
+      </button>
+    </form>
+
+    <ul class="shadow-md rounded">
+      <for|item| of=(state.list)>
+        <TodoItem item=(item)></TodoItem>
+      </for>
+    </ul>
+
+    <if(state.list.length)>
+      <button
+        class="m-4 text-gray-500 w-full"
+        on-click(event => component.clear())
+      >
+        Clear
+      </button></if>
+  </div>
+</div>

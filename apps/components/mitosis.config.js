@@ -21,14 +21,16 @@ module.exports = {
     'vue3',
     'marko',
     'qwik',
+    'preact',
   ],
   options: {
     react: { transpiler: { ...transpilerOptions, languages: ['ts'] } },
     solid: { transpiler: { ...transpilerOptions, languages: ['ts'] } },
+    preact: { transpiler: { ...transpilerOptions, languages: ['ts'] } },
     vue2: vueConfig,
     vue3: vueConfig,
     angular: { standalone: true, transpiler: transpilerOptions },
-    qwik: { transpiler: { ...transpilerOptions }, },
+    qwik: { transpiler: { ...transpilerOptions } },
     marko: { transpiler: { ...transpilerOptions } },
   },
 };

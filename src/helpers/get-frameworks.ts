@@ -4,8 +4,7 @@ const FRAMEWORKS = process.env.FRAMEWORKS?.split(',');
 
 const IGNORE_FRAMEWORKS = process.env.IGNORE_FRAMEWORKS
   ? process.env.IGNORE_FRAMEWORKS.split(',')
-  : // These are currently not working
-    ['fresh', 'nuxt2'];
+  : [];
 
 /**
  * Get the list of frameworks to test

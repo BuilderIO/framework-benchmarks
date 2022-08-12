@@ -1,0 +1,9 @@
+{
+  "port": 8000,
+  "scripts": {
+    "build": "echo ''",
+    "dev": "npm run preview",
+    "start": "npm run preview",
+    "preview": "deno task start"
+  }
+}

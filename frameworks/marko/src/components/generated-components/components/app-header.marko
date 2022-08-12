@@ -1,0 +1,53 @@
+import { frameworks, examples } from "../links.js";
+
+class {
+  getClassForFrameworkLink(link) {
+    return `p-2 text-base font-medium capitalize ${
+      this.input.framework === link.name
+        ? "text-blue-500"
+        : "text-gray-500 hover:text-gray-900"
+    }`;
+  }
+  getclassForExampleLink(link) {
+    return `p-2 text-base font-medium capitalize ${
+      link.url === this.input.path
+        ? "text-blue-500"
+        : "text-gray-500 hover:text-gray-900"
+    }`;
+  }
+}
+
+<div>
+  <link
+    href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+    rel="stylesheet"
+  />
+
+  <div
+    class="bg-gray-100 border-gray-200 border-b-2 flex flex-col md:flex-row mb-8"
+  >
+    <div
+      class="flex flex-row justify-center flex-wrap border-gray-200 border-b-2 md:border-b-0 p-2"
+    >
+      <for|link| of=(frameworks)>
+        <a
+          href=(link.url + (input.path || '/'))
+          class=(component.getClassForFrameworkLink(link))
+        >
+          ${link.text || link.name}
+        </a>
+      </for>
+    </div>
+
+    <div class="flex flex-row justify-center md:ml-auto flex-wrap p-2">
+      <for|example| of=(examples)>
+        <a
+          href=(example.url)
+          class=(component.getclassForExampleLink(example))
+        >
+          ${example.name}
+        </a>
+      </for>
+    </div>
+  </div>
+</div>

@@ -5,9 +5,11 @@
       rel="stylesheet"
     />
     <div
-      class="bg-gray-100 border-gray-200 border-b-2 flex flex-col md:flex-row p-2 mb-8"
+      class="bg-gray-100 border-gray-200 border-b-2 flex flex-col md:flex-row mb-8"
     >
-      <div class="flex flex-row justify-center">
+      <div
+        class="flex flex-row justify-center flex-wrap border-gray-200 border-b-2 md:border-b-0 p-2"
+      >
         <a
           v-for="(link, index) in frameworks"
           :href="link.url + (path || '/')"
@@ -17,7 +19,7 @@
           {{ link.text || link.name }}
         </a>
       </div>
-      <div class="flex flex-row justify-center md:ml-auto">
+      <div class="flex flex-row justify-center md:ml-auto flex-wrap p-2">
         <a
           v-for="(example, index) in examples"
           :href="example.url"
@@ -31,7 +33,7 @@
   </div>
 </template>
 <script>
-import { frameworks, examples } from "../links";
+import { frameworks, examples } from "../links.js";
 
 export default {
   name: "app-header",

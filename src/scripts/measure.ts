@@ -12,19 +12,35 @@ const path = process.env.MEASURE_PATH || '/todo';
 // Kill any currently running servers
 await killAll(frameworks);
 
-const frameworkKbMap: Record<string, number | string> = {};
+export type Measurement = {
+  jsKb: number | 'ERR';
+  fcp?: string;
+  tbt?: string;
+  tti?: string;
+};
+
+const frameworkKbMap: Record<string, Measurement> = {};
 for (const framework of frameworks) {
   const { process, port } = await preview(framework);
   // Give the server a sec to start up
   await sleep(2000);
-  
+
   const measureUrl = `http://localhost:${port}${path}`;
   console.info(
     `Getting lighthouse report for ${chalk.green(framework)} on ${measureUrl}`
   );
   const report = await getLighthouseReport(measureUrl);
   const jsSize = getJsSize(report);
-  frameworkKbMap[framework] = jsSize;
+  const fcp = report.audits['first-contentful-paint'].displayValue;
+  const tbt = report.audits['total-blocking-time'].displayValue;
+  const tti = report.audits['interactive'].displayValue;
+
+  frameworkKbMap[framework] = {
+    jsKb: jsSize,
+    fcp,
+    tbt,
+    tti,
+  };
   console.info(chalk.green(`${framework}:`, jsSize + 'kb'));
 
   if (global.process.env.DEBUG === 'true') {
@@ -36,4 +52,5 @@ for (const framework of frameworks) {
   process.kill();
 }
 
-console.info(chalk.green('Done!'), frameworkKbMap);
+console.info(chalk.green('Done!'));
+console.table(frameworkKbMap);
