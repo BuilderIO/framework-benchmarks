@@ -1,22 +1,36 @@
+import { qwikCity } from '@builder.io/qwik-city/middleware/express';
 import express from 'express';
 import { fileURLToPath } from 'url';
 import { join } from 'path';
-import cityPlan from '@qwik-city-plan';
-import { qwikCity } from '@builder.io/qwik-city/middleware/express';
 import render from './entry.ssr';
 
+// directories where the static assets are located
+const distDir = join(fileURLToPath(import.meta.url), '..', '..', 'dist');
+const buildDir = join(distDir, 'build');
+
+// create the Qwik City express middleware
+const { router, notFound } = qwikCity(render);
+
+// create the express server
 const app = express();
 
-const port = Number(process.env.PORT || 8080);
+// use Qwik City's page and endpoint handler
+app.use(router);
 
+// static asset handlers
 app.use(
-  qwikCity(render, {
-    ...cityPlan,
-    staticDir: join(fileURLToPath(import.meta.url), '..', '..', 'dist'),
-  })
+  `/build`,
+  express.static(buildDir, { immutable: true, maxAge: '1y', index: false })
 );
+app.use(express.static(distDir, { index: false }));
 
-app.listen(port, () => {
+// use Qwik City's 404 handler
+app.use(notFound);
+
+const PORT = Number(process.env.PORT || 6006);
+
+// start the express server
+app.listen(PORT, () => {
   /* eslint-disable */
-  console.log(`http://localhost:${port}/`);
+  console.log(`http://localhost:${PORT}/`);
 });
