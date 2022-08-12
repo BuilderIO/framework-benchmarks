@@ -7,7 +7,7 @@ import { preview } from '../helpers/preview.js';
 
 const frameworks = await getFrameworks();
 
-const path = process.env.MEASURE_PATH || '/todo';
+const path = process.env.MEASURE_PATH || '/';
 
 // Kill any currently running servers
 await killAll(frameworks);
