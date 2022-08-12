@@ -1,4 +1,4 @@
-# Framework Performance
+# Framework Benchmarks
 
 Test each framework for it's performance, particularly common Lighthouse and CWV metrics as applications scale
 
