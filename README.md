@@ -8,6 +8,8 @@ Test each framework for it's performance, particularly common Lighthouse and CWV
 
 The goals for this project are to understand the performance tradeoffs of popular frameworks in real world-ish scenarios. We want to assume non trivial codebases and imperfect code and conditions, so to see how each framework holds up to real world scenarios and scale.
 
+We are intentionally not focused on client side rendering performance, for that please use [Stefan Krause](https://github.com/krausest)'s great [js-framework-benchmark](https://github.com/krausest/js-framework-benchmark)
+
 ### Status
 
 This project is in initial development. Do not put too much weight on these current results, there is still much more to do to ensure accuracy, consistency, and fairness.
@@ -176,3 +178,11 @@ To measure the weight of each framework (after you ran `install` and `build`):
 ```sh
 npm run measure
 ```
+
+## Credit and Inspiration
+
+- [Stefan Krause](https://github.com/krausest) and his [js-framework-benchmark](https://github.com/krausest/js-framework-benchmark)
+- [Addy Osmani](https://github.com/addyosmani) and his great [Web Performance Recipes With Puppeteer](https://addyosmani.com/blog/puppeteer-recipes/) blog post
+- [Lighthouse](https://github.com/GoogleChrome/lighthouse) and the very helpful Lighthouse team
+- [Ryan Carniato](https://github.com/ryansolid) for always providing incredibly helpful insight and feedback
+- [Builder.io](https://www.builder.io/) for funding this research and development
