@@ -2,6 +2,8 @@
 
 Test each framework for it's performance, particularly common Lighthouse and CWV metrics as applications scale
 
+**Important**: This is not a measure of "is framework x better than y". There are many tradeoffs to weigh when choosing the best framework for you - such as DX, features, render speed, etc. These benchmarks only show a part of the picture
+
 ### Goals
 
 The goals for this project are to understand the performance tradeoffs of popular frameworks in real world-ish scenarios. We want to assume non trivial codebases and imperfect code and conditions, so to see how each framework holds up to real world scenarios and scale.
@@ -22,10 +24,11 @@ We then create basic example components and use [Mitosis](https://github.com/bui
 
 We then build and serve each project, and run Lighthouse on each project with puppeteer, and measure:
 
-- **JS kb**: the kb of JS downloaded from `<script src="...">` tags
 - **FCP**: [First Contentful Paint](https://web.dev/first-contentful-paint/)
 - **TBT**: [Total Blocking Time](https://web.dev/tbt/)
 - **TTI**: [Time to Interactive](https://web.dev/interactive/)
+- **Eager JS Kib**: the KiH of JS that is eagerly downloaded and executed from `<script>` tags for the initial page load
+- **Total KiB**: the total KiB transferred with the given page, including prefetched JS. Also known as the "total byte weight"
 
 We sort the results by TTI, ascending
 
@@ -55,20 +58,21 @@ Alphabetically:
 Just a few links and `<h1>Hello World</h1>`
 
 ```
-┌─────────┬───────────┬─────────┬───────┬─────────┬──────────┐
-│ (index) │   name    │   TTI   │ JS kb │   FCP   │   TBT    │
-├─────────┼───────────┼─────────┼───────┼─────────┼──────────┤
-│    0    │  'qwik'   │ '0.6 s' │   0   │ '0.6 s' │  '0 ms'  │
-│    1    │  'astro'  │ '0.7 s' │   0   │ '0.7 s' │  '0 ms'  │
-│    2    │  'fresh'  │ '0.8 s' │   0   │ '0.8 s' │  '0 ms'  │
-│    3    │  'marko'  │ '0.8 s' │  15   │ '0.8 s' │  '0 ms'  │
-│    4    │  'solid'  │ '1.1 s' │  18   │ '1.1 s' │  '0 ms'  │
-│    5    │ 'svelte'  │ '1.3 s' │  17   │ '1.3 s' │  '0 ms'  │
-│    6    │  'nuxt2'  │ '1.6 s' │  90   │ '0.8 s' │ '140 ms' │
-│    7    │  'nuxt3'  │ '1.9 s' │  120  │ '1.9 s' │  '0 ms'  │
-│    8    │  'remix'  │ '2.0 s' │  62   │ '1.2 s' │ '70 ms'  │
-│    9    │  'next'   │ '2.1 s' │  81   │ '0.6 s' │ '40 ms'  │
-└─────────┴───────────┴─────────┴───────┴─────────┴──────────┘
+┌─────────┬───────────┬─────────┬─────────┬────────────┬──────────────┬───────────┐
+│ (index) │   name    │   TTI   │   FCP   │    TBT     │ Eager JS KiB │ Total KiB │
+├─────────┼───────────┼─────────┼─────────┼────────────┼──────────────┼───────────┤
+│    0    │  'marko'  │ '0.6 s' │ '0.6 s' │   '0 ms'   │      15      │    20     │
+│    1    │  'qwik'   │ '0.6 s' │ '0.6 s' │   '0 ms'   │      0       │     8     │
+│    2    │  'astro'  │ '0.6 s' │ '0.6 s' │   '0 ms'   │      0       │     7     │
+│    3    │  'fresh'  │ '0.8 s' │ '0.8 s' │   '0 ms'   │      0       │    27     │
+│    4    │ 'svelte'  │ '1.3 s' │ '1.3 s' │   '0 ms'   │      18      │    21     │
+│    5    │  'nuxt3'  │ '1.9 s' │ '1.9 s' │   '0 ms'   │     121      │   1145    │
+│    6    │ 'angular' │ '2.4 s' │ '2.3 s' │  '20 ms'   │     233      │    236    │
+│    7    │  'nuxt2'  │ '3.3 s' │ '0.8 s' │  '360 ms'  │     375      │    385    │
+│    8    │  'remix'  │ '3.5 s' │ '1.3 s' │  '200 ms'  │     358      │    363    │
+│    9    │  'next'   │ '3.8 s' │ '0.6 s' │  '230 ms'  │     366      │    376    │
+│   10    │  'solid'  │ '4.0 s' │ '0.9 s' │ '1,390 ms' │     304      │    308    │
+└─────────┴───────────┴─────────┴─────────┴────────────┴──────────────┴───────────┘
 ```
 
 #### Todo App:
@@ -76,42 +80,21 @@ Just a few links and `<h1>Hello World</h1>`
 A very simple/trivial interactive Todo app
 
 ```
-┌─────────┬──────────┬─────────┬───────┬─────────┬─────────┐
-│ (index) │   name   │   TTI   │ JS kb │   FCP   │   TBT   │
-├─────────┼──────────┼─────────┼───────┼─────────┼─────────┤
-│    0    │ 'astro'  │ '0.6 s' │  19   │ '0.6 s' │ '0 ms'  │
-│    1    │  'qwik'  │ '0.7 s' │   0   │ '0.7 s' │ '0 ms'  │
-│    2    │ 'fresh'  │ '0.8 s' │   8   │ '0.8 s' │ '0 ms'  │
-│    3    │ 'marko'  │ '0.8 s' │  16   │ '0.8 s' │ '0 ms'  │
-│    4    │ 'solid'  │ '1.1 s' │  18   │ '1.1 s' │ '0 ms'  │
-│    5    │ 'svelte' │ '1.4 s' │  18   │ '1.4 s' │ '0 ms'  │
-│    6    │ 'nuxt2'  │ '1.6 s' │  91   │ '1.0 s' │ '40 ms' │
-│    7    │ 'remix'  │ '2.0 s' │  62   │ '1.8 s' │ '60 ms' │
-│    8    │ 'nuxt3'  │ '2.0 s' │  121  │ '2.0 s' │ '0 ms'  │
-│    9    │  'next'  │ '2.1 s' │  81   │ '0.6 s' │ '30 ms' │
-└─────────┴──────────┴─────────┴───────┴─────────┴─────────┘
-```
-
-#### Syntax Highlighter:
-
-An interactive component with a text box to type text, and display the output with syntax highlighting.
-
-This is to test the impact of having a large external dependency, in this case: [highlight.js](https://github.com/highlightjs/highlight.js/)
-
-```
-┌─────────┬──────────┬─────────┬───────┬─────────┬────────────┐
-│ (index) │   name   │   TTI   │ JS kb │   FCP   │    TBT     │
-├─────────┼──────────┼─────────┼───────┼─────────┼────────────┤
-│    0    │  'qwik'  │ '0.8 s' │   0   │ '0.8 s' │   '0 ms'   │
-│    1    │ 'svelte' │ '2.7 s' │  313  │ '1.2 s' │ '1,370 ms' │
-│    0    │ 'solid'  │ '3.5 s' │  305  │ '1.1 s' │ '1,430 ms' │
-│    2    │ 'nuxt2'  │ '3.9 s' │  375  │ '1.0 s' │  '910 ms'  │
-│    3    │ 'marko'  │ '4.4 s' │  245  │ '0.9 s' │ '1,720 ms' │
-│    4    │  'next'  │ '4.5 s' │  366  │ '0.7 s' │ '1,640 ms' │
-│    5    │ 'remix'  │ '5.0 s' │  357  │ '1.7 s' │ '1,730 ms' │
-│    6    │ 'astro'  │ '7.8 s' │ 1043  │ '0.8 s' │ '1,630 ms' │
-│    7    │ 'nuxt3'  │ '7.9 s' │ 1134  │ '7.1 s' │  '50 ms'   │
-└─────────┴──────────┴─────────┴───────┴─────────┴────────────┘
+┌─────────┬───────────┬─────────┬─────────┬──────────┬──────────────┬───────────┐
+│ (index) │   name    │   TTI   │   FCP   │   TBT    │ Eager JS KiB │ Total KiB │
+├─────────┼───────────┼─────────┼─────────┼──────────┼──────────────┼───────────┤
+│    0    │  'qwik'   │ '0.7 s' │ '0.7 s' │  '0 ms'  │      2       │    55     │
+│    1    │  'fresh'  │ '0.8 s' │ '0.8 s' │  '0 ms'  │      9       │    36     │
+│    2    │  'marko'  │ '0.8 s' │ '0.8 s' │  '0 ms'  │      16      │    22     │
+│    3    │  'astro'  │ '1.2 s' │ '0.7 s' │  '0 ms'  │      20      │    29     │
+│    4    │ 'svelte'  │ '1.3 s' │ '1.3 s' │  '0 ms'  │      19      │    23     │
+│    5    │  'nuxt3'  │ '2.0 s' │ '2.0 s' │  '0 ms'  │     122      │   1146    │
+│    6    │ 'angular' │ '2.4 s' │ '2.3 s' │ '40 ms'  │     233      │    236    │
+│    7    │  'solid'  │ '2.8 s' │ '0.9 s' │ '150 ms' │     304      │    307    │
+│    8    │  'nuxt2'  │ '3.2 s' │ '1.5 s' │ '130 ms' │     376      │    386    │
+│    9    │  'remix'  │ '3.5 s' │ '1.3 s' │ '210 ms' │     358      │    363    │
+│    10   │  'next'   │ '3.8 s' │ '0.7 s' │ '210 ms' │     366      │    377    │
+└─────────┴───────────┴─────────┴─────────┴──────────┴──────────────┴───────────┘
 ```
 
 #### Build times:

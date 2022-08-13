@@ -14,5 +14,5 @@ export async function getFrameworks() {
     return FRAMEWORKS;
   }
   const frameworks = await fs.readdir('./frameworks');
-  return frameworks.filter((item) => !IGNORE_FRAMEWORKS.includes(item)).reverse();
+  return frameworks.filter((item) => !IGNORE_FRAMEWORKS.includes(item));
 }

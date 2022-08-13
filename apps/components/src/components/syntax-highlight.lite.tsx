@@ -1,4 +1,6 @@
 import { useStore } from '@builder.io/mitosis';
+// TODO: this actually has issues where some frameworks over
+// bundle
 import hljs from 'highlight.js';
 
 export default function SyntaxHighlight() {

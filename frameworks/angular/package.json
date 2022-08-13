@@ -6,8 +6,8 @@
     "ng": "ng",
     "start": "ng serve --port 4200",
     "dev": "npm start",
-    "build": "ng build && cp dist/angular/index.html dist/angular/404.html",
-    "preview": "http-server dist/angular --port 4200",
+    "build": "ng build",
+    "preview": "node server.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -21,11 +21,12 @@
     "@angular/platform-browser": "^14.1.0",
     "@angular/platform-browser-dynamic": "^14.1.0",
     "@angular/router": "^14.1.0",
+    "@builder.io/components": "../../apps/components",
+    "express": "^4.18.1",
     "http-server": "^14.1.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4",
-    "@builder.io/components": "../../apps/components"
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.1.1",

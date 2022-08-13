@@ -33,8 +33,8 @@ async function setupBrowser(options: chromeLauncher.Options = {}) {
 export async function teardownBrowser() {
   await browser?.disconnect();
   await chrome?.kill();
-  chrome = null
-  browser = null
+  chrome = null;
+  browser = null;
 }
 
 // Adapted from: https://addyosmani.com/blog/puppeteer-recipes/#lighthouse-metrics
@@ -49,14 +49,45 @@ export async function getLighthouseReport(
     ...options,
     port,
   });
+  const page = await browser!.newPage();
+  await page.goto(url);
 
-  const json: LH.Result = JSON.parse(
+  // Assumes one byte per character. Does not account for gzipping
+  const inlineJsBytes = await page?.evaluate(() => {
+    return Array.from(document.querySelectorAll('script:not([src])')).reduce(
+      (memo, _script) => {
+        const script = _script as HTMLScriptElement;
+        if (
+          !['module', ''].includes(script.type) ||
+          script.type.includes('javascript')
+        ) {
+          return memo;
+        }
+
+        return memo + (script.textContent || '').length;
+      },
+      0
+    );
+  });
+  await page.close();
+
+  const lhReport: LH.Result = JSON.parse(
     reportGenerator.generateReport(lhr, 'json')
   );
 
-  return json;
+  return {
+    lhReport,
+    inlineJsBytes,
+  };
 }
 
 process.on('beforeExit', async () => {
   await teardownBrowser();
+});
+
+process.on('uncaughtException', async (err) => {
+  console.error(new Date().toUTCString() + ' uncaughtException:', err.message);
+  console.error(err.stack);
+  await teardownBrowser();
+  process.exit(1);
 });

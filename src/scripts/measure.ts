@@ -18,6 +18,7 @@ await killAll(frameworks);
 
 export type Measurement = {
   jsKb?: number;
+  totalKb?: number;
   fcpDisplay?: string;
   fcpNumber?: number;
   tbtDisplay?: string;
@@ -54,8 +55,10 @@ async function measure(framework: string) {
   console.info(
     `Getting lighthouse report for ${chalk.green(framework)} on ${measureUrl}`
   );
-  const report = await getLighthouseReport(measureUrl);
-  const jsSize = getJsSize(report);
+  const { lhReport: report, inlineJsBytes } = await getLighthouseReport(
+    measureUrl
+  );
+  const jsSize = Math.round((getJsSize(report) + inlineJsBytes) / 1024);
   const fcp = report.audits['first-contentful-paint'];
   const lcp = report.audits['largest-contentful-paint'];
   const tbt = report.audits['total-blocking-time'];
@@ -63,6 +66,9 @@ async function measure(framework: string) {
 
   results[framework] = {
     jsKb: jsSize,
+    totalKb: Math.round(
+      (report.audits['total-byte-weight']?.numericValue || 0) / 1024
+    ),
     fcpDisplay: fcp?.displayValue,
     fcpNumber: fcp?.numericValue,
     tbtDisplay: tbt?.displayValue,
@@ -96,9 +102,10 @@ function getTable(results: Record<string, Measurement>) {
     .map((item) => ({
       name: item.name,
       TTI: item.ttiDisplay,
-      'JS kb': item.jsKb,
       FCP: item.fcpDisplay,
       TBT: item.tbtDisplay,
+      'Eager JS KiB': item.jsKb,
+      'Total KiB': item.totalKb,
       // Getting really weird results for LCP, commenting out for now
       // LCP: item.lcpDisplay,
     }));
