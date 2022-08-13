@@ -22,7 +22,7 @@ We created a basic starting point for each framework in the `frameworks/` folder
 
 We then create basic example components and use [Mitosis](https://github.com/builderio/mitosis) to compile them to best-effort idiomatic code for each framework. This will never be perfectly optimized code
 
-We then build and serve each project, and run Lighthouse on each project with puppeteer, and measure:
+We then build and serve each project, and run Lighthouse on each project with puppeteer, including with [emulation of slow devices and networks](https://github.com/GoogleChrome/lighthouse/blob/master/docs/emulation.md) (aka includes CPU and network throttling), and measure:
 
 - **FCP**: [First Contentful Paint](https://web.dev/first-contentful-paint/)
 - **TBT**: [Total Blocking Time](https://web.dev/tbt/)
