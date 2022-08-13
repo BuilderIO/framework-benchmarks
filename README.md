@@ -116,6 +116,15 @@ A very simple/trivial interactive Todo app
 └─────────┴──────────┴──────────────────────┘
 ```
 
+## Todo
+
+Next things we want to add:
+
+- Time to interaction
+- More complex examples that more closesly emulate real world sites and apps
+
+Contributions welcome!
+
 ## Running locally
 
 ### Prereqs
