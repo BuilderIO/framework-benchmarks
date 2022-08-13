@@ -55,7 +55,7 @@ Alphabetically:
 
 #### Hello World:
 
-Just a few links and `<h1>Hello World</h1>`
+Just a few links and `<h1>Hello World</h1>`. [Source](https://github.com/BuilderIO/framework-benchmarks/blob/main/apps/components/src/components/hello-world.lite.tsx)
 
 ```
 ┌─────────┬───────────┬─────────┬─────────┬────────────┬──────────────┬───────────┐
@@ -77,7 +77,7 @@ Just a few links and `<h1>Hello World</h1>`
 
 #### Todo App:
 
-A very simple/trivial interactive Todo app
+A very simple/trivial interactive Todo app. [Source](https://github.com/BuilderIO/framework-benchmarks/blob/main/apps/components/src/components/todo-app.lite.tsx)
 
 ```
 ┌─────────┬───────────┬─────────┬─────────┬──────────┬──────────────┬───────────┐
