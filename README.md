@@ -122,6 +122,8 @@ Next things we want to add:
 
 - Time to interaction
 - More complex examples that more closesly emulate real world sites and apps
+- Execute multiple runs per test and averate the results
+- Move test running to be remote, such as in GH actions
 
 Contributions welcome!
 
