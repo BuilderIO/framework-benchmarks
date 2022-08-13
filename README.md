@@ -28,7 +28,7 @@ We then build and serve each project, and run Lighthouse on each project with pu
 - **TBT**: [Total Blocking Time](https://web.dev/tbt/)
 - **TTI**: [Time to Interactive](https://web.dev/interactive/)
 - **Eager JS Kib**: the KiB of JS that is eagerly downloaded and executed from `<script>` tags for the initial page load. This is the actual size transferred over the network, including compression
-- **Total KiB**: the total KiB transferred with the given page, including prefetched JS. Also known as the "total byte weight". This is the actual size transferred over the network, including compression
+- **Total KiB**: the total KiB transferred with the given page, including HTML, CSS, prefetched resources, etc. Also known as the "total byte weight". This is the actual size transferred over the network, including compression
 
 We sort the results by TTI, ascending
 
