@@ -1,10 +1,11 @@
-import { Highlight, AppHeader } from '@builder.io/components/solid';
+import AppHeader from '../generated-components/components/app-header';
+import HelloWorld from '../generated-components/components/hello-world';
 
 export default function Home() {
   return (
     <>
       <AppHeader framework="solid" path="/highlight" />
-      <Highlight />
+      <HelloWorld />
     </>
   );
 }

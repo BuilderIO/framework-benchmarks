@@ -6,6 +6,6 @@
 </template>
 
 <script>
-import { AppHeader } from '../components/generated-components'
+import AppHeader from '../components/generated-components/components/app-header.vue'
 export default { components: { AppHeader } }
 </script>

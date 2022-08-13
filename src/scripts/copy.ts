@@ -16,6 +16,11 @@ const paths: Path[] = [
     src: 'apps/components/output/solid/src',
     dest: 'frameworks/astro/src/generated-components',
   },
+  // Solid
+  {
+    src: 'apps/components/output/solid/src',
+    dest: 'frameworks/solid/src/generated-components',
+  },
   // Fresh
   {
     src: 'apps/components/output/preact/src',
