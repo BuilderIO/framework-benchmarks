@@ -2,11 +2,11 @@
 
 Test each framework for it's performance, particularly common Lighthouse and CWV metrics as applications scale
 
-**Important**: This is not a measure of "is framework x better than y". There are many tradeoffs to weight when choosing the best framework for you - such as DX, features, familiarity, ecosystem, documentation, etc. These benchmarks only show a part of the picture
+**Important**: This is not a measure of "is framework x better than y". There are many tradeoffs to weigh when choosing the best framework for you - such as DX, features, familiarity, ecosystem, documentation, etc. These benchmarks only show a part of the picture.
 
 ### Goals
 
-The goals for this project are to understand the performance tradeoffs of popular frameworks in real world-ish scenarios. We want to assume non trivial codebases and imperfect code and conditions, so to see how each framework holds up to real world scenarios and scale.
+The goal for this project are to understand the performance tradeoffs of popular frameworks in real world-ish scenarios. We want to assume non trivial codebases and imperfect code and conditions, so to see how each framework holds up to real world scenarios and scale.
 
 ### Status
 
@@ -40,6 +40,7 @@ Alphabetically:
 
 - [Astro](https://astro.build/) (Given that Astro supports interactivity via other framework, we use Solidjs for the interactive parts)
 - [Fresh](https://fresh.deno.dev/)
+- [Gatsby](https://www.gatsbyjs.com/)
 - [Marko](https://markojs.com/)
 - [Next.js](https://nextjs.org/)
 - [Nuxt 2](https://nuxtjs.org/)
