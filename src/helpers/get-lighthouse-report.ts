@@ -79,6 +79,8 @@ export async function getLighthouseReport(
   };
 }
 
+// TODO: move this to lighthouse directly. I'm not finding how to do this,
+// but it is supposed to exist: https://twitter.com/cjamcl/status/1558303078452867074
 async function getInlineJsBytes(url: string) {
   const browser = browserInstances[0];
   const page = await browser.newPage();

@@ -25,7 +25,10 @@ module.exports = {
   ],
   options: {
     react: { transpiler: { ...transpilerOptions, languages: ['ts'] } },
-    solid: { transpiler: { ...transpilerOptions, languages: ['ts'] } },
+    solid: {
+      stylesType: 'style-tag',
+      transpiler: { ...transpilerOptions, languages: ['ts'] },
+    },
     preact: { transpiler: { ...transpilerOptions, languages: ['ts'] } },
     vue2: vueConfig,
     vue3: vueConfig,

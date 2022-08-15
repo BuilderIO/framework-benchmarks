@@ -56,49 +56,52 @@ Alphabetically:
 
 **Important:**: This project is still in initial development. Do not put too much weight on these current results, there is still much more to do to ensure accuracy, consistency, and fairness.
 
-#### Hello World:
-
-Just a few links and `<h1>Hello World</h1>`. [Source](https://github.com/BuilderIO/framework-benchmarks/blob/main/apps/components/src/components/hello-world.lite.tsx)
-
-```
-┌─────────┬───────────┬─────────┬─────────┬──────────┬──────────────┬───────────┐
-│ (index) │   name    │   TTI   │   FCP   │   TBT    │ Eager JS KiB │ Total KiB │
-├─────────┼───────────┼─────────┼─────────┼──────────┼──────────────┼───────────┤
-│    0    │ 'gatsby'  │ '0.6 s' │ '0.6 s' │  '0 ms'  │      70      │    73     │
-│    1    │  'marko'  │ '0.6 s' │ '0.6 s' │  '0 ms'  │      15      │    20     │
-│    2    │  'astro'  │ '0.6 s' │ '0.6 s' │  '0 ms'  │      0       │     7     │
-│    3    │  'qwik'   │ '0.6 s' │ '0.6 s' │  '0 ms'  │      0       │     8     │
-│    4    │  'fresh'  │ '0.8 s' │ '0.8 s' │  '0 ms'  │      0       │    27     │
-│    5    │  'solid'  │ '1.1 s' │ '1.1 s' │  '0 ms'  │      14      │    16     │
-│    6    │  'nuxt2'  │ '1.2 s' │ '0.9 s' │ '20 ms'  │      90      │    100    │
-│    7    │ 'svelte'  │ '1.3 s' │ '1.3 s' │  '0 ms'  │      18      │    21     │
-│    8    │  'nuxt3'  │ '1.9 s' │ '1.9 s' │  '0 ms'  │     121      │   1145    │
-│    9    │ 'angular' │ '2.3 s' │ '2.3 s' │  '0 ms'  │     233      │    236    │
-│   10    │  'remix'  │ '3.3 s' │ '1.3 s' │ '100 ms' │     358      │    363    │
-│   11    │  'next'   │ '3.5 s' │ '0.6 s' │ '80 ms'  │     366      │    376    │
-└─────────┴───────────┴─────────┴─────────┴──────────┴──────────────┴───────────┘
-```
-
 #### Todo App:
 
 A very simple/trivial interactive Todo app. [Source](https://github.com/BuilderIO/framework-benchmarks/blob/main/apps/components/src/components/todo-app.lite.tsx)
 
+Ordered by TTI, ascending:
+
 ```
 ┌─────────┬───────────┬─────────┬─────────┬──────────┬──────────────┬───────────┐
 │ (index) │   name    │   TTI   │   FCP   │   TBT    │ Eager JS KiB │ Total KiB │
 ├─────────┼───────────┼─────────┼─────────┼──────────┼──────────────┼───────────┤
-│    0    │  'astro'  │ '0.6 s' │ '0.6 s' │  '0 ms'  │      20      │    29     │
-│    1    │  'qwik'   │ '0.6 s' │ '0.6 s' │  '0 ms'  │      2       │    55     │
-│    2    │  'fresh'  │ '0.8 s' │ '0.8 s' │  '0 ms'  │      9       │    36     │
-│    3    │  'marko'  │ '0.8 s' │ '0.8 s' │  '0 ms'  │      16      │    22     │
-│    4    │ 'gatsby'  │ '0.8 s' │ '0.8 s' │  '0 ms'  │      70      │    74     │
-│    5    │  'solid'  │ '1.1 s' │ '1.1 s' │  '0 ms'  │      16      │    18     │
-│    6    │ 'svelte'  │ '1.3 s' │ '1.3 s' │  '0 ms'  │      19      │    23     │
+│    0    │  'qwik'   │ '0.7 s' │ '0.7 s' │  '0 ms'  │      2       │    55     │
+│    1    │  'marko'  │ '0.8 s' │ '0.8 s' │  '0 ms'  │      16      │    22     │
+│    2    │  'astro'  │ '0.8 s' │ '0.8 s' │  '0 ms'  │      19      │    28     │
+│    3    │  'solid'  │ '1.0 s' │ '0.6 s' │  '0 ms'  │      15      │    18     │
+│    4    │  'fresh'  │ '1.2 s' │ '1.2 s' │  '0 ms'  │      9       │    36     │
+│    5    │ 'svelte'  │ '1.3 s' │ '1.3 s' │  '0 ms'  │      19      │    23     │
+│    6    │ 'gatsby'  │ '1.6 s' │ '0.8 s' │ '10 ms'  │      70      │    74     │
 │    7    │  'nuxt3'  │ '2.0 s' │ '2.0 s' │  '0 ms'  │     122      │   1146    │
-│    8    │ 'angular' │ '2.3 s' │ '2.3 s' │ '10 ms'  │     233      │    236    │
-│    9    │  'nuxt2'  │ '3.3 s' │ '0.9 s' │ '60 ms'  │     377      │    387    │
-│   10    │  'remix'  │ '3.3 s' │ '1.3 s' │ '100 ms' │     358      │    363    │
-│   11    │  'next'   │ '3.5 s' │ '0.6 s' │ '80 ms'  │     366      │    377    │
+│    8    │ 'angular' │ '2.4 s' │ '2.3 s' │ '50 ms'  │     233      │    236    │
+│    9    │  'nuxt2'  │ '3.4 s' │ '0.9 s' │ '170 ms' │     377      │    387    │
+│   10    │  'remix'  │ '3.4 s' │ '1.7 s' │ '200 ms' │     358      │    363    │
+│   11    │  'next'   │ '3.7 s' │ '0.6 s' │ '180 ms' │     366      │    377    │
+└─────────┴───────────┴─────────┴─────────┴──────────┴──────────────┴───────────┘
+```
+
+#### Hello World:
+
+Just a few links and `<h1>Hello World</h1>`. [Source](https://github.com/BuilderIO/framework-benchmarks/blob/main/apps/components/src/components/hello-world.lite.tsx)
+
+Ordered by TTI, ascending:
+
+```
+┌─────────┬───────────┬─────────┬─────────┬──────────┬──────────────┬───────────┐
+│ (index) │   name    │   TTI   │   FCP   │   TBT    │ Eager JS KiB │ Total KiB │
+├─────────┼───────────┼─────────┼─────────┼──────────┼──────────────┼───────────┤
+│    0    │  'astro'  │ '0.6 s' │ '0.6 s' │  '0 ms'  │      0       │     7     │
+│    1    │  'qwik'   │ '0.6 s' │ '0.6 s' │  '0 ms'  │      0       │     8     │
+│    2    │  'solid'  │ '0.6 s' │ '0.6 s' │  '0 ms'  │      15      │    17     │
+│    3    │  'marko'  │ '0.6 s' │ '0.6 s' │  '0 ms'  │      15      │    20     │
+│    4    │  'fresh'  │ '0.8 s' │ '0.8 s' │  '0 ms'  │      0       │    27     │
+│    5    │ 'svelte'  │ '1.3 s' │ '1.3 s' │  '0 ms'  │      17      │    21     │
+│    6    │  'nuxt2'  │ '1.6 s' │ '0.9 s' │ '160 ms' │      90      │    100    │
+│    7    │  'nuxt3'  │ '1.9 s' │ '1.9 s' │  '0 ms'  │     121      │   1145    │
+│    8    │ 'angular' │ '2.3 s' │ '2.3 s' │ '30 ms'  │     233      │    236    │
+│    9    │  'remix'  │ '3.4 s' │ '1.7 s' │ '210 ms' │     358      │    363    │
+│   10    │  'next'   │ '3.7 s' │ '0.6 s' │ '180 ms' │     366      │    376    │
 └─────────┴───────────┴─────────┴─────────┴──────────┴──────────────┴───────────┘
 ```
 
@@ -123,14 +126,13 @@ A very simple/trivial interactive Todo app. [Source](https://github.com/BuilderI
 └─────────┴───────────┴──────────────────────┘
 ```
 
-## Todo
+## Roadmap
 
 Next things we want to add:
 
 - More complex examples that more closesly emulate real world sites and apps (e.g. a dashboard for exploring the test run results in interactive tables and graphs)
 - Test interaction delays - such as initial interaction (like add todo) or navigate to next page
-- Execute multiple runs per test and medium the results using Lighthouse's [computeMedianRun](https://github.com/GoogleChrome/lighthouse/blob/master/docs/variability.md#run-lighthouse-multiple-times)
-- Move test running to be remote, such as in GH actions
+- Move test running to be remote, such as in GH actions ([Help wanted!](https://github.com/BuilderIO/framework-benchmarks/issues/6))
 
 Contributions welcome!
 
