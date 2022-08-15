@@ -1,55 +1,75 @@
 import lighthouse from 'lighthouse';
 import * as puppeteer from 'puppeteer';
 import fetch from 'node-fetch';
+const { computeMedianRun } = require('lighthouse/core/lib/median-run.js');
 
 import * as chromeLauncher from 'chrome-launcher';
 import reportGenerator from 'lighthouse/report/generator/report-generator.js';
 
-let port: number;
-let chrome: chromeLauncher.LaunchedChrome | null = null;
-let browser: puppeteer.Browser | null = null;
+let ports: number[] = [];
+const chromeInstances: chromeLauncher.LaunchedChrome[] = [];
+const browserInstances: puppeteer.Browser[] = [];
 
 /**
  * Setup a chrome and puppeteer instance if we haven't already
+ * 
+ * @param {number} n - the number of the given run
  */
-async function setupBrowser(options: chromeLauncher.Options = {}) {
+async function setupBrowser(n = 0, options: chromeLauncher.Options = {}) {
   // If we have initialized, return
-  if (chrome) {
+  if (chromeInstances[n]) {
     return;
   }
-  chrome = await chromeLauncher.launch(options);
-  port = chrome.port;
+  chromeInstances[n] = await chromeLauncher.launch(options);
+  ports[n] = chromeInstances[n].port;
 
   // Connect chrome-launcher to puppeteer
   const { webSocketDebuggerUrl } = (await fetch(
-    `http://localhost:${port}/json/version`
+    `http://localhost:${ports}/json/version`
   ).then((res) => res.json())) as any;
 
-  browser = await puppeteer.connect({
+  browserInstances[n] = await puppeteer.connect({
     browserWSEndpoint: webSocketDebuggerUrl,
   });
 }
 
 export async function teardownBrowser() {
-  await browser?.disconnect();
-  await chrome?.kill();
-  chrome = null;
-  browser = null;
+  for (const browser of browserInstances) {
+    await browser.close();
+  }
+  for (const chrome of chromeInstances) {
+    await chrome.kill();
+  }
+  ports = [];
 }
 
-// Adapted from: https://addyosmani.com/blog/puppeteer-recipes/#lighthouse-metrics
+export const DEFAULT_RUNS = 3;
+
+const range = (n: number) => Array.from({ length: n }, (_, k) => k);
+
+/**
+ * Get a median lighthouse report for a given url
+ */
 export async function getLighthouseReport(
   url: string,
+  runs = DEFAULT_RUNS,
   options: chromeLauncher.Options = {}
 ) {
-  await setupBrowser();
-
-  // Run Lighthouse
-  const { lhr } = await lighthouse(url, {
-    ...options,
-    port,
+  const reports = await range(runs).map(async (n) => {
+    const report = await getSingleLighthouseReport(url, n, options);
+    return report;
   });
-  const page = await browser!.newPage();
+  const inlineJsBytes = await getInlineJsBytes(url);
+  const median = computeMedianRun(reports);
+  return {
+    lhReport: median,
+    inlineJsBytes,
+  };
+}
+
+async function getInlineJsBytes(url: string) {
+  const browser = browserInstances[0];
+  const page = await browser.newPage();
   await page.goto(url);
 
   // Assumes one byte per character. Does not account for gzipping
@@ -71,14 +91,28 @@ export async function getLighthouseReport(
   });
   await page.close();
 
+  return inlineJsBytes;
+}
+
+// Adapted from: https://addyosmani.com/blog/puppeteer-recipes/#lighthouse-metrics
+export async function getSingleLighthouseReport(
+  url: string,
+  n: number,
+  options: chromeLauncher.Options = {}
+) {
+  await setupBrowser(n);
+
+  // Run Lighthouse
+  const { lhr } = await lighthouse(url, {
+    ...options,
+    port: ports[n],
+  });
+
   const lhReport: LH.Result = JSON.parse(
     reportGenerator.generateReport(lhr, 'json')
   );
 
-  return {
-    lhReport,
-    inlineJsBytes,
-  };
+  return lhReport;
 }
 
 process.on('beforeExit', async () => {

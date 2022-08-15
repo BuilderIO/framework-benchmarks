@@ -127,8 +127,8 @@ A very simple/trivial interactive Todo app. [Source](https://github.com/BuilderI
 
 Next things we want to add:
 
-- Test interaction delays - such as initial interaction (like add todo) or navigate to next page
 - More complex examples that more closesly emulate real world sites and apps (e.g. a dashboard for exploring the test run results in interactive tables and graphs)
+- Test interaction delays - such as initial interaction (like add todo) or navigate to next page
 - Execute multiple runs per test and medium the results using Lighthouse's [computeMedianRun](https://github.com/GoogleChrome/lighthouse/blob/master/docs/variability.md#run-lighthouse-multiple-times)
 - Move test running to be remote, such as in GH actions
 

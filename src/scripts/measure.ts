@@ -2,6 +2,7 @@ import { fs, chalk, sleep } from 'zx';
 import { getFrameworks } from '../helpers/get-frameworks.js';
 import { getJsSize } from '../helpers/get-js-size.js';
 import {
+  DEFAULT_RUNS,
   getLighthouseReport,
   teardownBrowser,
 } from '../helpers/get-lighthouse-report.js';
@@ -30,6 +31,7 @@ export type Measurement = {
 };
 
 const PARALLEL = process.env.PARALLEL ? process.env.PARALLEL === 'true' : false;
+const RUNS = Number(process.env.RUNS || DEFAULT_RUNS);
 
 const results: Record<string, Measurement> = {};
 
@@ -55,8 +57,10 @@ async function measure(framework: string) {
   console.info(
     `Getting lighthouse report for ${chalk.green(framework)} on ${measureUrl}`
   );
+
   const { lhReport: report, inlineJsBytes } = await getLighthouseReport(
-    measureUrl
+    measureUrl,
+    RUNS
   );
   const jsSize = Math.round((getJsSize(report) + inlineJsBytes) / 1024);
   const fcp = report.audits['first-contentful-paint'];
