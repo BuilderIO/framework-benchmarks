@@ -1,0 +1,26 @@
+{
+  "name": "gatsby",
+  "version": "1.0.0",
+  "private": true,
+  "description": "gatsby",
+  "author": "Chris LaRocque",
+  "keywords": [
+    "gatsby"
+  ],
+  "port": 8001,
+  "scripts": {
+    "develop": "gatsby develop -p 8001",
+    "start": "gatsby develop -p 8001",
+    "build": "gatsby build",
+    "serve": "gatsby serve -p 8001",
+    "clean": "gatsby clean",
+    "preview": "npm run serve"
+  },
+  "dependencies": {
+    "@builder.io/components": "../../apps/components",
+    "highlight.js": "^11.6.0",
+    "gatsby": "^4.20.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  }
+}

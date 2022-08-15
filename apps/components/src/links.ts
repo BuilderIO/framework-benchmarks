@@ -64,6 +64,10 @@ export const frameworks: Framework[] = [
     name: 'fresh',
     url: getUrl(8000),
   },
+  {
+    name: 'gatsby',
+    url: getUrl(8001),
+  },
 ];
 
 export const examples: Example[] = [

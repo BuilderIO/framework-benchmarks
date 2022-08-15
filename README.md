@@ -2,11 +2,11 @@
 
 Test each framework for it's performance, particularly common Lighthouse and CWV metrics as applications scale
 
-**Important**: This is not a measure of "is framework x better than y". There are many tradeoffs to weight when choosing the best framework for you - such as DX, features, familiarity, ecosystem, documentation, etc. These benchmarks only show a part of the picture
+**Important**: This is not a measure of "is framework x better than y". There are many tradeoffs to weigh when choosing the best framework for you - such as DX, features, familiarity, ecosystem, documentation, etc. These benchmarks only show a part of the picture.
 
 ### Goals
 
-The goals for this project are to understand the performance tradeoffs of popular frameworks in real world-ish scenarios. We want to assume non trivial codebases and imperfect code and conditions, so to see how each framework holds up to real world scenarios and scale.
+The goal for this project are to understand the performance tradeoffs of popular frameworks in real world-ish scenarios. We want to assume non trivial codebases and imperfect code and conditions, so to see how each framework holds up to real world scenarios and scale.
 
 We are intentionally not focused on client side rendering performance, for that please use [Stefan Krause](https://github.com/krausest)'s great [js-framework-benchmark](https://github.com/krausest/js-framework-benchmark)
 
@@ -40,16 +40,18 @@ We are also experimenting with looking at other metrics, such as [build times](#
 
 Alphabetically:
 
-- [Astro](https://astro.build/) - generated via their official CLI, with Solid for the interactive parts 
-- [Fresh](https://fresh.deno.dev/) - generated via their official CLI
-- [Marko](https://markojs.com/) - generated via their official CLI
-- [Next.js](https://nextjs.org/) - generated via their official CLI
-- [Nuxt 2](https://nuxtjs.org/) - generated via their official CLI
-- [Nuxt 3](https://v3.nuxtjs.org/) - generated via their official CLI (in beta)
-- [Qwik](https://qwik.builder.io/) - generated with Qwik City (meta framework)
-- [Remix](https://remix.run/) - generated via their official CLI
-- [Solid](https://www.solidjs.com/) - generated with Solid Start (meta framework)
-- [Svelte](https://svelte.dev/) - generated with Svelte Kit (meta framework)
+
+- [Astro](https://astro.build/) (Given that Astro supports interactivity via other framework, we use Solidjs for the interactive parts)
+- [Fresh](https://fresh.deno.dev/)
+- [Gatsby](https://www.gatsbyjs.com/)
+- [Marko](https://markojs.com/)
+- [Next.js](https://nextjs.org/)
+- [Nuxt 2](https://nuxtjs.org/)
+- [Nuxt 3](https://v3.nuxtjs.org/)
+- [Qwik](https://qwik.builder.io/)
+- [Remix](https://remix.run/)
+- [Solid](https://www.solidjs.com/)
+- [Svelte](https://svelte.dev/)
 
 ### Sample output
 
