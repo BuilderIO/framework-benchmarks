@@ -1,6 +1,11 @@
 import React from 'react';
-import { HelloWorld } from '@builder.io/components/react';
+import { HelloWorld, AppHeader } from '@builder.io/components/react';
 
 export default function Home() {
-  return <HelloWorld name="Gatsby" />;
+  return (
+    <>
+      <AppHeader framework="gatsby" path="/" />
+      <HelloWorld name="Gatsby" />
+    </>
+  );
 }

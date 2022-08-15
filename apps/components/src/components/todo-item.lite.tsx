@@ -1,4 +1,4 @@
-import { Todo } from './todo-app.lite';
+import type { Todo } from './todo-app.lite';
 
 export type TodoItemProps = {
   item: Todo;
