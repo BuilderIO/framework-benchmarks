@@ -1,7 +1,7 @@
 import lighthouse from 'lighthouse';
 import * as puppeteer from 'puppeteer';
 import fetch from 'node-fetch';
-const { computeMedianRun } = require('lighthouse/core/lib/median-run.js');
+import { computeMedianRun } from 'lighthouse/lighthouse-core/lib/median-run.js';
 
 import * as chromeLauncher from 'chrome-launcher';
 import reportGenerator from 'lighthouse/report/generator/report-generator.js';
@@ -10,12 +10,14 @@ let ports: number[] = [];
 const chromeInstances: chromeLauncher.LaunchedChrome[] = [];
 const browserInstances: puppeteer.Browser[] = [];
 
+const PARALLEL = process.env.PARALLEL === 'true';
+
 /**
  * Setup a chrome and puppeteer instance if we haven't already
- * 
+ *
  * @param {number} n - the number of the given run
  */
-async function setupBrowser(n = 0, options: chromeLauncher.Options = {}) {
+async function setupBrowser(n: number, options: chromeLauncher.Options = {}) {
   // If we have initialized, return
   if (chromeInstances[n]) {
     return;
@@ -25,7 +27,7 @@ async function setupBrowser(n = 0, options: chromeLauncher.Options = {}) {
 
   // Connect chrome-launcher to puppeteer
   const { webSocketDebuggerUrl } = (await fetch(
-    `http://localhost:${ports}/json/version`
+    `http://localhost:${ports[n]}/json/version`
   ).then((res) => res.json())) as any;
 
   browserInstances[n] = await puppeteer.connect({
@@ -55,10 +57,20 @@ export async function getLighthouseReport(
   runs = DEFAULT_RUNS,
   options: chromeLauncher.Options = {}
 ) {
-  const reports = await range(runs).map(async (n) => {
-    const report = await getSingleLighthouseReport(url, n, options);
-    return report;
-  });
+  let reports: LH.Result[] = [];
+  if (PARALLEL) {
+    reports = await Promise.all(
+      range(runs).map(async (n) => {
+        const report = await getSingleLighthouseReport(url, n, options);
+        return report;
+      })
+    );
+  } else {
+    for (let i = 0; i < runs; i++) {
+      const report = await getSingleLighthouseReport(url, i, options);
+      reports.push(report);
+    }
+  }
   const inlineJsBytes = await getInlineJsBytes(url);
   const median = computeMedianRun(reports);
   return {
