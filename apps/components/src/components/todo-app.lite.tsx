@@ -58,10 +58,11 @@ export default function ToDoApp() {
           <input
             placeholder="Add new item..."
             css={{
+              all: 'unset',
               boxShadow: 'var(--shadow)',
               borderRadius: 'var(--round)',
               width: '100%',
-              padding: '0 var(--s1)',
+              padding: '$s2',
               margin: 'var(--s1) 0',
             }}
             value={state.newItemName}
@@ -70,12 +71,14 @@ export default function ToDoApp() {
 
           <button
             css={{
+              all: 'unset',
+              textAlign: 'center',
               background: 'var(--primary)',
               borderRadius: 'var(--round)',
               width: '100%',
               color: 'white',
               fontWeight: 'bold',
-              padding: '0 var(--s1)',
+              padding: '$s1 $s2',
               margin: 'var(--s2) 0',
             }}
           >
@@ -101,8 +104,12 @@ export default function ToDoApp() {
           >
             <button
               css={{
+                all: 'unset',
+                color: 'white',
+                backgroundColor: '$primary',
                 margin: 'var(--s1)',
-                color: 'var(--gray-2)',
+                padding: '$s2',
+                borderRadius: '$round',
               }}
               onClick={() => state.clear()}
             >
@@ -110,8 +117,12 @@ export default function ToDoApp() {
             </button>
             <button
               css={{
+                all: 'unset',
+                color: 'white',
+                backgroundColor: '$primary',
                 margin: 'var(--s1)',
-                color: 'var(--gray-2)',
+                padding: '$s2',
+                borderRadius: '$round',
               }}
               onClick={() => state.clearDone()}
             >
@@ -119,8 +130,12 @@ export default function ToDoApp() {
             </button>
             <button
               css={{
+                all: 'unset',
+                color: 'white',
+                backgroundColor: '$primary',
                 margin: 'var(--s1)',
-                color: 'var(--gray-2)',
+                padding: '$s2',
+                borderRadius: '$round',
               }}
               onClick={() => state.markAllDone()}
             >

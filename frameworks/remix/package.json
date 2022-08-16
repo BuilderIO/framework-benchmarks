@@ -3,8 +3,8 @@
   "sideEffects": false,
   "scripts": {
     "build": "remix build",
-    "dev": "PORT=6007 remix dev",
-    "start": "PORT=6007 remix-serve build",
+    "dev": "remix dev",
+    "start": "remix-serve build",
     "preview": "npm start"
   },
   "port": 6007,

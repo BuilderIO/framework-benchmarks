@@ -1,5 +1,7 @@
 import { useRouter } from 'next/router';
-import { AppHeader } from '@builder.io/components/react';
+import AppHeader from '../generated-components/components/app-header.lite';
+
+Error.stackTraceLimit = Infinity;
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();

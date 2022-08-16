@@ -10,6 +10,7 @@
   "port": 8001,
   "scripts": {
     "develop": "gatsby develop -p 8001",
+    "dev": "npm run develop",
     "start": "gatsby develop -p 8001",
     "build": "gatsby build",
     "serve": "gatsby serve -p 8001",

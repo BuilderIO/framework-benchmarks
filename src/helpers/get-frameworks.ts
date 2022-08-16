@@ -2,14 +2,16 @@ import { fs } from 'zx';
 
 const FRAMEWORKS = process.env.FRAMEWORKS?.split(',');
 
-const IGNORE_FRAMEWORKS = ['remix']
+const IGNORE_FRAMEWORKS = [
   // Removing remix, as to fully handle Remix properly we'll need to support more idiomatic code
   // like here: https://github.com/kentcdodds/remix-todomvc
-  .concat(
-    process.env.IGNORE_FRAMEWORKS
-      ? process.env.IGNORE_FRAMEWORKS.split(',')
-      : []
-  );
+  'remix',
+  // Svelte is temporarily broken in the Mitosis output due to a broken change
+  // with generating types
+  'svelte',
+].concat(
+  process.env.IGNORE_FRAMEWORKS ? process.env.IGNORE_FRAMEWORKS.split(',') : []
+);
 
 /**
  * Get the list of frameworks to test

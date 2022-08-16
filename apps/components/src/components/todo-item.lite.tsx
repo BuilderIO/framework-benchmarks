@@ -16,6 +16,9 @@ export default function TodoItem(props: TodoItemProps) {
       }}
     >
       <input
+        css={{
+          borderColor: '$gray-4',
+        }}
         type="checkbox"
         checked={props.item.completed}
         onInput={(event) => {
@@ -23,6 +26,9 @@ export default function TodoItem(props: TodoItemProps) {
         }}
       />
       <input
+        css={{
+          all: 'unset',
+        }}
         value={props.item.text}
         onInput={(event) => {
           props.item.text = event.target.value;

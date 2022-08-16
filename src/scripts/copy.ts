@@ -61,6 +61,16 @@ const paths: Path[] = [
     src: 'apps/components/output/react/src',
     dest: 'frameworks/hydrogen/src/generated-components',
   },
+  // Nuxt
+  {
+    src: 'apps/components/output/react/src',
+    dest: 'frameworks/next/generated-components',
+  },
+  // Svelte
+  {
+    src: 'apps/components/output/svelte/src',
+    dest: 'frameworks/svelte/src/generated-components',
+  },
 ];
 
 await Promise.all(

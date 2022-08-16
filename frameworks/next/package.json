@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@builder.io/components": "../../apps/components",
+    "@types/react": "^18.0.17",
     "highlight.js": "^11.6.0",
     "next": "12.2.3",
     "react": "18.2.0",
