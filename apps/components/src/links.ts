@@ -83,4 +83,8 @@ export const examples: Example[] = [
     name: 'Simple Todo',
     url: '/todo',
   },
+  {
+    name: 'Dashboard',
+    url: '/dashboard',
+  },
 ];
