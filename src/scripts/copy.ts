@@ -61,10 +61,15 @@ const paths: Path[] = [
     src: 'apps/components/output/react/src',
     dest: 'frameworks/hydrogen/src/generated-components',
   },
-  // Nuxt
+  // Next
   {
     src: 'apps/components/output/react/src',
     dest: 'frameworks/next/generated-components',
+  },
+  // Gatsby
+  {
+    src: 'apps/components/output/react/src',
+    dest: 'frameworks/gatsby/src/generated-components',
   },
   // Svelte
   {
@@ -75,7 +80,7 @@ const paths: Path[] = [
 
 await Promise.all(
   paths.map(async (path) => {
-    await fs.copy(path.src, path.dest, {
+    fs.copy(path.src, path.dest, {
       overwrite: true,
       recursive: true,
     });

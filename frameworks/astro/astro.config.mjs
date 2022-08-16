@@ -8,9 +8,4 @@ export default defineConfig({
     port: 6001,
   },
   integrations: [solid()],
-  vite: {
-    ssr: {
-      noExternal: ['@builder.io/components'],
-    },
-  },
 });

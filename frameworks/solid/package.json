@@ -9,7 +9,6 @@
   },
   "type": "module",
   "dependencies": {
-    "@builder.io/components": "../../apps/components",
     "highlight.js": "^11.6.0"
   },
   "devDependencies": {

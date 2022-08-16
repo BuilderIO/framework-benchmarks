@@ -18,7 +18,6 @@
     "preview": "npm run serve"
   },
   "dependencies": {
-    "@builder.io/components": "../../apps/components",
     "highlight.js": "^11.6.0",
     "gatsby": "^4.20.0",
     "react": "^18.1.0",

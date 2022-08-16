@@ -1,5 +1,6 @@
 import React from 'react';
-import { ToDoApp, AppHeader } from '@builder.io/components/react';
+import AppHeader from '../generated-components/components/app-header';
+import ToDoApp from '../generated-components/components/todo-app';
 
 export default function Todo() {
   return (

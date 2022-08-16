@@ -32,6 +32,14 @@ const dollarVarsPlugin = (options) => () => ({
 
 /**
  * Allow simple find and replace swaps in CSS
+ * 
+ * e.g. 
+ *  cssReplacePlugin({ '%mobile': '640px' }) 
+ * 
+ * will replace:
+ *  '@media (max-width: %mobile)': { .. }
+ * with:
+ *  '@media (max-width: 640px)': { .. }
  */
 const cssReplacePlugin = (options) => () => ({
   json: {
@@ -40,9 +48,10 @@ const cssReplacePlugin = (options) => () => ({
         if (item?.['@type'] === '@builder.io/mitosis/node') {
           if (item.bindings?.css?.code) {
             for (const key of Object.keys(options)) {
-              item.bindings.css.code = item.bindings.css.code
-                // $foo-bar -> var(--foo-bar)
-                .replace(new RegExp(escapeRegExp(key), 'g'), options[key]);
+              item.bindings.css.code = item.bindings.css.code.replace(
+                new RegExp(escapeRegExp(key), 'g'),
+                options[key]
+              );
             }
           }
         }
@@ -100,6 +109,7 @@ module.exports = {
     },
     preact: {
       ...baseOptions,
+      stylesType: 'style-tag',
       transpiler: { ...transpilerOptions, languages: ['ts'] },
     },
     vue2: vueConfig,

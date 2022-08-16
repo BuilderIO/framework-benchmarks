@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "port": 6002,
   "dependencies": {
-    "@builder.io/components": "../../apps/components/output/marko",
     "highlight.js": "^11.6.0",
     "marko": "^5"
   },

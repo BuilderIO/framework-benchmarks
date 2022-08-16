@@ -24,39 +24,39 @@ export default function AppHeader(props: HeaderProps) {
 
   return (
     <div>
-      {/* TODO: maybe some global style component, or use css={{}} obj with some @global or something */}
-      <style jsx>{`
-        :root {
-          /* Space */
-          --s1: 5px;
-          --s2: calc(var(--s1) * 2);
-          --gray-1: #eee;
-          --gray-2: #bbb;
-          --gray-3: #999;
-          --gray-4: #666;
-          --border-gray: 1px solid var(--gray-2);
-          --shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-          --round: 4px;
-          --primary: rgb(26, 115, 232);
-          --mobile: 640px;
-          --font-medium: 400;
-        }
-
-        ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-        }
-
-        body {
-          margin: 0;
-          font-family: Avenir, Helvetica, sans-serif;
-        }
-
-        a {
-          text-decoration: none;
-        }
-      `}</style>
+      <style
+        innerHTML={`
+      :root {
+        /* Space */
+        --s1: 5px;
+        --s2: calc(var(--s1) * 2);
+        --gray-1: #eee;
+        --gray-2: #bbb;
+        --gray-3: #999;
+        --gray-4: #666;
+        --border-gray: 1px solid var(--gray-2);
+        --shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        --round: 4px;
+        --primary: rgb(26, 115, 232);
+        --mobile: 640px;
+        --font-medium: 400;
+      }
+      
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      body {
+        margin: 0;
+        font-family: Avenir, Helvetica, sans-serif;
+      }
+      
+      a {
+        text-decoration: none;
+      }`}
+      />
       <div
         css={{
           backgroundColor: '$gray-1',
