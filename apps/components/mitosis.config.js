@@ -90,6 +90,7 @@ module.exports = {
   options: {
     react: {
       ...baseOptions,
+      stylesType: 'style-tag',
       transpiler: { ...transpilerOptions, languages: ['ts'] },
     },
     solid: {
