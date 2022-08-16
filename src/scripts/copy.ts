@@ -16,6 +16,11 @@ const paths: Path[] = [
     src: 'apps/components/output/solid/src',
     dest: 'frameworks/astro/src/generated-components',
   },
+  // Lit
+  {
+    src: 'apps/components/output/lit/src',
+    dest: 'frameworks/lit/src/generated-components',
+  },
   // Solid
   {
     src: 'apps/components/output/solid/src',

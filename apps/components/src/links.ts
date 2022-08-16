@@ -25,6 +25,10 @@ export const frameworks: Framework[] = [
     url: getUrl(6001),
   },
   {
+    name: 'lit',
+    url: getUrl(6010),
+  },
+  {
     name: 'marko',
     url: getUrl(6002),
   },

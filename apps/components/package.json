@@ -9,8 +9,8 @@
     "start": "watch 'npm run build' ./src"
   },
   "dependencies": {
-    "@builder.io/mitosis": "^0.0.56-68",
-    "@builder.io/mitosis-cli": "^0.0.17-62",
+    "@builder.io/mitosis": "^0.0.56-75",
+    "@builder.io/mitosis-cli": "^0.0.17-68",
     "highlight.js": "^11.6.0",
     "shiki": "^0.11.0",
     "watch": "^1.0.2"

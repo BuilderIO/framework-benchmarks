@@ -16,6 +16,7 @@ module.exports = {
     'angular',
     'react',
     'solid',
+    'lit',
     'svelte',
     'vue2',
     'vue3',
@@ -35,5 +36,6 @@ module.exports = {
     angular: { standalone: true, transpiler: transpilerOptions },
     qwik: { transpiler: { ...transpilerOptions } },
     marko: { transpiler: { ...transpilerOptions } },
+    lit: { transpiler: { ...transpilerOptions, languages: ['ts'] } },
   },
 };

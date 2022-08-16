@@ -1,5 +1,6 @@
 import { useStore } from '@builder.io/mitosis';
-import { frameworks, Framework, examples, Example } from '../links.js';
+import { frameworks, examples } from '../links.js';
+import type { Framework, Example } from '../links.js';
 
 export interface HeaderProps {
   framework: string;

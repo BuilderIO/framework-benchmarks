@@ -43,6 +43,7 @@ Alphabetically:
 - [Astro](https://astro.build/) - generated via their official CLI, with Solid for the interactive parts
 - [Fresh](https://fresh.deno.dev/) - generated via their official CLI
 - [Gatsby](https://www.gatsbyjs.com/) - contributed by the Gatsby team
+- [Lit](https://lit.dev/) - generated via their [starter](https://github.com/lit/lit-element-starter-ts)
 - [Marko](https://markojs.com/) - generated via their official CLI
 - [Next.js](https://nextjs.org/) - generated via their official CLI
 - [Nuxt 2](https://nuxtjs.org/) - generated via their official CLI
@@ -66,18 +67,19 @@ Ordered by TTI, ascending:
 ┌─────────┬───────────┬─────────┬─────────┬──────────┬──────────────┬───────────┐
 │ (index) │   name    │   TTI   │   FCP   │   TBT    │ Eager JS KiB │ Total KiB │
 ├─────────┼───────────┼─────────┼─────────┼──────────┼──────────────┼───────────┤
-│    0    │  'qwik'   │ '0.7 s' │ '0.7 s' │  '0 ms'  │      2       │    55     │
+│    0    │  'qwik'   │ '0.7 s' │ '0.7 s' │  '0 ms'  │      2       │    24     │
 │    1    │  'marko'  │ '0.8 s' │ '0.8 s' │  '0 ms'  │      16      │    22     │
 │    2    │  'astro'  │ '0.8 s' │ '0.8 s' │  '0 ms'  │      19      │    28     │
-│    3    │  'solid'  │ '1.0 s' │ '0.6 s' │  '0 ms'  │      15      │    18     │
-│    4    │  'fresh'  │ '1.2 s' │ '1.2 s' │  '0 ms'  │      9       │    36     │
-│    5    │ 'svelte'  │ '1.3 s' │ '1.3 s' │  '0 ms'  │      19      │    23     │
-│    6    │ 'gatsby'  │ '1.6 s' │ '0.8 s' │ '10 ms'  │      70      │    74     │
-│    7    │  'nuxt3'  │ '2.0 s' │ '2.0 s' │  '0 ms'  │     122      │   1146    │
-│    8    │ 'angular' │ '2.4 s' │ '2.3 s' │ '50 ms'  │     233      │    236    │
-│    9    │  'nuxt2'  │ '3.4 s' │ '0.9 s' │ '170 ms' │     377      │    387    │
-│   10    │  'remix'  │ '3.4 s' │ '1.7 s' │ '200 ms' │     358      │    363    │
-│   11    │  'next'   │ '3.7 s' │ '0.6 s' │ '180 ms' │     366      │    377    │
+│    3    │   'lit'   │ '0.8 s' │ '0.8 s' │  '0 ms'  │      15      │    17     │
+│    4    │  'solid'  │ '1.0 s' │ '0.6 s' │  '0 ms'  │      15      │    18     │
+│    5    │  'fresh'  │ '1.2 s' │ '1.2 s' │  '0 ms'  │      9       │    36     │
+│    6    │ 'svelte'  │ '1.3 s' │ '1.3 s' │  '0 ms'  │      19      │    23     │
+│    7    │ 'gatsby'  │ '1.6 s' │ '0.8 s' │ '10 ms'  │      70      │    74     │
+│    8    │  'nuxt3'  │ '2.0 s' │ '2.0 s' │  '0 ms'  │     122      │   1146    │
+│    9    │ 'angular' │ '2.4 s' │ '2.3 s' │ '50 ms'  │     233      │    236    │
+│   10    │  'nuxt2'  │ '3.4 s' │ '0.9 s' │ '170 ms' │     377      │    387    │
+│   11    │  'remix'  │ '3.4 s' │ '1.7 s' │ '200 ms' │     358      │    363    │
+│   12    │  'next'   │ '3.7 s' │ '0.6 s' │ '180 ms' │     366      │    377    │
 └─────────┴───────────┴─────────┴─────────┴──────────┴──────────────┴───────────┘
 ```
 
@@ -91,18 +93,19 @@ Ordered by TTI, ascending:
 ┌─────────┬───────────┬─────────┬─────────┬──────────┬──────────────┬───────────┐
 │ (index) │   name    │   TTI   │   FCP   │   TBT    │ Eager JS KiB │ Total KiB │
 ├─────────┼───────────┼─────────┼─────────┼──────────┼──────────────┼───────────┤
-│    0    │  'astro'  │ '0.6 s' │ '0.6 s' │  '0 ms'  │      0       │     7     │
-│    1    │  'qwik'   │ '0.6 s' │ '0.6 s' │  '0 ms'  │      0       │     8     │
+│    0    │  'qwik'   │ '0.6 s' │ '0.6 s' │  '0 ms'  │      0       │     3     │
+│    1    │  'astro'  │ '0.6 s' │ '0.6 s' │  '0 ms'  │      0       │     7     │
 │    2    │  'solid'  │ '0.6 s' │ '0.6 s' │  '0 ms'  │      15      │    17     │
 │    3    │  'marko'  │ '0.6 s' │ '0.6 s' │  '0 ms'  │      15      │    20     │
 │    4    │ 'gatsby'  │ '0.6 s' │ '0.6 s' │  '0 ms'  │      70      │    73     │
-│    5    │  'fresh'  │ '0.8 s' │ '0.8 s' │  '0 ms'  │      0       │    27     │
-│    6    │ 'svelte'  │ '1.3 s' │ '1.3 s' │  '0 ms'  │      17      │    21     │
-│    7    │  'nuxt2'  │ '1.6 s' │ '0.9 s' │ '160 ms' │      90      │    100    │
-│    8    │  'nuxt3'  │ '1.9 s' │ '1.9 s' │  '0 ms'  │     121      │   1145    │
-│    9    │ 'angular' │ '2.3 s' │ '2.3 s' │ '30 ms'  │     233      │    236    │
-│   10    │  'remix'  │ '3.4 s' │ '1.7 s' │ '210 ms' │     358      │    363    │
-│   11    │  'next'   │ '3.7 s' │ '0.6 s' │ '180 ms' │     366      │    376    │
+│    5    │   'lit'   │ '0.6 s' │ '0.6 s' │  '0 ms'  │      14      │    16     │
+│    6    │  'fresh'  │ '0.8 s' │ '0.8 s' │  '0 ms'  │      0       │    27     │
+│    7    │ 'svelte'  │ '1.3 s' │ '1.3 s' │  '0 ms'  │      17      │    21     │
+│    8    │  'nuxt2'  │ '1.6 s' │ '0.9 s' │ '160 ms' │      90      │    100    │
+│    9    │  'nuxt3'  │ '1.9 s' │ '1.9 s' │  '0 ms'  │     121      │   1145    │
+│   10    │ 'angular' │ '2.3 s' │ '2.3 s' │ '30 ms'  │     233      │    236    │
+│   11    │  'remix'  │ '3.4 s' │ '1.7 s' │ '210 ms' │     358      │    363    │
+│   12    │  'next'   │ '3.7 s' │ '0.6 s' │ '180 ms' │     366      │    376    │
 └─────────┴───────────┴─────────┴─────────┴──────────┴──────────────┴───────────┘
 ```
 

@@ -37,6 +37,8 @@
   },
   "dependencies": {
     "@builder.io/components": "../../apps/components/output",
+    "@types/compression": "^1.7.2",
+    "compression": "^1.7.4",
     "highlight.js": "^11.6.0"
   },
   "engines": {

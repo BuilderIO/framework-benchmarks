@@ -3,6 +3,7 @@ import express from 'express';
 import { fileURLToPath } from 'url';
 import { join } from 'path';
 import render from './entry.ssr';
+import compression from 'compression';
 
 // directories where the static assets are located
 const distDir = join(fileURLToPath(import.meta.url), '..', '..', 'dist');
@@ -13,6 +14,8 @@ const { router, notFound } = qwikCity(render);
 
 // create the express server
 const app = express();
+
+app.use(compression());
 
 // use Qwik City's page and endpoint handler
 app.use(router);
