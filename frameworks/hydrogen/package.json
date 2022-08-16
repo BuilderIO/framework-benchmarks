@@ -1,0 +1,24 @@
+{
+  "name": "hydrogen",
+  "description": "An example using JavaScript in Hydrogen",
+  "version": "0.0.0",
+  "license": "MIT",
+  "port": 6011,
+  "private": true,
+  "scripts": {
+    "dev": "PORT=6011 shopify hydrogen dev",
+    "build": "shopify hydrogen build",
+    "preview": "PORT=6011 shopify hydrogen preview --port 6011"
+  },
+  "devDependencies": {
+    "@shopify/cli": "3.7.1",
+    "@shopify/cli-hydrogen": "3.7.1",
+    "vite": "^2.9.0"
+  },
+  "dependencies": {
+    "@shopify/hydrogen": "^1.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "author": "stephensewell"
+}

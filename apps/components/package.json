@@ -15,6 +15,7 @@
     "highlight.js": "^11.6.0",
     "lighthouse": "^9.6.5",
     "shiki": "^0.11.0",
+    "traverse": "^0.6.6",
     "watch": "^1.0.2"
   },
   "devDependencies": {

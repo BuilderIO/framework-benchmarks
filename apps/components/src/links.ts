@@ -72,6 +72,10 @@ export const frameworks: Framework[] = [
     name: 'gatsby',
     url: getUrl(8001),
   },
+  {
+    name: 'hydrogen',
+    url: getUrl(6011),
+  },
 ];
 
 export const examples: Example[] = [

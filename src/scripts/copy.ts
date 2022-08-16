@@ -56,6 +56,11 @@ const paths: Path[] = [
     src: 'apps/components/output/react/src',
     dest: 'frameworks/remix/components/generated-components',
   },
+  // Hydrogen
+  {
+    src: 'apps/components/output/react/src',
+    dest: 'frameworks/hydrogen/src/generated-components',
+  },
 ];
 
 await Promise.all(

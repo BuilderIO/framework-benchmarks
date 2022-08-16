@@ -27,6 +27,7 @@ export default function AppHeader(props: HeaderProps) {
 
   return (
     <div>
+      {/* TODO: maybe some global style component, or use css={{}} obj with some @global or something */}
       <style jsx>{`
         :root {
           /* Space */
@@ -38,6 +39,7 @@ export default function AppHeader(props: HeaderProps) {
           --shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
           --round: 4px;
           --primary: steelblue;
+          --mobile: 640px;
         }
 
         ul {
