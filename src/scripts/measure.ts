@@ -58,11 +58,8 @@ async function measure(framework: string) {
     `Getting lighthouse report for ${chalk.green(framework)} on ${measureUrl}`
   );
 
-  const { lhReport: report, inlineJsBytes } = await getLighthouseReport(
-    measureUrl,
-    RUNS
-  );
-  const jsSize = Math.round((getJsSize(report) + inlineJsBytes) / 1024);
+  const { report } = await getLighthouseReport(measureUrl, RUNS);
+  const jsSize = Math.round(getJsSize(report) / 1024);
   const fcp = report.audits['first-contentful-paint'];
   const lcp = report.audits['largest-contentful-paint'];
   const tbt = report.audits['total-blocking-time'];

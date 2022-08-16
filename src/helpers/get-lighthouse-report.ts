@@ -1,7 +1,7 @@
 import lighthouse from 'lighthouse';
 import * as puppeteer from 'puppeteer';
 import fetch from 'node-fetch';
-import { computeMedianRun } from 'lighthouse/lighthouse-core/lib/median-run.js';
+import { computeMedianRun } from 'lighthouse/core/lib/median-run.js';
 
 import * as chromeLauncher from 'chrome-launcher';
 import reportGenerator from 'lighthouse/report/generator/report-generator.js';
@@ -71,11 +71,9 @@ export async function getLighthouseReport(
       reports.push(report);
     }
   }
-  const inlineJsBytes = await getInlineJsBytes(url);
   const median = computeMedianRun(reports);
   return {
-    lhReport: median,
-    inlineJsBytes,
+    report: median,
   };
 }
 
