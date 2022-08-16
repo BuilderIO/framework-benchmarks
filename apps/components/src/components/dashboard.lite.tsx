@@ -12,9 +12,10 @@ export default function Dashboard() {
     framework: 'angular' as Framework,
     currentData: null as LH.Result[] | null,
     getData() {
+      return [];
       // return state.currentData || [helloWorldData, todoData];
     },
-    async changeFamework(framework: Framework) {
+    changeFamework(framework: Framework) {
       state.framework = framework;
       state.loading = true;
       // if (framework === 'angular') {

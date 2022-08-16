@@ -70,7 +70,7 @@ export default function ToDoApp() {
 
           <button
             css={{
-              background: 'var(--primary',
+              background: 'var(--primary)',
               borderRadius: 'var(--round)',
               width: '100%',
               color: 'white',
@@ -102,7 +102,7 @@ export default function ToDoApp() {
             <button
               css={{
                 margin: 'var(--s1)',
-                color: 'var(--gray-2',
+                color: 'var(--gray-2)',
               }}
               onClick={() => state.clear()}
             >
@@ -111,7 +111,7 @@ export default function ToDoApp() {
             <button
               css={{
                 margin: 'var(--s1)',
-                color: 'var(--gray-2',
+                color: 'var(--gray-2)',
               }}
               onClick={() => state.clearDone()}
             >
@@ -120,7 +120,7 @@ export default function ToDoApp() {
             <button
               css={{
                 margin: 'var(--s1)',
-                color: 'var(--gray-2',
+                color: 'var(--gray-2)',
               }}
               onClick={() => state.markAllDone()}
             >
