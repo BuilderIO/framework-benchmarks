@@ -57,22 +57,38 @@ export default function ToDoApp() {
         >
           <input
             placeholder="Add new item..."
-            class="shadow-md rounded w-full px-4 py-2"
+            css={{
+              boxShadow: 'var(--shadow)',
+              borderRadius: 'var(--round)',
+              width: '100%',
+              padding: '0 var(--s1)',
+              margin: 'var(--s1) 0',
+            }}
             value={state.newItemName}
             onInput={(event) => state.setItemName(event)}
           />
 
           <button
-            class="bg-blue-500 rounded w-full text-white font-bold py-2 px-4"
             css={{
-              margin: '10px 0',
+              background: 'var(--primary',
+              borderRadius: 'var(--round)',
+              width: '100%',
+              color: 'white',
+              fontWeight: 'bold',
+              padding: '0 var(--s1)',
+              margin: 'var(--s2) 0',
             }}
           >
             Add list item
           </button>
         </form>
 
-        <ul class="shadow-md rounded">
+        <ul
+          css={{
+            boxShadow: 'var(--shadow)',
+            borderRadius: 'var(--round)',
+          }}
+        >
           {state.list.map((item) => (
             <TodoItem item={item} />
           ))}
@@ -84,19 +100,28 @@ export default function ToDoApp() {
             }}
           >
             <button
-              class="m-4 text-gray-500 w-full"
+              css={{
+                margin: 'var(--s1)',
+                color: 'var(--gray-2',
+              }}
               onClick={() => state.clear()}
             >
               Clear All
             </button>
             <button
-              class="m-4 text-gray-500 w-full"
+              css={{
+                margin: 'var(--s1)',
+                color: 'var(--gray-2',
+              }}
               onClick={() => state.clearDone()}
             >
               Clear Done
             </button>
             <button
-              class="m-4 text-gray-500 w-full"
+              css={{
+                margin: 'var(--s1)',
+                color: 'var(--gray-2',
+              }}
               onClick={() => state.markAllDone()}
             >
               Mark all as done

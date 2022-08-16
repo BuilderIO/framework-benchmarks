@@ -27,12 +27,42 @@ export default function AppHeader(props: HeaderProps) {
 
   return (
     <div>
-      {/* <link
-        href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
-        rel="stylesheet"
-      /> */}
-      <div class="bg-gray-100 border-gray-200 border-b-2 flex flex-col md:flex-row mb-8">
-        <div class="flex flex-row justify-center flex-wrap border-gray-200 border-b-2 md:border-b-0 p-2">
+      <style jsx>{`
+        :root {
+          /* Space */
+          --s1: 5px;
+          --s2: calc(--s1 * 2);
+          --gray-1: #bbb;
+          --gray-2: #999;
+          --border-gray: 1px solid var(--gray-2);
+          --shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+          --round: 4px;
+          --primary: steelblue;
+        }
+
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+        }
+      `}</style>
+      <div
+        css={{
+          background: 'var(--gray)',
+          borderBottom: '1px solid var(--gray-2)',
+          display: 'flex',
+          marginBottom: 'var(--s2)',
+        }}
+      >
+        <div
+          css={{
+            display: 'flex',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+            borderBottom: 'var(--border-gray)',
+            padding: 'var(--s2)',
+          }}
+        >
           {frameworks.map((link) => (
             <a
               href={link.url + (props.path || '/')}
@@ -42,7 +72,15 @@ export default function AppHeader(props: HeaderProps) {
             </a>
           ))}
         </div>
-        <div class="flex flex-row justify-center md:ml-auto flex-wrap p-2">
+        <div
+          css={{
+            display: 'flex',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+            borderBottom: 'var(--border-gray)',
+            padding: 'var(--s2)',
+          }}
+        >
           {examples.map((example) => (
             <a href={example.url} class={state.getclassForExampleLink(example)}>
               {example.name}

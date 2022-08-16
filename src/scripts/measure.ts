@@ -84,7 +84,12 @@ async function measure(framework: string) {
   };
   console.info(chalk.green(`${framework}:`, jsSize + 'kb'));
 
-  fs.writeFile('report.json', JSON.stringify(report, null, 2));
+  await fs.outputFile(
+    `apps/components/reports${
+      path === '/' ? '/' : path + '/'
+    }${framework}.json`,
+    JSON.stringify(report, null, 2)
+  );
 
   // Don't throw an error when we kill the process below
   runningProcess.catch(() => null);

@@ -7,12 +7,12 @@ export type TodoItemProps = {
 export default function TodoItem(props: TodoItemProps) {
   return (
     <li
-      class="border-gray-200 border-b"
       style={{
         textDecoration: props.item.completed ? 'line-through' : 'none',
       }}
       css={{
         padding: '10px',
+        borderBottom: 'var(--border-gray)',
       }}
     >
       <input
