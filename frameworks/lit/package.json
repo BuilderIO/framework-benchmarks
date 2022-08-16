@@ -19,7 +19,7 @@
     "docs:gen": "eleventy --config=.eleventy.cjs",
     "docs:gen:watch": "eleventy --config=.eleventy.cjs --watch",
     "docs:build": "rollup -c rollup.config.js",
-    "dev": "concurrently \"rollup -c rollup.config.js -w\" \"npm run serve\"",
+    "dev": "concurrently \"rollup -c rollup.config.js -w\" \"npm run preview\"",
     "docs:assets": "cp node_modules/prismjs/themes/prism-okaidia.css docs/",
     "docs:serve": "wds --root-dir=docs --node-resolve --watch",
     "analyze": "cem analyze --litelement --globs \"src/**/*.ts\"",
