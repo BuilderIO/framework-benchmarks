@@ -51,11 +51,11 @@ export const frameworks: Framework[] = [
     name: 'qwik',
     url: getUrl(6006),
   },
-  // TODO: add back when get working
-  {
-    name: 'remix',
-    url: getUrl(6007),
-  },
+  // TODO: add back when we can generate more idiomatic remix code
+  // {
+  //   name: 'remix',
+  //   url: getUrl(6007),
+  // },
   {
     name: 'solid',
     url: getUrl(6008),
