@@ -49,7 +49,6 @@ Alphabetically:
 - [Nuxt 2](https://nuxtjs.org/) - generated via their official CLI
 - [Nuxt 3](https://v3.nuxtjs.org/) - generated via their official CLI (in beta)
 - [Qwik](https://qwik.builder.io/) - generated with Qwik City (meta framework)
-- [Remix](https://remix.run/) - generated via their official CLI
 - [Solid](https://www.solidjs.com/) - generated with Solid Start (meta framework)
 - [Svelte](https://svelte.dev/) - generated with Svelte Kit (meta framework)
 
