@@ -12,6 +12,6 @@
     "highlight.js": "^11.6.0"
   },
   "devDependencies": {
-    "nuxt": "3.0.0-rc.6"
+    "nuxt": "npm:nuxt3@3.0.0-rc.8-27677607.a3a8706"
   }
 }
