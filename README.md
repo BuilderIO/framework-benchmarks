@@ -139,6 +139,7 @@ Next things we want to add:
 - Test interaction delays - such as initial interaction (like add todo) or navigate to next page
 - Move test running to be remote, such as in GH actions ([Help wanted!](https://github.com/BuilderIO/framework-benchmarks/issues/6))
 - Benchmark SSR speeds. Also add Bun here.
+- Benchmark with and without Partytown for 3P scripts (and vs none at all)
 
 Contributions welcome!
 
