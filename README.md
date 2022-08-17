@@ -27,8 +27,10 @@ We then create basic example components and use [Mitosis](https://github.com/bui
 We then build and serve each project, and run Lighthouse on each project with puppeteer, including with [emulation of slow devices and networks](https://github.com/GoogleChrome/lighthouse/blob/master/docs/emulation.md) (aka includes CPU and network throttling), and measure:
 
 - **FCP**: [First Contentful Paint](https://web.dev/first-contentful-paint/)
+- **LCP**: [Largest Contentful Paint](https://web.dev/largest-contentful-paint/)
 - **TBT**: [Total Blocking Time](https://web.dev/tbt/)
 - **TTI**: [Time to Interactive](https://web.dev/interactive/)
+- **Score**: [Lighthouse Performance Score](https://web.dev/performance-scoring/)
 - **Eager JS Kib**: the KiB of JS that is eagerly downloaded and executed from `<script>` tags for the initial page load. This is the actual size transferred over the network, including compression
 - **Total KiB**: the total KiB transferred with the given page, including HTML, CSS, prefetched resources, etc. Also known as the "total byte weight". This is the actual size transferred over the network, including compression
 
