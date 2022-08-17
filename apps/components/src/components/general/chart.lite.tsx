@@ -1,7 +1,7 @@
 import { useStore } from '@builder.io/mitosis';
 
 export interface ChartProps {
-  data: LH.Result[];
+  data: any[];
 }
 
 export default function Chart(props: ChartProps) {

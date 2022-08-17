@@ -22,6 +22,9 @@ export default function Tooltip(props: TooltipProps) {
       {state.open && (
         <div
           css={{
+            position: 'absolute',
+            zIndex: '1',
+            borderRadius: '$round',
             padding: '$s1',
             shadow: '$shadow-2',
             background: '$gray-4',

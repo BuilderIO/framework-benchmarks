@@ -3,6 +3,7 @@ export type Framework =
   | 'astro'
   | 'fresh'
   | 'gatsby'
+  | 'hydrogen'
   | 'lit'
   | 'marko'
   | 'next'
@@ -17,6 +18,7 @@ export const frameworks: Framework[] = [
   'astro',
   'fresh',
   'gatsby',
+  'hydrogen',
   'lit',
   'marko',
   'next',

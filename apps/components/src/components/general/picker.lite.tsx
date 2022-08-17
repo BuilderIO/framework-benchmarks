@@ -10,6 +10,7 @@ import Fuse from 'fuse.js';
 export interface PickerProps {
   value: string;
   options: string[];
+  dropdownSide?: 'left' | 'right';
   onChange: (value: string) => void;
 }
 
@@ -22,14 +23,6 @@ export default function Picker(props: PickerProps) {
     searchString: '',
     dropdownOpen: false,
     highlightedIndex: 0,
-    onDocumentClick(event: MouseEvent) {
-      if (state.dropdownOpen) {
-        // Click outside
-        if (!(event.target as HTMLElement).contains(inputRef!)) {
-          state.closeTheDropdown();
-        }
-      }
-    },
     getFilteredResults() {
       if (!state.searchString) {
         return props.options;
@@ -46,9 +39,6 @@ export default function Picker(props: PickerProps) {
       return index === state.highlightedIndex;
     },
     onKeyDown(event: KeyboardEvent) {
-      if (!state.dropdownOpen) {
-        return;
-      }
       if (event.key === 'ArrowDown') {
         event.preventDefault();
         const isLast =
@@ -91,16 +81,6 @@ export default function Picker(props: PickerProps) {
         inputRef?.focus();
       });
     },
-  });
-
-  onMount(() => {
-    document.addEventListener('click', state.onDocumentClick);
-    document.addEventListener('keydown', state.onKeyDown);
-  });
-
-  onUnMount(() => {
-    document.removeEventListener('click', state.onDocumentClick);
-    document.removeEventListener('keydown', state.onKeyDown);
   });
 
   onUpdate(() => {
@@ -157,6 +137,9 @@ export default function Picker(props: PickerProps) {
       </button>
       {state.dropdownOpen && (
         <div
+          style={{
+            right: props.dropdownSide === 'right' ? '0' : 'auto',
+          }}
           css={{
             position: 'absolute',
             zIndex: '2',
@@ -171,6 +154,8 @@ export default function Picker(props: PickerProps) {
           }}
         >
           <input
+            onBlur={() => state.closeTheDropdown()}
+            onKeyDown={(event) => state.onKeyDown(event)}
             ref={inputRef}
             autofocus
             placeholder="Search frameworks..."

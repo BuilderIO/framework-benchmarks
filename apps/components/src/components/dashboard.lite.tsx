@@ -1,47 +1,32 @@
 import { useStore } from '@builder.io/mitosis';
-import helloWorldData from '../reports/angular';
-import todoData from '../reports/todo/angular';
 import Chart from './general/chart.lite';
-import Table from './general/table.lite';
+import Table, { TableRecord } from './general/table.lite';
 import { Framework, frameworks } from './dashboard/frameworks';
 import Picker from './general/picker.lite';
 import CodeViewer from './general/code-viewer.lite';
 import { Benchmark } from './dashboard/benchmarks';
+import { getReportData } from './dashboard/get-report-data';
+import {
+  LighthouseDataWithName,
+  todoDataList,
+} from './dashboard/lighthouse-data';
 
 export default function Dashboard() {
   const state = useStore({
     loading: false,
     framework: 'angular' as Framework,
     benchmark: 'todo' as Benchmark,
-    currentData: null as LH.Result[] | null,
+    currentData: null as LighthouseDataWithName[] | null,
     getData() {
-      return state.currentData || ([helloWorldData, todoData] as LH.Result[]);
+      return state.currentData || todoDataList;
+    },
+    getTableData() {
+      return state.getData().map((data) => getReportData(data));
     },
     changeFamework(framework: Framework) {
       state.framework = framework;
-      state.loading = true;
-      if (framework === 'angular') {
-        state.currentData = [
-          helloWorldData as LH.Result,
-          todoData as LH.Result,
-        ];
-        state.loading = false;
-      } else if (framework === 'astro') {
-        Promise.all([
-          import('../reports/astro'),
-          import('../reports/todo/astro'),
-        ]).then((results) => {
-          state.currentData = results as any;
-          state.loading = false;
-        });
-      } else {
-        state.currentData = [
-          helloWorldData as LH.Result,
-          todoData as LH.Result,
-        ];
-        state.loading = false;
-      }
     },
+    changeBenchmark(benchmark: Benchmark) {},
   });
 
   return (
@@ -50,16 +35,37 @@ export default function Dashboard() {
         padding: '$s3',
       }}
     >
-      {/* <Table data={state.getData()} /> */}
-      <Chart data={state.getData()} />
-      <Picker
-        options={frameworks}
-        value={state.framework}
-        onChange={(event) => state.changeFamework(event as Framework)}
+      <Table
+        defaultSort="ttiNumber"
+        data={state.getTableData() as any}
+        columnInfo={{
+          ttiNumber: {
+            name: 'TTI Number',
+            tooltipText: 'Time to Interactive in ms',
+          },
+        }}
       />
+      <Chart data={state.getTableData()} />
+
+      <div css={{ display: 'flex', alignItems: 'center', marginTop: '10px' }}>
+        <h2>View full median lighthouse data</h2>
+        <div css={{ marginLeft: 'auto' }}>
+          <Picker
+            dropdownSide="right"
+            options={frameworks}
+            value={state.framework}
+            onChange={(event) => state.changeFamework(event as Framework)}
+          />
+        </div>
+      </div>
+
       <CodeViewer
         style={{ maxHeight: '50vh', minHeight: '200px' }}
-        code={JSON.stringify(state.getData()[0], null, 2)}
+        code={JSON.stringify(
+          state.getData().find((data) => data.name === state.framework),
+          null,
+          2
+        )}
         language="json"
       />
     </div>

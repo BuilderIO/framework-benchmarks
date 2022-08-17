@@ -1,4 +1,7 @@
+import { LighthouseDataWithName } from './lighthouse-data';
+
 export interface ReportData {
+  name: string;
   jsKb?: number;
   totalKb?: number;
   fcpDisplay?: string;
@@ -11,7 +14,7 @@ export interface ReportData {
   lcpNumber?: number;
 }
 
-export function getReportData(report: LH.Result): ReportData {
+export function getReportData(report: LighthouseDataWithName): ReportData {
   const jsSize = Math.round(getJsSize(report) / 1024);
   const fcp = report.audits['first-contentful-paint'];
   const lcp = report.audits['largest-contentful-paint'];
@@ -19,6 +22,7 @@ export function getReportData(report: LH.Result): ReportData {
   const tti = report.audits['interactive'];
 
   const data: ReportData = {
+    name: report.name,
     jsKb: jsSize,
     totalKb: Math.round(
       (report.audits['total-byte-weight']?.numericValue || 0) / 1024
@@ -26,9 +30,9 @@ export function getReportData(report: LH.Result): ReportData {
     fcpDisplay: fcp?.displayValue,
     fcpNumber: fcp?.numericValue,
     tbtDisplay: tbt?.displayValue,
-    tbtNumber: tbt?.numericValue,
+    tbtNumber: Math.round(tbt?.numericValue!),
     ttiDisplay: tti?.displayValue,
-    ttiNumber: tti?.numericValue,
+    ttiNumber: Math.round(tti?.numericValue!),
     lcpDisplay: lcp?.displayValue,
     lcpNumber: lcp?.numericValue,
   };
