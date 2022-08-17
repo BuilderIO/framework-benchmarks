@@ -1,10 +1,4 @@
-import {
-  onUnMount,
-  onUpdate,
-  useRef,
-  useStore,
-  onMount,
-} from '@builder.io/mitosis';
+import { onUpdate, useRef, useStore } from '@builder.io/mitosis';
 import Fuse from 'fuse.js';
 
 export interface PickerProps {

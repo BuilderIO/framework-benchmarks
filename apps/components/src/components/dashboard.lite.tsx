@@ -2,8 +2,7 @@ import { useStore } from '@builder.io/mitosis';
 import Chart from './general/chart.lite';
 import LiteTable, { TableRecord } from './general/lite-table.lite';
 import { Framework, frameworks } from './dashboard/frameworks.js';
-import LitePicker from './general/picker.lite';
-import CodeViewer from './general/code-viewer.lite';
+import LitePicker from './general/lite-picker.lite';
 import { Benchmark } from './dashboard/benchmarks.js';
 import { getReportData } from './dashboard/get-report-data.js';
 import {

@@ -1,6 +1,6 @@
 import { useStore } from '@builder.io/mitosis';
 import { sortBy } from '../utils/sort.js';
-import Tooltip from './tooltip.lite';
+import Tooltip from './lite-tooltip.lite';
 
 export interface ColumnInfo {
   name: string;

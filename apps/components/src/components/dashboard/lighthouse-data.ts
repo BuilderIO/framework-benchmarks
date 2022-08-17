@@ -5,12 +5,12 @@ import astroDashboardData from '../../reports/dashboard/astro.js';
 import freshDashboardData from '../../reports/dashboard/fresh.js';
 import gatsbyDashboardData from '../../reports/dashboard/gatsby.js';
 import hydrogenDashboardData from '../../reports/dashboard/hydrogen.js';
-// import litDashboardData from '../../reports/dashboard/lit.js';
+import litDashboardData from '../../reports/dashboard/lit.js';
 import markoDashboardData from '../../reports/dashboard/marko.js';
 import nextDashboardData from '../../reports/dashboard/next.js';
 import nuxt3DashboardData from '../../reports/dashboard/nuxt3.js';
 import qwikDashboardData from '../../reports/dashboard/qwik.js';
-// import solidDashboardData from '../../reports/dashboard/solid.js';
+import solidDashboardData from '../../reports/dashboard/solid.js';
 import svelteDashboardData from '../../reports/dashboard/svelte.js';
 
 export type LighthouseDataWithName = LH.Result & {
@@ -115,12 +115,12 @@ export const dashboardData: LighthouseDataMap = {
   fresh: freshDashboardData,
   gatsby: gatsbyDashboardData,
   hydrogen: hydrogenDashboardData,
-  // lit: litDashboardData,
+  lit: litDashboardData,
   marko: markoDashboardData,
   next: nextDashboardData,
   nuxt3: nuxt3DashboardData,
   qwik: qwikDashboardData,
-  // solid: solidDashboardData,
+  solid: solidDashboardData,
   svelte: svelteDashboardData,
 };
 

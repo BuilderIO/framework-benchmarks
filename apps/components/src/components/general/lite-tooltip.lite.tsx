@@ -5,7 +5,7 @@ export type TooltipProps = {
   tooltipText: string;
 };
 
-export default function Tooltip(props: TooltipProps) {
+export default function LiteTooltip(props: TooltipProps) {
   const state = useStore({
     open: false,
   });
