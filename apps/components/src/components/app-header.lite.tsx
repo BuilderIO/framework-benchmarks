@@ -24,25 +24,28 @@ export default function AppHeader(props: HeaderProps) {
 
   return (
     <div>
+      {/* TODO: move this out of here */}
       <style
         innerHTML={`
       :root {
         /* Space */
         --s1: 5px;
         --s2: calc(var(--s1) * 2);
+        --s3: calc(var(--s1) * 4);
         --gray-1: #eee;
         --gray-2: #bbb;
         --gray-3: #999;
         --gray-4: #666;
         --border-gray: 1px solid var(--gray-2);
         --shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        --shadow-2: 0 1px 10px rgba(0, 0, 0, 0.1);
         --round: 4px;
         --primary: rgb(26, 115, 232);
         --mobile: 640px;
         --font-medium: 400;
       }
       
-      ul {
+      ul, ol {
         list-style-type: none;
         margin: 0;
         padding: 0;
@@ -64,7 +67,7 @@ export default function AppHeader(props: HeaderProps) {
           display: 'flex',
           padding: '$s1',
           marginBottom: 'var(--s2)',
-          '@media (max-width: %mobile)': {
+          '@mobile': {
             flexDirection: 'column',
           },
         }}
@@ -75,7 +78,7 @@ export default function AppHeader(props: HeaderProps) {
             flexWrap: 'wrap',
             padding: '$s1',
             textTransform: 'capitalize',
-            '@media (max-width: %mobile)': {
+            '@mobile': {
               borderBottom: 'var(--border-gray)',
               justifyContent: 'center',
             },
@@ -105,7 +108,7 @@ export default function AppHeader(props: HeaderProps) {
             padding: '$s1',
             marginLeft: 'auto',
             justifyContent: 'flex-end',
-            '@media (max-width: %mobile)': {
+            '@mobile': {
               marginRight: 'auto',
               justifyContent: 'center',
             },

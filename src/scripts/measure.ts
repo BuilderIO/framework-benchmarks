@@ -81,12 +81,17 @@ async function measure(framework: string) {
   };
   console.info(chalk.green(`${framework}:`, jsSize + 'kb'));
 
-  await fs.outputFile(
-    `apps/components/reports${
-      path === '/' ? '/' : path + '/'
-    }${framework}.json`,
-    JSON.stringify(report, null, 2)
-  );
+  const outputDir = 'apps/components/src/reports';
+  const pathFragment = path === '/' ? '/' : path + '/';
+  const jsonPath = `${outputDir}${pathFragment}${framework}.json`;
+  const jsPath = `${outputDir}${pathFragment}${framework}.ts`;
+
+  await Promise.all([
+    // Output results to a JSON file
+    fs.outputFile(jsonPath, JSON.stringify(report, null, 2)),
+    // Output results to a JS file for importing
+    fs.outputFile(jsPath, `export default ${JSON.stringify(report, null, 2)}`),
+  ]);
 
   // Don't throw an error when we kill the process below
   runningProcess.catch(() => null);

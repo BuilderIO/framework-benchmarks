@@ -32,14 +32,14 @@ const dollarVarsPlugin = (options) => () => ({
 
 /**
  * Allow simple find and replace swaps in CSS
- * 
- * e.g. 
- *  cssReplacePlugin({ '%mobile': '640px' }) 
- * 
+ *
+ * e.g.
+ *  cssReplacePlugin({ '@mobile': '@media screen and (max-width: 640px)' })
+ *
  * will replace:
- *  '@media (max-width: %mobile)': { .. }
+ *  '@mobil': { ... }
  * with:
- *  '@media (max-width: 640px)': { .. }
+ *  '@media screen and (max-width: 640px)': { .. }
  */
 const cssReplacePlugin = (options) => () => ({
   json: {
@@ -64,7 +64,7 @@ const baseOptions = {
   plugins: [
     dollarVarsPlugin(),
     cssReplacePlugin({
-      '%mobile': '640px',
+      '@mobile': '@media screen and (max-width: 640px)',
     }),
   ],
 };

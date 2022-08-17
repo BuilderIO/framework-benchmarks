@@ -1,10 +1,11 @@
 import { useStore } from '@builder.io/mitosis';
-// import helloWorldData from '../../reports/angular.json';
-// import todoData from '../../reports/todo/angular.json';
-import Chart from './dashboard/chart.lite';
-import Table from './dashboard/dash-table.lite';
-import FrameworkPicker from './dashboard/framework-picker.lite';
-import { Framework } from './dashboard/frameworks';
+import helloWorldData from '../reports/angular';
+import todoData from '../reports/todo/angular';
+import Chart from './general/chart.lite';
+import Table from './general/dash-table.lite';
+import { Framework, frameworks } from './dashboard/frameworks';
+import Picker from './general/picker.lite';
+import CodeViewer from './general/code-viewer.lite';
 
 export default function Dashboard() {
   const state = useStore({
@@ -12,33 +13,53 @@ export default function Dashboard() {
     framework: 'angular' as Framework,
     currentData: null as LH.Result[] | null,
     getData() {
-      return [];
-      // return state.currentData || [helloWorldData, todoData];
+      return state.currentData || ([helloWorldData, todoData] as LH.Result[]);
     },
     changeFamework(framework: Framework) {
       state.framework = framework;
       state.loading = true;
-      // if (framework === 'angular') {
-      //   state.currentData = [helloWorldData, todoData];
-      // } else if (framework === 'astro') {
-      //   state.currentData = await Promise.all([
-      //     import('../../reports/astro.json'),
-      //     import('../../reports/todo/astro.json'),
-      //   ]);
-      // }
-      state.loading = false;
-      state.currentData = null;
+      if (framework === 'angular') {
+        state.currentData = [
+          helloWorldData as LH.Result,
+          todoData as LH.Result,
+        ];
+        state.loading = false;
+      } else if (framework === 'astro') {
+        Promise.all([
+          import('../reports/astro'),
+          import('../reports/todo/astro'),
+        ]).then((results) => {
+          state.currentData = results as any;
+          state.loading = false;
+        });
+      } else {
+        state.currentData = [
+          helloWorldData as LH.Result,
+          todoData as LH.Result,
+        ];
+        state.loading = false;
+      }
     },
   });
 
   return (
-    <>
-      <FrameworkPicker
+    <div
+      css={{
+        padding: '$s3',
+      }}
+    >
+      <Picker
+        options={frameworks}
         value={state.framework}
-        onChange={(event) => state.changeFamework(event)}
+        onChange={(event) => state.changeFamework(event as Framework)}
       />
+
       <Table data={state.getData()} />
       <Chart data={state.getData()} />
-    </>
+      <CodeViewer
+        code={JSON.stringify(state.getData()[0], null, 2)}
+        language="json"
+      />
+    </div>
   );
 }
