@@ -75,6 +75,13 @@ export default function LitePicker(props: PickerProps) {
         inputRef?.focus();
       });
     },
+    toggleDropdown() {
+      if (state.dropdownOpen) {
+        state.closeTheDropdown();
+      } else {
+        state.openTheDropdown();
+      }
+    },
   });
 
   onUpdate(() => {
@@ -119,13 +126,7 @@ export default function LitePicker(props: PickerProps) {
         }}
         aria-haspopup="listbox"
         aria-expanded={state.dropdownOpen}
-        onClick={() => {
-          if (state.dropdownOpen) {
-            state.closeTheDropdown();
-          } else {
-            state.openTheDropdown();
-          }
-        }}
+        onClick={() => state.toggleDropdown()}
       >
         {props.value}
       </button>

@@ -40,6 +40,16 @@ export default function LiteTable(props: TableProps) {
     getSortKey() {
       return state.sortByKey || props.defaultSort;
     },
+    thClicked(key: string) {
+      if (state.sortByKey === key) {
+        if (state.sortDirection === 'asc') {
+          state.sortDirection = 'desc';
+        } else {
+          state.sortDirection = 'asc';
+        }
+      }
+      state.sortByKey = key;
+    },
     getSortedRows() {
       const sortKey = state.getSortKey();
       const rows = props.data;
@@ -77,10 +87,6 @@ export default function LiteTable(props: TableProps) {
         '& tbody tr:nth-of-type(even)': {
           backgroundColor: '#f3f3f3',
         },
-
-        '& tbody tr:last-of-type': {
-          borderNottom: '2px solid #009879',
-        },
       }}
     >
       <thead>
@@ -91,16 +97,7 @@ export default function LiteTable(props: TableProps) {
                 cursor: 'pointer',
               }}
               key={key}
-              onClick={() => {
-                if (state.sortByKey === key) {
-                  if (state.sortDirection === 'asc') {
-                    state.sortDirection = 'desc';
-                  } else {
-                    state.sortDirection = 'asc';
-                  }
-                }
-                state.sortByKey = key;
-              }}
+              onClick={() => state.thClicked(key)}
             >
               {state.getColumnInfo(key).tooltipText ? (
                 <Tooltip

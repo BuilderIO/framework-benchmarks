@@ -6,11 +6,6 @@ const IGNORE_FRAMEWORKS = [
   // Removing remix, as to fully handle Remix properly we'll need to support more idiomatic code
   // like here: https://github.com/kentcdodds/remix-todomvc
   'remix',
-  // Nuxt2/Vue2 doesn't support some modern things like components with more than one elements
-  // at the root, and modern ES syntax
-  'nuxt2',
-  // Needs more work to support the new dashboard example
-  'angular',
 ].concat(
   process.env.IGNORE_FRAMEWORKS ? process.env.IGNORE_FRAMEWORKS.split(',') : []
 );
