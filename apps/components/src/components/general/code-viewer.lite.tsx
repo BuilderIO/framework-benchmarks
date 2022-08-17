@@ -1,4 +1,4 @@
-import { hljs } from './highlight';
+import { hljs } from './highlight.js';
 
 export type CodeViewerProps = {
   code: string;

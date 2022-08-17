@@ -6,7 +6,14 @@ const config = {
 	kit: {
 		adapter: adapter()
 	},
-	preprocess: preprocess()
+	preprocess: preprocess(),
+	onwarn: (warning, handler) => {
+		const { code, frame } = warning;
+		// Allow unused selectors
+		if (code === 'css-unused-selector') return;
+
+		handler(warning);
+	}
 };
 
 export default config;

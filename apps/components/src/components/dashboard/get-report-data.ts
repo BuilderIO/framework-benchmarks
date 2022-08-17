@@ -1,17 +1,14 @@
-import { LighthouseDataWithName } from './lighthouse-data';
+import { LighthouseDataWithName } from './lighthouse-data.js';
 
 export interface ReportData {
   name: string;
+  ttiNumber?: number;
+  FCP?: string;
+  TBT?: string;
+  TTI?: string;
+  LCP?: string;
   jsKb?: number;
   totalKb?: number;
-  fcpDisplay?: string;
-  fcpNumber?: number;
-  tbtDisplay?: string;
-  tbtNumber?: number;
-  ttiDisplay?: string;
-  ttiNumber?: number;
-  lcpDisplay?: string;
-  lcpNumber?: number;
 }
 
 export function getReportData(report: LighthouseDataWithName): ReportData {
@@ -23,18 +20,15 @@ export function getReportData(report: LighthouseDataWithName): ReportData {
 
   const data: ReportData = {
     name: report.name,
+    ttiNumber: Math.round(tti?.numericValue!),
+    TTI: tti?.displayValue,
+    FCP: fcp?.displayValue,
+    TBT: tbt?.displayValue,
+    LCP: lcp?.displayValue,
     jsKb: jsSize,
     totalKb: Math.round(
       (report.audits['total-byte-weight']?.numericValue || 0) / 1024
     ),
-    fcpDisplay: fcp?.displayValue,
-    fcpNumber: fcp?.numericValue,
-    tbtDisplay: tbt?.displayValue,
-    tbtNumber: Math.round(tbt?.numericValue!),
-    ttiDisplay: tti?.displayValue,
-    ttiNumber: Math.round(tti?.numericValue!),
-    lcpDisplay: lcp?.displayValue,
-    lcpNumber: lcp?.numericValue,
   };
 
   return data;

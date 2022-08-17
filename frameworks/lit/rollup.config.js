@@ -43,4 +43,5 @@ export default [
   getConfig('hello-world'),
   getConfig('todo-app'),
   getConfig('app-header'),
+  getConfig('dashboard'),
 ];

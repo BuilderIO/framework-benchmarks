@@ -1,9 +1,8 @@
-import { Slot, useStore } from '@builder.io/mitosis';
-import { JSX } from '@builder.io/mitosis/jsx-runtime';
+import { useStore } from '@builder.io/mitosis';
 
 export type TooltipProps = {
   text: string;
-  children: JSX.Element;
+  tooltipText: string;
 };
 
 export default function Tooltip(props: TooltipProps) {
@@ -18,7 +17,7 @@ export default function Tooltip(props: TooltipProps) {
         position: 'relative',
       }}
     >
-      <Slot />
+      {props.text}
       {state.open && (
         <div
           css={{
@@ -31,7 +30,7 @@ export default function Tooltip(props: TooltipProps) {
             color: 'white',
           }}
         >
-          {props.text}
+          {props.tooltipText}
         </div>
       )}
     </span>

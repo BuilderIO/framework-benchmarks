@@ -1,5 +1,5 @@
 import { useStore } from '@builder.io/mitosis';
-import { sortBy } from '../utils/sort';
+import { sortBy } from '../utils/sort.js';
 import Tooltip from './tooltip.lite';
 
 export interface ColumnInfo {
@@ -12,11 +12,12 @@ export type TableRecord = Record<string, Primitive>[];
 
 export interface TableProps {
   data: TableRecord[];
+  hideKeys?: string[];
   defaultSort?: string;
   columnInfo?: Record<string, ColumnInfo>;
 }
 
-export default function Table(props: TableProps) {
+export default function LiteTable(props: TableProps) {
   const state = useStore({
     sortByKey: '',
     sortDirection: 'asc' as 'asc' | 'desc',
@@ -32,7 +33,9 @@ export default function Table(props: TableProps) {
       if (!props.data?.length) {
         return [];
       }
-      return Object.keys(props.data[0]);
+      return Object.keys(props.data[0]).filter(
+        (item) => !props.hideKeys?.includes(item)
+      );
     },
     getSortKey() {
       return state.sortByKey || props.defaultSort;
@@ -100,9 +103,10 @@ export default function Table(props: TableProps) {
               }}
             >
               {state.getColumnInfo(key).tooltipText ? (
-                <Tooltip text={state.getColumnInfo(key).tooltipText!}>
-                  {state.getColumnInfo(key).name}
-                </Tooltip>
+                <Tooltip
+                  text={state.getColumnInfo(key).name}
+                  tooltipText={state.getColumnInfo(key).tooltipText!}
+                />
               ) : (
                 <span>{state.getColumnInfo(key).name}</span>
               )}

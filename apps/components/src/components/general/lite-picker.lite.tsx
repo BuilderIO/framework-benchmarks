@@ -14,7 +14,7 @@ export interface PickerProps {
   onChange: (value: string) => void;
 }
 
-export default function Picker(props: PickerProps) {
+export default function LitePicker(props: PickerProps) {
   const inputRef = useRef<HTMLInputElement | undefined>();
   const buttonRef = useRef<HTMLButtonElement | undefined>();
   const containerRef = useRef<HTMLOListElement | undefined>();

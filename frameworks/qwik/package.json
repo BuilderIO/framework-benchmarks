@@ -29,6 +29,7 @@
     "eslint": "8.20.0",
     "eslint-plugin-qwik": "0.0.39",
     "express": "4.17.3",
+    "lighthouse": "^9.6.6",
     "node-fetch": "3.2.9",
     "prettier": "2.7.1",
     "typescript": "4.7.4",

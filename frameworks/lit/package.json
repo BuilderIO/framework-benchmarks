@@ -66,6 +66,7 @@
     "@web/test-runner-playwright": "^0.8.8",
     "@webcomponents/webcomponentsjs": "^2.6.0",
     "eslint": "^8.15.0",
+    "lighthouse": "^9.6.6",
     "lit-analyzer": "^1.2.1",
     "prettier": "^2.6.2",
     "rimraf": "^3.0.2",

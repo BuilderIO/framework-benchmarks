@@ -22,6 +22,12 @@ module.exports = function (data) {
       '/todo-app.bundled.js'
     )}" async></script>
     ` : ''}
+    ${page.url === '/dashboard/' ? `
+    <script type="module" src="${relative(
+      page.url,
+      '/dashboard.bundled.js'
+    )}" async></script>
+    ` : ''}
     <script type="module" src="${relative(
       page.url,
       '/app-header.bundled.js'

@@ -1,32 +1,34 @@
 import { useStore } from '@builder.io/mitosis';
 import Chart from './general/chart.lite';
-import Table, { TableRecord } from './general/table.lite';
-import { Framework, frameworks } from './dashboard/frameworks';
-import Picker from './general/picker.lite';
+import LiteTable, { TableRecord } from './general/lite-table.lite';
+import { Framework, frameworks } from './dashboard/frameworks.js';
+import LitePicker from './general/picker.lite';
 import CodeViewer from './general/code-viewer.lite';
-import { Benchmark } from './dashboard/benchmarks';
-import { getReportData } from './dashboard/get-report-data';
+import { Benchmark } from './dashboard/benchmarks.js';
+import { getReportData } from './dashboard/get-report-data.js';
 import {
   LighthouseDataWithName,
-  todoDataList,
-} from './dashboard/lighthouse-data';
+  dashboardDataList,
+} from './dashboard/lighthouse-data.js';
 
 export default function Dashboard() {
   const state = useStore({
     loading: false,
-    framework: 'angular' as Framework,
-    benchmark: 'todo' as Benchmark,
+    framework: 'astro' as Framework,
+    benchmark: 'dashboard' as Benchmark,
     currentData: null as LighthouseDataWithName[] | null,
     getData() {
-      return state.currentData || todoDataList;
+      return state.currentData || dashboardDataList;
     },
     getTableData() {
       return state.getData().map((data) => getReportData(data));
     },
-    changeFamework(framework: Framework) {
-      state.framework = framework;
+    changeFamework(newFramework: Framework) {
+      state.framework = newFramework;
     },
-    changeBenchmark(benchmark: Benchmark) {},
+    changeBenchmark(newBenchmark: Benchmark) {
+      state.benchmark = newBenchmark;
+    },
   });
 
   return (
@@ -35,22 +37,36 @@ export default function Dashboard() {
         padding: '$s3',
       }}
     >
-      <Table
+      <LiteTable
         defaultSort="ttiNumber"
+        hideKeys={['ttiNumber']}
         data={state.getTableData() as any}
         columnInfo={{
+          name: {
+            name: 'Name',
+          },
           ttiNumber: {
             name: 'TTI Number',
             tooltipText: 'Time to Interactive in ms',
           },
+          jsKb: {
+            name: 'Eager JS KiB',
+            tooltipText:
+              'Total KiB of eager downloaded and executed JS from <script> tags',
+          },
+          totalKb: {
+            name: 'Page Weight KiB',
+            tooltipText:
+              'Total page weight, including HTML, CSS, prefetched resoures',
+          },
         }}
       />
-      <Chart data={state.getTableData()} />
+      {/* <Chart data={state.getTableData()} /> */}
 
       <div css={{ display: 'flex', alignItems: 'center', marginTop: '10px' }}>
         <h2>View full median lighthouse data</h2>
         <div css={{ marginLeft: 'auto' }}>
-          <Picker
+          <LitePicker
             dropdownSide="right"
             options={frameworks}
             value={state.framework}
@@ -59,7 +75,7 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <CodeViewer
+      {/* <CodeViewer
         style={{ maxHeight: '50vh', minHeight: '200px' }}
         code={JSON.stringify(
           state.getData().find((data) => data.name === state.framework),
@@ -67,7 +83,7 @@ export default function Dashboard() {
           2
         )}
         language="json"
-      />
+      /> */}
     </div>
   );
 }

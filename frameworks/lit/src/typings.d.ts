@@ -1,0 +1,1 @@
+/// <reference types="lighthouse/types/global-lh" />
