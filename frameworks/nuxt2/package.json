@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "core-js": "^3.19.3",
+    "fuse.js": "^6.6.2",
     "highlight.js": "^11.6.0",
     "nuxt": "^2.15.8",
     "vue": "^2.6.14",

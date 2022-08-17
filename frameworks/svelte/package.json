@@ -11,6 +11,8 @@
 		"format": "prettier --write --plugin-search-dir=. ."
 	},
 	"dependencies": {
+		"fuse.js": "^6.6.2",
+		"highlight.js": "^11.6.0",
 		"svelte-preprocess": "^4.10.7"
 	},
 	"devDependencies": {

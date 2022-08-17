@@ -100,17 +100,17 @@ module.exports = {
     react: {
       ...baseOptions,
       stylesType: 'style-tag',
-      transpiler: { ...transpilerOptions, languages: ['ts'] },
+      transpiler: { ...transpilerOptions },
     },
     solid: {
       ...baseOptions,
       stylesType: 'style-tag',
-      transpiler: { ...transpilerOptions, languages: ['ts'] },
+      transpiler: { ...transpilerOptions },
     },
     preact: {
       ...baseOptions,
       stylesType: 'style-tag',
-      transpiler: { ...transpilerOptions, languages: ['ts'] },
+      transpiler: { ...transpilerOptions },
     },
     vue2: vueConfig,
     vue3: vueConfig,
@@ -124,7 +124,7 @@ module.exports = {
     marko: { ...baseOptions, transpiler: { ...transpilerOptions } },
     lit: {
       ...baseOptions,
-      transpiler: { ...transpilerOptions, languages: ['ts'] },
+      transpiler: { ...transpilerOptions },
     },
   },
 };

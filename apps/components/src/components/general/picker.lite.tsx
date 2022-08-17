@@ -162,6 +162,7 @@ export default function Picker(props: PickerProps) {
             zIndex: '2',
             width: '200px',
             boxShadow: '$shadow-2',
+            background: 'white',
             overflow: 'hidden',
             display: 'flex',
             flexDirection: 'column',

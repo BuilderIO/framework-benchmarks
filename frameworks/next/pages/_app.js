@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import AppHeader from '../generated-components/components/app-header.lite';
+import AppHeader from '../generated-components/components/app-header';
 
 Error.stackTraceLimit = Infinity;
 

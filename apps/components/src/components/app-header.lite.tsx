@@ -36,6 +36,7 @@ export default function AppHeader(props: HeaderProps) {
         --gray-2: #bbb;
         --gray-3: #999;
         --gray-4: #666;
+        --gray-5: #333;
         --border-gray: 1px solid var(--gray-2);
         --shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
         --shadow-2: 0 1px 10px rgba(0, 0, 0, 0.1);

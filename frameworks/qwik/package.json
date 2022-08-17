@@ -38,6 +38,7 @@
   "dependencies": {
     "@types/compression": "^1.7.2",
     "compression": "^1.7.4",
+    "fuse.js": "^6.6.2",
     "highlight.js": "^11.6.0"
   },
   "engines": {

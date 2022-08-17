@@ -8,6 +8,7 @@
     "preview": "PORT=6005 nuxt preview -p 6005"
   },
   "dependencies": {
+    "fuse.js": "^6.6.2",
     "highlight.js": "^11.6.0"
   },
   "devDependencies": {

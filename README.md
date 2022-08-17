@@ -138,6 +138,7 @@ Next things we want to add:
 - More complex examples that more closesly emulate real world sites and apps (e.g. a dashboard for exploring the test run results in interactive tables and graphs)
 - Test interaction delays - such as initial interaction (like add todo) or navigate to next page
 - Move test running to be remote, such as in GH actions ([Help wanted!](https://github.com/BuilderIO/framework-benchmarks/issues/6))
+- Benchmark SSR speeds. Also add Bun here.
 
 Contributions welcome!
 

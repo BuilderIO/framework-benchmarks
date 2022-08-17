@@ -90,7 +90,10 @@ async function measure(framework: string) {
     // Output results to a JSON file
     fs.outputFile(jsonPath, JSON.stringify(report, null, 2)),
     // Output results to a JS file for importing
-    fs.outputFile(jsPath, `export default ${JSON.stringify(report, null, 2)}`),
+    fs.outputFile(
+      jsPath,
+      `export default ${JSON.stringify(report, null, 2)} as LH.Result`
+    ),
   ]);
 
   // Don't throw an error when we kill the process below
