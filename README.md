@@ -43,7 +43,7 @@ Alphabetically:
 - [Astro](https://astro.build/) - generated via their official CLI, with Solid for the interactive parts
 - [Fresh](https://fresh.deno.dev/) - generated via their official CLI
 - [Gatsby](https://www.gatsbyjs.com/) - contributed by the Gatsby team
-- [Hydrogen] - generated via their [official CLI](https://shopify.dev/custom-storefronts/hydrogen/getting-started/quickstart)
+- [Hydrogen](https://hydrogen.shopify.dev/) - generated via their [official CLI](https://shopify.dev/custom-storefronts/hydrogen/getting-started/quickstart)
 - [Lit](https://lit.dev/) - generated via their official [starter](https://github.com/lit/lit-element-starter-ts)
 - [Marko](https://markojs.com/) - generated via their official CLI
 - [Next.js](https://nextjs.org/) - generated via their official CLI
