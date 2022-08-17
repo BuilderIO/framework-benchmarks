@@ -60,6 +60,14 @@ const cssReplacePlugin = (options) => () => ({
   },
 });
 
+const stripSvelteNonRootStyle = () => () => ({
+  code: {
+    // Remove generated inline styles for svelte - they break the build
+    // This matches what we generate:
+    post: (code) => code.replace(/<style>\s*{@html[\s\S]+?<\/style>/g, ''),
+  },
+});
+
 const baseOptions = {
   plugins: [
     dollarVarsPlugin(),
@@ -114,7 +122,10 @@ module.exports = {
     },
     vue2: vueConfig,
     vue3: vueConfig,
-    svelte: baseOptions,
+    svelte: {
+      ...baseOptions,
+      plugins: baseOptions.plugins.concat([stripSvelteNonRootStyle()]),
+    },
     angular: {
       ...baseOptions,
       standalone: true,
