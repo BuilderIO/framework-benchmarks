@@ -28,6 +28,7 @@ export type Measurement = {
   ttiNumber?: number;
   lcpDisplay?: string;
   lcpNumber?: number;
+  score?: number;
 };
 
 const PARALLEL = process.env.PARALLEL ? process.env.PARALLEL === 'true' : false;
@@ -64,6 +65,7 @@ async function measure(framework: string) {
   const lcp = report.audits['largest-contentful-paint'];
   const tbt = report.audits['total-blocking-time'];
   const tti = report.audits['interactive'];
+  const score = (report.categories.performance.score || 0) * 100;
 
   results[framework] = {
     jsKb: jsSize,
@@ -78,6 +80,7 @@ async function measure(framework: string) {
     ttiNumber: tti?.numericValue,
     lcpDisplay: lcp?.displayValue,
     lcpNumber: lcp?.numericValue,
+    score,
   };
   console.info(chalk.green(`${framework}:`, jsSize + 'kb'));
 
@@ -117,7 +120,9 @@ function getTable(results: Record<string, Measurement>) {
       name: item.name,
       TTI: item.ttiDisplay,
       FCP: item.fcpDisplay,
+      LCP: item.lcpDisplay,
       TBT: item.tbtDisplay,
+      Score: item.score,
       'Eager JS KiB': item.jsKb,
       'Total KiB': item.totalKb,
       // Getting really weird results for LCP, commenting out for now

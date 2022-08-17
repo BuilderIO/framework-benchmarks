@@ -9,6 +9,7 @@ export interface ReportData {
   LCP?: string;
   jsKb?: number;
   totalKb?: number;
+  score?: number;
 }
 
 export function getReportData(report: LighthouseDataWithName): ReportData {
@@ -17,14 +18,16 @@ export function getReportData(report: LighthouseDataWithName): ReportData {
   const lcp = report.audits['largest-contentful-paint'];
   const tbt = report.audits['total-blocking-time'];
   const tti = report.audits['interactive'];
+  const score = (report.categories.performance.score || 0) * 100;
 
   const data: ReportData = {
     name: report.name,
     ttiNumber: Math.round(tti?.numericValue!),
     TTI: tti?.displayValue,
-    FCP: fcp?.displayValue,
     TBT: tbt?.displayValue,
+    FCP: fcp?.displayValue,
     LCP: lcp?.displayValue,
+    score: score,
     jsKb: jsSize,
     totalKb: Math.round(
       (report.audits['total-byte-weight']?.numericValue || 0) / 1024

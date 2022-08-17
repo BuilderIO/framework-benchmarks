@@ -57,6 +57,27 @@ Alphabetically:
 
 **Important:**: This project is still in initial development. Do not put too much weight on these current results, there is still much more to do to ensure accuracy, consistency, and fairness.
 
+#### Dashboard:
+
+A more feature rich app for displaying table data, sorting, filtering, etc. Uses more JS, more like a [median website](https://almanac.httparchive.org/en/2021/javascript). [Source](https://github.com/BuilderIO/framework-benchmarks/blob/main/apps/components/src/components/dashboard.lite.tsx)
+
+```
+┌─────────┬────────────┬─────────┬─────────┬─────────┬──────────┬───────┬──────────────┬───────────┐
+│ (index) │    name    │   TTI   │   FCP   │   LCP   │   TBT    │ Score │ Eager JS KiB │ Total KiB │
+├─────────┼────────────┼─────────┼─────────┼─────────┼──────────┼───────┼──────────────┼───────────┤
+│    0    │   'qwik'   │ '0.6 s' │ '0.6 s' │ '1.5 s' │  '0 ms'  │  100  │      2       │    682    │
+│    1    │ 'hydrogen' │ '1.1 s' │ '0.9 s' │ '1.7 s' │ '180 ms' │  97   │     3619     │   3635    │
+│    2    │  'svelte'  │ '1.4 s' │ '1.4 s' │ '1.4 s' │ '70 ms'  │  99   │     674      │    680    │
+│    3    │   'lit'    │ '2.6 s' │ '0.8 s' │ '0.9 s' │ '60 ms'  │  100  │     651      │    653    │
+│    4    │  'solid'   │ '2.8 s' │ '0.6 s' │ '4.6 s' │ '240 ms' │  79   │     668      │    672    │
+│    5    │  'marko'   │ '3.4 s' │ '0.8 s' │ '0.9 s' │ '430 ms' │  89   │     361      │    369    │
+│    6    │  'fresh'   │ '4.0 s' │ '0.9 s' │ '0.9 s' │ '10 ms'  │  99   │     1114     │   1142    │
+│    7    │   'next'   │ '7.0 s' │ '0.7 s' │ '1.2 s' │ '510 ms' │  82   │     959      │    970    │
+│    8    │  'astro'   │ '8.2 s' │ '0.7 s' │ '0.8 s' │ '170 ms' │  92   │     2731     │   2748    │
+│    9    │  'nuxt3'   │ '8.6 s' │ '1.9 s' │ '2.1 s' │  '0 ms'  │  91   │     2836     │   2852    │
+└─────────┴────────────┴─────────┴─────────┴─────────┴──────────┴───────┴──────────────┴───────────┘
+```
+
 #### Todo App:
 
 A very simple/trivial interactive Todo app. [Source](https://github.com/BuilderIO/framework-benchmarks/blob/main/apps/components/src/components/todo-app.lite.tsx)
