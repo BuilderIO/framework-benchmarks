@@ -1,19 +1,16 @@
 const http = require('http');
 const express = require('express');
-const compression = require('compression');
 const path = require('path');
-
 const app = express();
 
-app.use(compression());
 app.use(express.json());
-app.use(express.static('dist/angular'));
+app.use(express.static('build'));
 
 app.use('/', function (req, res) {
-  res.sendFile(path.join(__dirname + '/dist/angular/index.html'));
+  res.sendFile(path.join(__dirname + '/build/index.html'));
 });
 
 const server = http.createServer(app);
-const port = Number(process.env.PORT || 4200);
+const port = Number(process.env.PORT);
 server.listen(port);
 console.debug('Server is running... http://localhost:' + port);

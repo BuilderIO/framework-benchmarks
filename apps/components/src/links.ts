@@ -76,6 +76,14 @@ export const frameworks: Framework[] = [
     name: 'hydrogen',
     url: getUrl(6011),
   },
+  {
+    name: 'react',
+    url: getUrl(6012),
+  },
+  {
+    name: 'vue3',
+    url: getUrl(6013),
+  },
 ];
 
 export const examples: Example[] = [

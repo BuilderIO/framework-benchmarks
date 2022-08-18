@@ -46,6 +46,11 @@ const paths: Path[] = [
     src: 'apps/components/output/vue/vue3/src',
     dest: 'frameworks/nuxt3/components/generated-components',
   },
+  // Vue3
+  {
+    src: 'apps/components/output/vue/vue3/src',
+    dest: 'frameworks/vue3/src/generated-components',
+  },
   // Qwik
   {
     src: 'apps/components/output/qwik/src',
@@ -70,6 +75,11 @@ const paths: Path[] = [
   {
     src: 'apps/components/output/react/src',
     dest: 'frameworks/gatsby/src/generated-components',
+  },
+  // React
+  {
+    src: 'apps/components/output/react/src',
+    dest: 'frameworks/react/src/generated-components',
   },
   // Svelte
   {

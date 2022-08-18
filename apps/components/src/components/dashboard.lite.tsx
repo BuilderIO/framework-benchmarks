@@ -49,7 +49,7 @@ export default function Dashboard() {
           jsKb: {
             name: 'Eager JS KiB',
             tooltipText:
-              'Total KiB of eager downloaded and executed JS from <script> tags',
+              'Total KiB of eager downloaded and executed JS from script tags',
           },
           totalKb: {
             name: 'Page Weight KiB',

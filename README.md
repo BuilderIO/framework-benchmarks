@@ -52,8 +52,10 @@ Alphabetically:
 - [Nuxt 2](https://nuxtjs.org/) - generated via their official CLI
 - [Nuxt 3](https://v3.nuxtjs.org/) - generated via their official CLI (in beta)
 - [Qwik](https://qwik.builder.io/) - generated with Qwik City (meta framework)
+- [React](https://reactjs.org/) - generated from create-react-app with react-router-dom added for routing
 - [Solid](https://www.solidjs.com/) - generated with Solid Start (meta framework)
 - [Svelte](https://svelte.dev/) - generated with Svelte Kit (meta framework)
+- [Vue3](https://vuejs.org/) - generated via their official CLI, with routing
 
 ### Sample output
 
@@ -64,7 +66,22 @@ Alphabetically:
 A more feature rich app for displaying table data, sorting, filtering, etc. Uses more JS, more like a [median website](https://almanac.httparchive.org/en/2021/javascript). [Source](https://github.com/BuilderIO/framework-benchmarks/blob/main/apps/components/src/components/dashboard.lite.tsx)
 
 ```
-Results Coming Soon
+┌─────────┬────────────┬─────────┬─────────┬─────────┬──────────┬───────┬──────────────┬───────────┐
+│ (index) │    name    │   TTI   │   FCP   │   LCP   │   TBT    │ Score │ Eager JS KiB │ Total KiB │
+├─────────┼────────────┼─────────┼─────────┼─────────┼──────────┼───────┼──────────────┼───────────┤
+│    0    │   'qwik'   │ '0.6 s' │ '0.6 s' │ '1.5 s' │  '0 ms'  │  100  │      2       │    38     │
+│    1    │  'gatsby'  │ '0.8 s' │ '0.8 s' │ '1.4 s' │  '0 ms'  │  100  │      82      │    87     │
+│    2    │   'lit'    │ '0.8 s' │ '0.8 s' │ '1.1 s' │  '0 ms'  │  100  │      23      │    25     │
+│    3    │ 'hydrogen' │ '0.8 s' │ '0.8 s' │ '1.3 s' │  '0 ms'  │  90   │      44      │    61     │
+│    4    │  'solid'   │ '0.9 s' │ '0.6 s' │ '1.3 s' │  '0 ms'  │  85   │      24      │    28     │
+│    5    │  'astro'   │ '0.9 s' │ '0.9 s' │ '1.1 s' │  '0 ms'  │  100  │      15      │    35     │
+│    6    │  'marko'   │ '1.0 s' │ '0.8 s' │ '0.9 s' │ '10 ms'  │  100  │      24      │    33     │
+│    7    │  'fresh'   │ '1.3 s' │ '1.3 s' │ '1.5 s' │  '0 ms'  │  100  │      17      │    46     │
+│    8    │   'next'   │ '1.6 s' │ '0.6 s' │ '1.2 s' │ '10 ms'  │  100  │      91      │    103    │
+│    9    │  'svelte'  │ '1.6 s' │ '1.6 s' │ '1.7 s' │  '0 ms'  │  99   │      29      │    35     │
+│   10    │ 'angular'  │ '1.7 s' │ '1.5 s' │ '1.5 s' │ '150 ms' │  98   │      86      │    88     │
+│   11    │  'nuxt2'   │ '2.1 s' │ '1.2 s' │ '2.1 s' │ '70 ms'  │  98   │     106      │    118    │
+└─────────┴────────────┴─────────┴─────────┴─────────┴──────────┴───────┴──────────────┴───────────┘
 ```
 
 #### Todo App:

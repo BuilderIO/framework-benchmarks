@@ -6,6 +6,7 @@ import {
   teardownBrowser,
 } from '../helpers/get-lighthouse-report.js';
 import { getSimpleReport, SimpleReport } from '../helpers/get-simple-report.js';
+import { getTable } from '../helpers/get-table.js';
 import { killAll } from '../helpers/kill-process.js';
 import { preview } from '../helpers/preview.js';
 import { sortBy } from '../helpers/sort-by.js';
@@ -53,45 +54,19 @@ async function measure(framework: string) {
   const jsonPath = `${outputDir}${pathFragment}${framework}.json`;
   const jsPath = `${outputDir}${pathFragment}${framework}.ts`;
 
-  await Promise.all([
-    // Output results to a JSON file
-    fs.outputFile(jsonPath, JSON.stringify(report, null, 2)),
-    // Output results to a JS file for importing
-    fs.outputFile(
-      jsPath,
-      `export default ${JSON.stringify(report, null, 2)} as LH.Result`
-    ),
-  ]);
+  if (process.env.NO_WRITE !== 'true') {
+    await Promise.all([
+      // Output results to a JSON file
+      fs.outputFile(jsonPath, JSON.stringify(report, null, 2)),
+      // Output results to a TS file for importing
+      fs.outputFile(
+        jsPath,
+        `export default ${JSON.stringify(report, null, 2)} as LH.Result`
+      ),
+    ]);
+  }
 
   // Don't throw an error when we kill the process below
   runningProcess.catch(() => null);
   runningProcess.kill();
-}
-
-function getTable(results: Record<string, SimpleReport>) {
-  const table = Object.keys(results)
-    // Add the framework name to the object
-    .map((framework) => ({
-      name: framework,
-      ...results[framework],
-    }))
-    // Only include successful results (failed results have undefined values)
-    .filter((item) => typeof item.jsKb === 'number')
-    // Rank by tti
-    .sort(sortBy('ttiNumber'))
-    // Pick the display values
-    .map((item) => ({
-      name: item.name,
-      TTI: item.ttiDisplay,
-      FCP: item.fcpDisplay,
-      LCP: item.lcpDisplay,
-      TBT: item.tbtDisplay,
-      Score: item.score,
-      'Eager JS KiB': item.jsKb,
-      'Total KiB': item.totalKb,
-      // Getting really weird results for LCP, commenting out for now
-      // LCP: item.lcpDisplay,
-    }));
-
-  return table;
 }
