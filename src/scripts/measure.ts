@@ -6,6 +6,7 @@ import {
   getLighthouseReport,
   teardownBrowser,
 } from '../helpers/get-lighthouse-report.js';
+import { getSimpleReport, SimpleReport } from '../helpers/get-simple-report.js';
 import { killAll } from '../helpers/kill-process.js';
 import { preview } from '../helpers/preview.js';
 import { sortBy } from '../helpers/sort-by.js';
@@ -17,24 +18,10 @@ const path = process.env.URL || '/todo';
 // Kill any currently running servers
 await killAll(frameworks);
 
-export type Measurement = {
-  jsKb?: number;
-  totalKb?: number;
-  fcpDisplay?: string;
-  fcpNumber?: number;
-  tbtDisplay?: string;
-  tbtNumber?: number;
-  ttiDisplay?: string;
-  ttiNumber?: number;
-  lcpDisplay?: string;
-  lcpNumber?: number;
-  score?: number;
-};
-
 const PARALLEL = process.env.PARALLEL ? process.env.PARALLEL === 'true' : false;
 const RUNS = Number(process.env.RUNS || DEFAULT_RUNS);
 
-const results: Record<string, Measurement> = {};
+const results: Record<string, SimpleReport> = {};
 
 if (PARALLEL) {
   await Promise.all(frameworks.map(measure));
@@ -60,29 +47,7 @@ async function measure(framework: string) {
   );
 
   const { report } = await getLighthouseReport(measureUrl, RUNS);
-  const jsSize = Math.round(getJsSize(report) / 1024);
-  const fcp = report.audits['first-contentful-paint'];
-  const lcp = report.audits['largest-contentful-paint'];
-  const tbt = report.audits['total-blocking-time'];
-  const tti = report.audits['interactive'];
-  const score = (report.categories.performance.score || 0) * 100;
-
-  results[framework] = {
-    jsKb: jsSize,
-    totalKb: Math.round(
-      (report.audits['total-byte-weight']?.numericValue || 0) / 1024
-    ),
-    fcpDisplay: fcp?.displayValue,
-    fcpNumber: fcp?.numericValue,
-    tbtDisplay: tbt?.displayValue,
-    tbtNumber: tbt?.numericValue,
-    ttiDisplay: tti?.displayValue,
-    ttiNumber: tti?.numericValue,
-    lcpDisplay: lcp?.displayValue,
-    lcpNumber: lcp?.numericValue,
-    score,
-  };
-  console.info(chalk.green(`${framework}:`, jsSize + 'kb'));
+  results[framework] = getSimpleReport(report);
 
   const outputDir = 'apps/components/src/reports';
   const pathFragment = path === '/' ? '/' : path + '/';
@@ -104,7 +69,7 @@ async function measure(framework: string) {
   runningProcess.kill();
 }
 
-function getTable(results: Record<string, Measurement>) {
+function getTable(results: Record<string, SimpleReport>) {
   const table = Object.keys(results)
     // Add the framework name to the object
     .map((framework) => ({

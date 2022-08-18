@@ -63,26 +63,8 @@ Alphabetically:
 
 A more feature rich app for displaying table data, sorting, filtering, etc. Uses more JS, more like a [median website](https://almanac.httparchive.org/en/2021/javascript). [Source](https://github.com/BuilderIO/framework-benchmarks/blob/main/apps/components/src/components/dashboard.lite.tsx)
 
-Ordered by TTI, ascending:
-
 ```
-┌─────────┬────────────┬──────────┬──────────┬──────────┬──────────┬───────────────────┬──────────────┬───────────┐
-│ (index) │    name    │   TTI    │   FCP    │   LCP    │   TBT    │       Score       │ Eager JS KiB │ Total KiB │
-├─────────┼────────────┼──────────┼──────────┼──────────┼──────────┼───────────────────┼──────────────┼───────────┤
-│    0    │   'qwik'   │ '0.6 s'  │ '0.6 s'  │ '1.4 s'  │  '0 ms'  │        100        │      2       │    930    │
-│    1    │  'fresh'   │ '1.0 s'  │ '0.9 s'  │ '0.9 s'  │ '10 ms'  │        100        │     1189     │   1217    │
-│    2    │ 'hydrogen' │ '1.1 s'  │ '0.8 s'  │ '1.7 s'  │ '160 ms' │        98         │     3779     │   3796    │
-│    3    │  'solid'   │ '1.3 s'  │ '0.7 s'  │ '5.9 s'  │ '390 ms' │        55         │     918      │    921    │
-│    4    │  'svelte'  │ '1.6 s'  │ '1.5 s'  │ '1.6 s'  │ '90 ms'  │        99         │     921      │    927    │
-│    5    │  'marko'   │ '4.5 s'  │ '0.8 s'  │ '0.9 s'  │ '540 ms' │        84         │     553      │    561    │
-│    6    │   'lit'    │ '5.8 s'  │ '0.8 s'  │ '5.8 s'  │ '210 ms' │        72         │     915      │    917    │
-│    7    │ 'angular'  │ '6.5 s'  │ '6.0 s'  │ '6.0 s'  │ '370 ms' │        50         │     978      │    980    │
-│    8    │ 'gatsby'   │ '6.9 s'  │ '0.8 s'  │ '1.1 s'  │ '150 ms' │        94         │     976      │    982    │
-│    9    │   'next'   │ '7.2 s'  │ '0.7 s'  │ '1.6 s'  │ '720 ms' │        77         │     984      │    996    │
-│   10    │  'nuxt2'   │ '7.8 s'  │ '0.8 s'  │ '0.8 s'  │ '760 ms' │        76         │     1000     │   1011    │
-│   11    │  'astro'   │ '10.8 s' │ '0.8 s'  │ '1.3 s'  │ '230 ms' │        88         │     3679     │   3697    │
-│   12    │  'nuxt3'   │ '20.8 s' │ '20.8 s' │ '21.0 s' │  '0 ms'  │        45         │     3784     │   3801    │
-└─────────┴────────────┴──────────┴──────────┴──────────┴──────────┴───────────────────┴──────────────┴───────────┘
+Results Coming Soon
 ```
 
 #### Todo App:

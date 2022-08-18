@@ -10,7 +10,8 @@
     "serve": "ts-node-esm --transpileOnly ./src/scripts/serve",
     "dev": "ts-node-esm --transpileOnly ./src/scripts/dev",
     "kill": "ts-node-esm --transpileOnly ./src/scripts/kill",
-    "measure": "ts-node-esm --transpileOnly ./src/scripts/measure"
+    "measure": "ts-node-esm --transpileOnly ./src/scripts/measure",
+    "gen-simple-reports": "ts-node-esm --transpileOnly ./src/scripts/gen-simple-reports"
   },
   "engines": {
     "node": ">=16.14.0"
