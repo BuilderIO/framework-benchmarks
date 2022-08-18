@@ -3,5 +3,5 @@
 	import AppHeader from '../generated-components/components/app-header.svelte';
 </script>
 
-<AppHeader framework="svelte" path="/todo" />
+<AppHeader framework="svelte" path="/dashboard" />
 <Dashboard />
