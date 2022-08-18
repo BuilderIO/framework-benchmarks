@@ -1,10 +1,8 @@
 import { useStore } from '@builder.io/mitosis';
-import Chart from './general/chart.lite';
 import LiteTable, { TableRecord } from './general/lite-table.lite';
 import { Framework, frameworks } from './dashboard/frameworks.js';
 import LitePicker from './general/lite-picker.lite';
 import { Benchmark } from './dashboard/benchmarks.js';
-import { getReportData } from './dashboard/get-report-data.js';
 import {
   LighthouseDataWithName,
   dashboardDataList,
@@ -20,7 +18,7 @@ export default function Dashboard() {
       return state.currentData || dashboardDataList;
     },
     getTableData() {
-      return state.getData().map((data) => getReportData(data));
+      return state.getData();
     },
     changeFamework(newFramework: Framework) {
       state.framework = newFramework;
@@ -73,16 +71,6 @@ export default function Dashboard() {
           />
         </div>
       </div>
-
-      {/* <CodeViewer
-        style={{ maxHeight: '50vh', minHeight: '200px' }}
-        code={JSON.stringify(
-          state.getData().find((data) => data.name === state.framework),
-          null,
-          2
-        )}
-        language="json"
-      /> */}
     </div>
   );
 }

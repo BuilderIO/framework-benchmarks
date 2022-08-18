@@ -13,11 +13,13 @@
   "dependencies": {
     "fuse.js": "^6.6.2",
     "highlight.js": "^11.6.0",
-    "solid-styled-components": "^0.28.4"
+    "solid-styled-components": "^0.28.4",
+    "vite-plugin-compress": "^2.1.1"
   },
   "devDependencies": {
     "@astrojs/solid-js": "^1.0.0",
     "astro": "^1.0.0-rc.3",
+    "astro-compress": "^1.0.1",
     "solid-js": "^1.4.8"
   }
 }

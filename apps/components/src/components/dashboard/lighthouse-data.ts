@@ -1,23 +1,23 @@
 import { Framework } from './frameworks.js';
 
-// import angularDashboardData from '../../reports/dashboard/angular.js';
-import astroDashboardData from '../../reports/dashboard/astro.js';
-import freshDashboardData from '../../reports/dashboard/fresh.js';
-import gatsbyDashboardData from '../../reports/dashboard/gatsby.js';
-import hydrogenDashboardData from '../../reports/dashboard/hydrogen.js';
-import litDashboardData from '../../reports/dashboard/lit.js';
-import markoDashboardData from '../../reports/dashboard/marko.js';
-import nextDashboardData from '../../reports/dashboard/next.js';
-import nuxt3DashboardData from '../../reports/dashboard/nuxt3.js';
-import qwikDashboardData from '../../reports/dashboard/qwik.js';
-import solidDashboardData from '../../reports/dashboard/solid.js';
-import svelteDashboardData from '../../reports/dashboard/svelte.js';
+// import angularDashboardData from '../../reports/dashboard/angular_simple.js';
+import astroDashboardData from '../../reports/dashboard/astro_simple.js';
+import freshDashboardData from '../../reports/dashboard/fresh_simple.js';
+import gatsbyDashboardData from '../../reports/dashboard/gatsby_simple.js';
+import hydrogenDashboardData from '../../reports/dashboard/hydrogen_simple.js';
+import litDashboardData from '../../reports/dashboard/lit_simple.js';
+import markoDashboardData from '../../reports/dashboard/marko_simple.js';
+import nextDashboardData from '../../reports/dashboard/next_simple.js';
+import nuxt3DashboardData from '../../reports/dashboard/nuxt3_simple.js';
+import qwikDashboardData from '../../reports/dashboard/qwik_simple.js';
+import solidDashboardData from '../../reports/dashboard/solid_simple.js';
+import svelteDashboardData from '../../reports/dashboard/svelte_simple.js';
 
-export type LighthouseDataWithName = LH.Result & {
+export type LighthouseDataWithName = ReportData & {
   name: string;
 };
 
-export type LighthouseDataMap = Partial<Record<Framework, LH.Result>>;
+export type LighthouseDataMap = Partial<Record<Framework, ReportData>>;
 
 export const getTodoData = async () => {
   const [
@@ -34,18 +34,18 @@ export const getTodoData = async () => {
     solidTodoData,
     svelteTodoData,
   ] = await Promise.all([
-    import('../../reports/todo/angular.js'),
-    import('../../reports/todo/astro.js'),
-    import('../../reports/todo/fresh.js'),
-    import('../../reports/todo/gatsby.js'),
-    import('../../reports/todo/hydrogen.js'),
-    import('../../reports/todo/lit.js'),
-    import('../../reports/todo/marko.js'),
-    import('../../reports/todo/next.js'),
-    import('../../reports/todo/nuxt3.js'),
-    import('../../reports/todo/qwik.js'),
-    import('../../reports/todo/solid.js'),
-    import('../../reports/todo/svelte.js'),
+    import('../../reports/todo/angular_simple.js'),
+    import('../../reports/todo/astro_simple.js'),
+    import('../../reports/todo/fresh_simple.js'),
+    import('../../reports/todo/gatsby_simple.js'),
+    import('../../reports/todo/hydrogen_simple.js'),
+    import('../../reports/todo/lit_simple.js'),
+    import('../../reports/todo/marko_simple.js'),
+    import('../../reports/todo/next_simple.js'),
+    import('../../reports/todo/nuxt3_simple.js'),
+    import('../../reports/todo/qwik_simple.js'),
+    import('../../reports/todo/solid_simple.js'),
+    import('../../reports/todo/svelte_simple.js'),
   ]);
 
   return {
@@ -79,18 +79,18 @@ export const getHelloWorldData = async () => {
     solidHelloWorldData,
     svelteHelloWorldData,
   ] = await Promise.all([
-    import('../../reports/angular.js'),
-    import('../../reports/astro.js'),
-    import('../../reports/fresh.js'),
-    import('../../reports/gatsby.js'),
-    import('../../reports/hydrogen.js'),
-    import('../../reports/lit.js'),
-    import('../../reports/marko.js'),
-    import('../../reports/next.js'),
-    import('../../reports/nuxt3.js'),
-    import('../../reports/qwik.js'),
-    import('../../reports/solid.js'),
-    import('../../reports/svelte.js'),
+    import('../../reports/angular_simple.js'),
+    import('../../reports/astro_simple.js'),
+    import('../../reports/fresh_simple.js'),
+    import('../../reports/gatsby_simple.js'),
+    import('../../reports/hydrogen_simple.js'),
+    import('../../reports/lit_simple.js'),
+    import('../../reports/marko_simple.js'),
+    import('../../reports/next_simple.js'),
+    import('../../reports/nuxt3_simple.js'),
+    import('../../reports/qwik_simple.js'),
+    import('../../reports/solid_simple.js'),
+    import('../../reports/svelte_simple.js'),
   ]);
 
   return {
@@ -145,3 +145,14 @@ export const dashboardDataList: LighthouseDataWithName[] = Object.keys(
   name,
   ...dashboardData[name as Framework]!,
 }));
+
+export interface ReportData {
+  ttiNumber?: number;
+  FCP?: string;
+  TBT?: string;
+  TTI?: string;
+  LCP?: string;
+  jsKb?: number;
+  totalKb?: number;
+  score?: number;
+}

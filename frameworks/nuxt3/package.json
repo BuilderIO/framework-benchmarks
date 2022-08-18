@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "fuse.js": "^6.6.2",
-    "highlight.js": "^11.6.0"
+    "highlight.js": "^11.6.0",
+    "vite-plugin-compress": "^2.1.1"
   },
   "devDependencies": {
     "nuxt": "npm:nuxt3@3.0.0-rc.8-27677607.a3a8706"

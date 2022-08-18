@@ -1,6 +1,5 @@
 import { fs, chalk, sleep } from 'zx';
 import { getFrameworks } from '../helpers/get-frameworks.js';
-import { getJsSize } from '../helpers/get-js-size.js';
 import {
   DEFAULT_RUNS,
   getLighthouseReport,
