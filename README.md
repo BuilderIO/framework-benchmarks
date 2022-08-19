@@ -50,7 +50,7 @@ Alphabetically:
 - [marko](https://markojs.com/) - generated via their official CLI
 - [next](https://nextjs.org/) - generated via their official CLI
 - next-bun - Next.js with [Bun](https://bun.sh/), via `bun create next`
-- [next2](https://nuxtjs.org/) - generated via their official CLI
+- [nuxt2](https://nuxtjs.org/) - generated via their official CLI
 - [nuxt3](https://v3.nuxtjs.org/) - generated via their official CLI (in beta)
 - [qwik](https://qwik.builder.io/) - generated with Qwik City (meta framework)
 - [react](https://reactjs.org/) - generated from create-react-app with react-router-dom added for routing
