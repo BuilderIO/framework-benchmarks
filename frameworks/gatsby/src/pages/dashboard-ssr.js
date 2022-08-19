@@ -10,3 +10,7 @@ export default function DashboardPage() {
     </>
   );
 }
+
+export async function getServerData() {
+  return { props: { random: Math.random() } };
+}

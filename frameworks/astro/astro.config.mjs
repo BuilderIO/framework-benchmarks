@@ -12,6 +12,6 @@ export default defineConfig({
     plugins: [compress.default()],
   },
   integrations: [solid()],
-  // adapter: node(),
-  // output: 'server',
+  adapter: node(),
+  output: 'server',
 });

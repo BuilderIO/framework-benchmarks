@@ -1,8 +1,8 @@
-import { chalk, fetch, sleep } from 'zx';
+import { $, chalk, fetch, sleep } from 'zx';
 import { getFrameworks } from '../helpers/get-frameworks.js';
 import { killAll } from '../helpers/kill-process.js';
 import { preview } from '../helpers/preview.js';
-import { range } from '../helpers/range.js';
+import autocannon from 'autocannon';
 import { sortBy } from '../helpers/sort-by.js';
 
 type PathMap = Record<string, string>;
@@ -14,12 +14,10 @@ export const ssrPathMap: Record<string, PathMap | undefined> = {
   'next-bun': {
     '/dashboard': '/dashboard-ssr',
   },
+  gatsby: {
+    '/dashboard': '/dashboard-ssr',
+  },
 };
-
-const DEFAULT_RUNS = 1;
-
-const AMOUNT = Number(process.env.AMOUNT || 10_000);
-const MAX_CONCURRENCY = Number(process.env.MAX_CONCURRENCY || 50);
 
 // These frameowrks do not use SSR right now
 const IGNORE_FRAMEWORKS = [
@@ -27,17 +25,18 @@ const IGNORE_FRAMEWORKS = [
   'lit', // currently client side only
   'react', // client side only
   'vue3', // client side only
-  'gatsby', // SSG (maybe implement their SSR)
   'nuxt3', // currently not buliding
+  'qwik', // currently having issues being looked into
 ];
 
 const path = process.env.URL || '/dashboard';
-const RUNS = Number(process.env.RUNS || DEFAULT_RUNS);
 
 const frameworks = (await getFrameworks()).filter(
   (framework) => !IGNORE_FRAMEWORKS.includes(framework)
 );
-const results: Record<string, number> = {};
+
+const resultsMap: Record<string, autocannon.Result> = {};
+
 // Kill any currently running servers
 await killAll(frameworks);
 
@@ -45,52 +44,46 @@ for (const framework of frameworks) {
   await measure(framework);
 }
 
-const resultsTable = Object.entries(results)
-  .map(([framework, time]) => {
-    return {
-      Name: framework,
-      'Requests per second': Math.round(AMOUNT / (time / 1000)),
-    };
-  })
-  .sort(sortBy('Requests per second'));
-
-console.table(resultsTable);
+console.table(
+  Object.entries(resultsMap)
+    .map(([framework, result]) => ({
+      name: framework,
+      '1%': result.requests.p1,
+      '2.5%': result.requests.p2_5,
+      '50%': result.requests.p50,
+      '97.5%': result.requests.p97_5,
+      '99%': result.requests.p99,
+      Avg: result.requests.average,
+      'Std Dev': result.requests.stddev,
+      Min: result.requests.min,
+      Max: result.requests.max,
+    }))
+    .sort(sortBy('99%'))
+    .reverse()
+);
 
 async function measure(framework: string) {
   const { process: runningProcess, port } = await preview(framework);
-  // Give the server a sec to start up
-  await sleep(5000);
+  // Hydrogen has a very long boot up period as it is launchhing miniflare
+  await sleep(framework === 'hydrogen' ? 15000 : 5000);
 
   const usePath = ssrPathMap[framework]?.[path] || path;
   const measureUrl = `http://localhost:${port}${usePath}`;
-  for (let i = 0; i < RUNS; i++) {
-    results[framework] = await measureTimeForRequests(measureUrl);
-  }
 
-  console.info(chalk.green(`Done with ${framework}:`), results[framework]);
+  const result = (resultsMap[framework] = await measureTimeForRequests(
+    measureUrl
+  ));
+
+  console.info(chalk.green(`Done with ${framework}:`), result);
 
   // Don't throw an error when we kill the process below
   runningProcess.catch(() => null);
   runningProcess.kill();
 }
 
-async function runChain(url: string, amount: number) {
-  for (const i of range(amount)) {
-    await fetch(url);
-  }
-}
-
-async function measureTimeForRequests(url: string, amountOfRequests = AMOUNT) {
-  const startTime = Date.now();
-  const concurrency = MAX_CONCURRENCY;
-
-  await Promise.all(
-    range(concurrency).map(async () => {
-      await runChain(url, amountOfRequests / concurrency);
-    })
-  );
-
-  const endTime = Date.now();
-  const time = endTime - startTime;
-  return time;
+async function measureTimeForRequests(url: string) {
+  const result = await autocannon({
+    url: url,
+  });
+  return result;
 }

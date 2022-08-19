@@ -19,21 +19,11 @@ export default function App() {
   const { pathname } = useLocation();
   return (
     <html lang="en">
-      <head>
-        <Meta />
-
-        <Links />
-      </head>
-
       <body>
         <AppHeader framework="remix" path={pathname} />
         <Outlet />
 
-        <ScrollRestoration />
-
         <Scripts />
-
-        <LiveReload />
       </body>
     </html>
   );

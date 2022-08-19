@@ -13,9 +13,12 @@ export const ssrPathMap: Record<string, PathMap | undefined> = {
   'next-bun': {
     '/dashboard': '/dashboard-ssr',
   },
+  gatsby: {
+    '/dashboard': '/dashboard-ssr',
+  },
 };
 
-const DEFAULT_RUNS = 3;
+const DEFAULT_RUNS = 10;
 
 // These frameowrks do not use SSR right now
 const IGNORE_FRAMEWORKS = [
@@ -23,8 +26,8 @@ const IGNORE_FRAMEWORKS = [
   'lit', // currently client side only
   'react', // client side only
   'vue3', // client side only
-  'gatsby', // SSG (maybe implement their SSR)
   'nuxt3', // currently not buliding
+  'qwik', // currently having an issue that needs fixing
 ];
 
 const path = process.env.URL || '/dashboard';
@@ -57,7 +60,7 @@ console.table(medianResults);
 
 async function measure(framework: string) {
   const { process: runningProcess, port } = await preview(framework);
-  // Give the server a sec to start up
+
   await sleep(5000);
 
   const usePath = ssrPathMap[framework]?.[path] || path;
