@@ -12,6 +12,7 @@
     "kill": "ts-node-esm --transpileOnly ./src/scripts/kill",
     "measure": "ts-node-esm --transpileOnly ./src/scripts/measure",
     "measure-ssr": "ts-node-esm --transpileOnly ./src/scripts/measure-ssr",
+    "measure-throughput": "ts-node-esm --transpileOnly ./src/scripts/measure-throughput",
     "report": "ts-node-esm --transpileOnly ./src/scripts/gen-simple-reports"
   },
   "engines": {

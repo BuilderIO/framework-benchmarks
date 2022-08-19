@@ -48,8 +48,6 @@ export async function teardownBrowser() {
 
 export const DEFAULT_RUNS = 3;
 
-const range = (n: number) => Array.from({ length: n }, (_, k) => k);
-
 /**
  * Get a median lighthouse report for a given url
  */
