@@ -26,6 +26,7 @@ export async function build(frameworks: string[], parallel = true) {
  */
 export async function buildFramework(framework: string) {
   const start = Date.now();
-  await $`cd frameworks/${framework} && npm run build`;
+  const useBun = framework.endsWith('-bun');
+  await $`cd frameworks/${framework} && ${useBun ? 'bun' : 'npm'} run build`;
   return Date.now() - start;
 }

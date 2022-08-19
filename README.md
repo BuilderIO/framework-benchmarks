@@ -34,7 +34,7 @@ We then build and serve each project, and run Lighthouse on each project with pu
 - **Eager JS Kib**: the KiB of JS that is eagerly downloaded and executed from `<script>` tags for the initial page load. This is the actual size transferred over the network, including compression (lower is better)
 - **Total KiB**: the total KiB transferred with the given page, including HTML, CSS, prefetched resources, etc. Also known as the "total byte weight". This is the actual size transferred over the network, including compression (lower is better)
 
-We sort the results by TTI, ascending
+We take the median of multiple runs, and sort the results by TTI, ascending
 
 We are also experimenting with looking at other metrics, such as [build times](#build-times)
 
@@ -42,20 +42,21 @@ We are also experimenting with looking at other metrics, such as [build times](#
 
 Alphabetically:
 
-- [Astro](https://astro.build/) - generated via their official CLI, with Solid for the interactive parts
-- [Fresh](https://fresh.deno.dev/) - generated via their official CLI
-- [Gatsby](https://www.gatsbyjs.com/) - contributed by the Gatsby team
-- [Hydrogen](https://hydrogen.shopify.dev/) - generated via their [official CLI](https://shopify.dev/custom-storefronts/hydrogen/getting-started/quickstart)
-- [Lit](https://lit.dev/) - generated via their official [starter](https://github.com/lit/lit-element-starter-ts)
-- [Marko](https://markojs.com/) - generated via their official CLI
-- [Next.js](https://nextjs.org/) - generated via their official CLI
-- [Nuxt 2](https://nuxtjs.org/) - generated via their official CLI
-- [Nuxt 3](https://v3.nuxtjs.org/) - generated via their official CLI (in beta)
-- [Qwik](https://qwik.builder.io/) - generated with Qwik City (meta framework)
-- [React](https://reactjs.org/) - generated from create-react-app with react-router-dom added for routing
-- [Solid](https://www.solidjs.com/) - generated with Solid Start (meta framework)
-- [Svelte](https://svelte.dev/) - generated with Svelte Kit (meta framework)
-- [Vue3](https://vuejs.org/) - generated via their official CLI, with routing
+- [astro](https://astro.build/) - generated via their official CLI, with Solid for the interactive parts
+- [fresh](https://fresh.deno.dev/) - generated via their official CLI
+- [gatsby](https://www.gatsbyjs.com/) - contributed by the Gatsby team
+- [hydrogen](https://hydrogen.shopify.dev/) - generated via their [official CLI](https://shopify.dev/custom-storefronts/hydrogen/getting-started/quickstart)
+- [lit](https://lit.dev/) - generated via their official [starter](https://github.com/lit/lit-element-starter-ts)
+- [marko](https://markojs.com/) - generated via their official CLI
+- [next](https://nextjs.org/) - generated via their official CLI
+- next-bun - Next.js with [Bun](https://bun.sh/), via `bun create next`
+- [next2](https://nuxtjs.org/) - generated via their official CLI
+- [nuxt3](https://v3.nuxtjs.org/) - generated via their official CLI (in beta)
+- [qwik](https://qwik.builder.io/) - generated with Qwik City (meta framework)
+- [react](https://reactjs.org/) - generated from create-react-app with react-router-dom added for routing
+- [solid](https://www.solidjs.com/) - generated with Solid Start (meta framework)
+- [svelte](https://svelte.dev/) - generated with Svelte Kit (meta framework)
+- [vue3](https://vuejs.org/) - generated via their official CLI, with routing
 
 ### Sample output
 
@@ -151,14 +152,15 @@ Time it took to server-side render the [/dashboard page](#Dashboard:)
 ┌─────────┬────────────┬───────────┐
 │ (index) │    Name    │ Time (ms) │
 ├─────────┼────────────┼───────────┤
-│    0    │  'marko'   │     6     │
+│    0    │  'marko'   │     7     │
 │    1    │  'solid'   │     8     │
-│    2    │  'fresh'   │     8     │
-│    3    │  'nuxt2'   │    11     │
-│    4    │  'astro'   │    12     │
-│    5    │  'svelte'  │    17     │
-│    6    │ 'hydrogen' │    19     │
-│    7    │   'next'   │    39     │
+│    2    │  'fresh'   │    10     │
+│    3    │  'svelte'  │    12     │
+│    4    │  'nuxt2'   │    12     │
+│    5    │  'astro'   │    15     │
+│    6    │ 'hydrogen' │    16     │
+│    7    │ 'next-bun' │    21     │
+│    8    │   'next'   │    22     │
 └─────────┴────────────┴───────────┘
 ```
 
@@ -202,7 +204,7 @@ Contributions welcome!
 
 ### Prereqs
 
-You will need [Node.js](https://nodejs.org/en/download/) >= 16.14.0 and [Deno](https://deno.land/manual/getting_started/installation) installed locally
+You will need [Node.js](https://nodejs.org/en/download/) >= 16.14.0k [Deno](https://deno.land/manual/getting_started/installation) installed locally, and [Bun](https://bun.sh/) installed locally
 
 ### Setup
 

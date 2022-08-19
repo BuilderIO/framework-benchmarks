@@ -71,6 +71,11 @@ const paths: Path[] = [
     src: 'apps/components/output/react/src',
     dest: 'frameworks/next/generated-components',
   },
+  // Next Bun
+  {
+    src: 'apps/components/output/react/src',
+    dest: 'frameworks/next-bun/generated-components',
+  },
   // Gatsby
   {
     src: 'apps/components/output/react/src',

@@ -9,7 +9,11 @@ export async function preview(framework: string) {
     );
   }
 
-  const process = $`cd frameworks/${framework} && npm run preview`;
+  const useBun = framework.endsWith('-bun');
+
+  const process = $`cd frameworks/${framework} && ${
+    useBun ? 'bun' : 'npm'
+  } run preview`;
 
   return {
     process,
