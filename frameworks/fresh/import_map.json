@@ -10,6 +10,8 @@
     "highlight.js/": "https://esm.sh/highlight.js@11.6.0/",
     "fuse.js": "https://esm.sh/fuse.js",
     "fuse.js/": "https://esm.sh/fuse.js/",
+    "@popperjs/core": "https://esm.sh/@popperjs/core",
+    "@popperjs/core/": "https://esm.sh/@popperjs/core/",
     "twind/": "https://esm.sh/twind@0.16.17/"
   }
 }

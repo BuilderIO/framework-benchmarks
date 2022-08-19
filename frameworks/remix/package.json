@@ -5,7 +5,7 @@
     "build": "remix build",
     "dev": "remix dev",
     "start": "remix-serve build",
-    "preview": "npm start"
+    "preview": "PORT=6007 npm start"
   },
   "port": 6007,
   "dependencies": {

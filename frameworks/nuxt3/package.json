@@ -8,6 +8,7 @@
     "preview": "PORT=6005 nuxt preview -p 6005"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.6",
     "fuse.js": "^6.6.2",
     "highlight.js": "^11.6.0",
     "vite-plugin-compress": "^2.1.1"

@@ -1,3 +1,3 @@
 import { installAll } from '../helpers/install.js';
 
-await installAll();
+await installAll(undefined, process.env.PACKAGE);

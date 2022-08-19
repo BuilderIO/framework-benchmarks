@@ -9,7 +9,6 @@ import { getSimpleReport, SimpleReport } from '../helpers/get-simple-report.js';
 import { getTable } from '../helpers/get-table.js';
 import { killAll } from '../helpers/kill-process.js';
 import { preview } from '../helpers/preview.js';
-import { sortBy } from '../helpers/sort-by.js';
 
 const frameworks = await getFrameworks();
 

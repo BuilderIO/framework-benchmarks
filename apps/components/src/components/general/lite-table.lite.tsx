@@ -51,6 +51,9 @@ export default function LiteTable(props: TableProps) {
       state.sortByKey = key;
     },
     getSortedRows() {
+      // This is checked in intentionally to verify SSR is actually running
+      // We expect to see this log in SSR tests
+      console.info('Get sorted rows');
       const sortKey = state.getSortKey();
       const rows = props.data;
       if (!sortKey) {

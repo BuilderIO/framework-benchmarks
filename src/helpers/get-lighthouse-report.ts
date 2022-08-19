@@ -5,6 +5,7 @@ import { computeMedianRun } from 'lighthouse/core/lib/median-run.js';
 
 import * as chromeLauncher from 'chrome-launcher';
 import reportGenerator from 'lighthouse/report/generator/report-generator.js';
+import lhConfig from './lh-config.js';
 
 let ports: number[] = [];
 const chromeInstances: chromeLauncher.LaunchedChrome[] = [];
@@ -115,10 +116,15 @@ export async function getSingleLighthouseReport(
   await setupBrowser(n);
 
   // Run Lighthouse
-  const { lhr } = await lighthouse(url, {
-    ...options,
-    port: ports[n],
-  });
+  const { lhr } = await lighthouse(
+    url,
+    {
+      ...options,
+      port: ports[n],
+      preset: 'experimental',
+    }
+    // lhConfig
+  );
 
   const lhReport: LH.Result = JSON.parse(
     reportGenerator.generateReport(lhr, 'json')

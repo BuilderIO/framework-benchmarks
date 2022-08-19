@@ -4,13 +4,14 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "install": "ts-node-esm --transpileOnly ./src/scripts/install",
+    "fw-install": "ts-node-esm --transpileOnly ./src/scripts/install",
     "build": "ts-node-esm --transpileOnly ./src/scripts/build",
     "copy": "ts-node-esm --transpileOnly ./src/scripts/copy",
     "serve": "ts-node-esm --transpileOnly ./src/scripts/serve",
     "dev": "ts-node-esm --transpileOnly ./src/scripts/dev",
     "kill": "ts-node-esm --transpileOnly ./src/scripts/kill",
     "measure": "ts-node-esm --transpileOnly ./src/scripts/measure",
+    "measure-ssr": "ts-node-esm --transpileOnly ./src/scripts/measure-ssr",
     "report": "ts-node-esm --transpileOnly ./src/scripts/gen-simple-reports"
   },
   "engines": {

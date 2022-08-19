@@ -143,6 +143,25 @@ Ordered by TTI, ascending:
 └─────────┴────────────┴─────────┴─────────┴─────────┴──────────┴───────┴──────────────┴───────────┘
 ```
 
+#### SSR times:
+
+Time it took to server-side render the [/dashboard page](#Dashboard:)
+
+```
+┌─────────┬────────────┬───────────┐
+│ (index) │    Name    │ Time (ms) │
+├─────────┼────────────┼───────────┤
+│    0    │  'marko'   │     6     │
+│    1    │  'solid'   │     8     │
+│    2    │  'fresh'   │     8     │
+│    3    │  'nuxt2'   │    11     │
+│    4    │  'astro'   │    12     │
+│    5    │  'svelte'  │    17     │
+│    6    │ 'hydrogen' │    19     │
+│    7    │   'next'   │    39     │
+└─────────┴────────────┴───────────┘
+```
+
 #### Build times:
 
 ```
@@ -200,7 +219,7 @@ Now you can start running the below scripts:
 Use the install script to install dependencies of each framework:
 
 ```sh
-npm run install
+npm run fw-install
 ```
 
 ### Generate

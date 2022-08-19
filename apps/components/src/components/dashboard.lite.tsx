@@ -58,6 +58,54 @@ export default function Dashboard() {
           },
         }}
       />
+      <LiteTable
+        defaultSort="ttiNumber"
+        hideKeys={['ttiNumber']}
+        data={state.getTableData() as any}
+        columnInfo={{
+          name: {
+            name: 'Name',
+          },
+          ttiNumber: {
+            name: 'TTI Number',
+            tooltipText: 'Time to Interactive in ms',
+          },
+          jsKb: {
+            name: 'Eager JS KiB',
+            tooltipText:
+              'Total KiB of eager downloaded and executed JS from script tags',
+          },
+          totalKb: {
+            name: 'Page Weight KiB',
+            tooltipText:
+              'Total page weight, including HTML, CSS, prefetched resoures',
+          },
+        }}
+      />
+      <LiteTable
+        defaultSort="ttiNumber"
+        hideKeys={['ttiNumber']}
+        data={state.getTableData() as any}
+        columnInfo={{
+          name: {
+            name: 'Name',
+          },
+          ttiNumber: {
+            name: 'TTI Number',
+            tooltipText: 'Time to Interactive in ms',
+          },
+          jsKb: {
+            name: 'Eager JS KiB',
+            tooltipText:
+              'Total KiB of eager downloaded and executed JS from script tags',
+          },
+          totalKb: {
+            name: 'Page Weight KiB',
+            tooltipText:
+              'Total page weight, including HTML, CSS, prefetched resoures',
+          },
+        }}
+      />
       {/* <Chart data={state.getTableData()} /> */}
 
       <div css={{ display: 'flex', alignItems: 'center', marginTop: '10px' }}>

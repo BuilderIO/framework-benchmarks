@@ -3,7 +3,8 @@
 declare module 'lighthouse' {
   function lighthouse(
     url: string,
-    options: Partial<LH.CliFlags>
+    options: Partial<LH.CliFlags>,
+    config?: any
   ): Promise<LH.RunnerResult>;
   export default lighthouse;
 }

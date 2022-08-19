@@ -1,0 +1,2811 @@
+{
+  "artifacts": [
+    {
+      "id": "DevtoolsLog",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "timespan",
+              "navigation"
+            ]
+          },
+          "_messageLog": {
+            "_filter": {},
+            "_messages": [],
+            "_isRecording": false
+          }
+        },
+        "path": "devtools-log"
+      }
+    },
+    {
+      "id": "Trace",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "timespan",
+              "navigation"
+            ]
+          },
+          "_trace": {
+            "traceEvents": []
+          }
+        },
+        "path": "trace"
+      }
+    },
+    {
+      "id": "Accessibility",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "snapshot",
+              "navigation"
+            ]
+          }
+        },
+        "path": "accessibility"
+      }
+    },
+    {
+      "id": "AnchorElements",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "snapshot",
+              "navigation"
+            ]
+          }
+        },
+        "path": "anchor-elements"
+      }
+    },
+    {
+      "id": "ConsoleMessages",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "timespan",
+              "navigation"
+            ]
+          },
+          "_logEntries": []
+        },
+        "path": "console-messages"
+      }
+    },
+    {
+      "id": "CSSUsage",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "snapshot",
+              "timespan",
+              "navigation"
+            ]
+          },
+          "_sheetPromises": {}
+        },
+        "path": "css-usage"
+      }
+    },
+    {
+      "id": "Doctype",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "snapshot",
+              "navigation"
+            ]
+          }
+        },
+        "path": "dobetterweb/doctype"
+      }
+    },
+    {
+      "id": "DOMStats",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "snapshot",
+              "navigation"
+            ]
+          }
+        },
+        "path": "dobetterweb/domstats"
+      }
+    },
+    {
+      "id": "EmbeddedContent",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "snapshot",
+              "navigation"
+            ]
+          }
+        },
+        "path": "seo/embedded-content"
+      }
+    },
+    {
+      "id": "FontSize",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "snapshot",
+              "navigation"
+            ]
+          }
+        },
+        "path": "seo/font-size"
+      }
+    },
+    {
+      "id": "GlobalListeners",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "snapshot",
+              "timespan",
+              "navigation"
+            ]
+          }
+        },
+        "path": "global-listeners"
+      }
+    },
+    {
+      "id": "ImageElements",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "snapshot",
+              "timespan",
+              "navigation"
+            ]
+          },
+          "_naturalSizeCache": {}
+        },
+        "path": "image-elements"
+      }
+    },
+    {
+      "id": "InstallabilityErrors",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "snapshot",
+              "navigation"
+            ]
+          }
+        },
+        "path": "installability-errors"
+      }
+    },
+    {
+      "id": "InspectorIssues",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "timespan",
+              "navigation"
+            ],
+            "dependencies": {}
+          },
+          "_issues": []
+        },
+        "path": "inspector-issues"
+      },
+      "dependencies": {
+        "DevtoolsLog": {
+          "id": "DevtoolsLog"
+        }
+      }
+    },
+    {
+      "id": "JsUsage",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "snapshot",
+              "timespan",
+              "navigation"
+            ]
+          },
+          "_scriptUsages": []
+        },
+        "path": "js-usage"
+      }
+    },
+    {
+      "id": "LinkElements",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "timespan",
+              "navigation"
+            ],
+            "dependencies": {}
+          }
+        },
+        "path": "link-elements"
+      },
+      "dependencies": {
+        "DevtoolsLog": {
+          "id": "DevtoolsLog"
+        }
+      }
+    },
+    {
+      "id": "MainDocumentContent",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "navigation"
+            ],
+            "dependencies": {}
+          }
+        },
+        "path": "main-document-content"
+      },
+      "dependencies": {
+        "DevtoolsLog": {
+          "id": "DevtoolsLog"
+        }
+      }
+    },
+    {
+      "id": "MetaElements",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "snapshot",
+              "navigation"
+            ]
+          }
+        },
+        "path": "meta-elements"
+      }
+    },
+    {
+      "id": "OptimizedImages",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "timespan",
+              "navigation"
+            ],
+            "dependencies": {}
+          },
+          "_encodingStartAt": 0
+        },
+        "path": "dobetterweb/optimized-images"
+      },
+      "dependencies": {
+        "DevtoolsLog": {
+          "id": "DevtoolsLog"
+        }
+      }
+    },
+    {
+      "id": "PasswordInputsWithPreventedPaste",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "snapshot",
+              "navigation"
+            ]
+          }
+        },
+        "path": "dobetterweb/password-inputs-with-prevented-paste"
+      }
+    },
+    {
+      "id": "ResponseCompression",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "timespan",
+              "navigation"
+            ],
+            "dependencies": {}
+          }
+        },
+        "path": "dobetterweb/response-compression"
+      },
+      "dependencies": {
+        "DevtoolsLog": {
+          "id": "DevtoolsLog"
+        }
+      }
+    },
+    {
+      "id": "RobotsTxt",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "snapshot",
+              "navigation"
+            ]
+          }
+        },
+        "path": "seo/robots-txt"
+      }
+    },
+    {
+      "id": "ServiceWorker",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "navigation"
+            ]
+          }
+        },
+        "path": "service-worker"
+      }
+    },
+    {
+      "id": "Scripts",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "timespan",
+              "navigation"
+            ]
+          },
+          "_scriptParsedEvents": [],
+          "_scriptContents": [],
+          "_mainSessionId": null
+        },
+        "path": "scripts"
+      }
+    },
+    {
+      "id": "SourceMaps",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "timespan",
+              "navigation"
+            ]
+          },
+          "_scriptParsedEvents": []
+        },
+        "path": "source-maps"
+      }
+    },
+    {
+      "id": "Stacks",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "snapshot",
+              "navigation"
+            ]
+          }
+        },
+        "path": "stacks"
+      }
+    },
+    {
+      "id": "TagsBlockingFirstPaint",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "navigation"
+            ],
+            "dependencies": {}
+          }
+        },
+        "path": "dobetterweb/tags-blocking-first-paint"
+      },
+      "dependencies": {
+        "DevtoolsLog": {
+          "id": "DevtoolsLog"
+        }
+      }
+    },
+    {
+      "id": "TapTargets",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "snapshot",
+              "navigation"
+            ]
+          }
+        },
+        "path": "seo/tap-targets"
+      }
+    },
+    {
+      "id": "TraceElements",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "timespan",
+              "navigation"
+            ],
+            "dependencies": {}
+          },
+          "animationIdToName": {}
+        },
+        "path": "trace-elements"
+      },
+      "dependencies": {
+        "Trace": {
+          "id": "Trace"
+        }
+      }
+    },
+    {
+      "id": "ViewportDimensions",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "snapshot",
+              "timespan",
+              "navigation"
+            ]
+          }
+        },
+        "path": "viewport-dimensions"
+      }
+    },
+    {
+      "id": "WebAppManifest",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "snapshot",
+              "navigation"
+            ]
+          }
+        },
+        "path": "web-app-manifest"
+      }
+    },
+    {
+      "id": "devtoolsLogs",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "timespan",
+              "navigation"
+            ],
+            "dependencies": {}
+          }
+        },
+        "path": "devtools-log-compat"
+      },
+      "dependencies": {
+        "DevtoolsLog": {
+          "id": "DevtoolsLog"
+        }
+      }
+    },
+    {
+      "id": "traces",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "timespan",
+              "navigation"
+            ],
+            "dependencies": {}
+          }
+        },
+        "path": "trace-compat"
+      },
+      "dependencies": {
+        "Trace": {
+          "id": "Trace"
+        }
+      }
+    },
+    {
+      "id": "FullPageScreenshot",
+      "gatherer": {
+        "instance": {
+          "meta": {
+            "supportedModes": [
+              "snapshot",
+              "timespan",
+              "navigation"
+            ]
+          }
+        },
+        "path": "full-page-screenshot"
+      }
+    }
+  ],
+  "navigations": [
+    {
+      "id": "default",
+      "loadFailureMode": "fatal",
+      "disableThrottling": false,
+      "disableStorageReset": false,
+      "pauseAfterFcpMs": 1000,
+      "pauseAfterLoadMs": 1000,
+      "networkQuietThresholdMs": 1000,
+      "cpuQuietThresholdMs": 1000,
+      "blockedUrlPatterns": [],
+      "blankPage": "about:blank",
+      "artifacts": [
+        {
+          "id": "DevtoolsLog",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "timespan",
+                  "navigation"
+                ]
+              },
+              "_messageLog": {
+                "_filter": {},
+                "_messages": [],
+                "_isRecording": false
+              }
+            },
+            "path": "devtools-log"
+          }
+        },
+        {
+          "id": "Trace",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "timespan",
+                  "navigation"
+                ]
+              },
+              "_trace": {
+                "traceEvents": []
+              }
+            },
+            "path": "trace"
+          }
+        },
+        {
+          "id": "Accessibility",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "snapshot",
+                  "navigation"
+                ]
+              }
+            },
+            "path": "accessibility"
+          }
+        },
+        {
+          "id": "AnchorElements",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "snapshot",
+                  "navigation"
+                ]
+              }
+            },
+            "path": "anchor-elements"
+          }
+        },
+        {
+          "id": "ConsoleMessages",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "timespan",
+                  "navigation"
+                ]
+              },
+              "_logEntries": []
+            },
+            "path": "console-messages"
+          }
+        },
+        {
+          "id": "CSSUsage",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "snapshot",
+                  "timespan",
+                  "navigation"
+                ]
+              },
+              "_sheetPromises": {}
+            },
+            "path": "css-usage"
+          }
+        },
+        {
+          "id": "Doctype",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "snapshot",
+                  "navigation"
+                ]
+              }
+            },
+            "path": "dobetterweb/doctype"
+          }
+        },
+        {
+          "id": "DOMStats",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "snapshot",
+                  "navigation"
+                ]
+              }
+            },
+            "path": "dobetterweb/domstats"
+          }
+        },
+        {
+          "id": "EmbeddedContent",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "snapshot",
+                  "navigation"
+                ]
+              }
+            },
+            "path": "seo/embedded-content"
+          }
+        },
+        {
+          "id": "FontSize",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "snapshot",
+                  "navigation"
+                ]
+              }
+            },
+            "path": "seo/font-size"
+          }
+        },
+        {
+          "id": "GlobalListeners",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "snapshot",
+                  "timespan",
+                  "navigation"
+                ]
+              }
+            },
+            "path": "global-listeners"
+          }
+        },
+        {
+          "id": "ImageElements",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "snapshot",
+                  "timespan",
+                  "navigation"
+                ]
+              },
+              "_naturalSizeCache": {}
+            },
+            "path": "image-elements"
+          }
+        },
+        {
+          "id": "InstallabilityErrors",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "snapshot",
+                  "navigation"
+                ]
+              }
+            },
+            "path": "installability-errors"
+          }
+        },
+        {
+          "id": "InspectorIssues",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "timespan",
+                  "navigation"
+                ],
+                "dependencies": {}
+              },
+              "_issues": []
+            },
+            "path": "inspector-issues"
+          },
+          "dependencies": {
+            "DevtoolsLog": {
+              "id": "DevtoolsLog"
+            }
+          }
+        },
+        {
+          "id": "JsUsage",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "snapshot",
+                  "timespan",
+                  "navigation"
+                ]
+              },
+              "_scriptUsages": []
+            },
+            "path": "js-usage"
+          }
+        },
+        {
+          "id": "LinkElements",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "timespan",
+                  "navigation"
+                ],
+                "dependencies": {}
+              }
+            },
+            "path": "link-elements"
+          },
+          "dependencies": {
+            "DevtoolsLog": {
+              "id": "DevtoolsLog"
+            }
+          }
+        },
+        {
+          "id": "MainDocumentContent",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "navigation"
+                ],
+                "dependencies": {}
+              }
+            },
+            "path": "main-document-content"
+          },
+          "dependencies": {
+            "DevtoolsLog": {
+              "id": "DevtoolsLog"
+            }
+          }
+        },
+        {
+          "id": "MetaElements",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "snapshot",
+                  "navigation"
+                ]
+              }
+            },
+            "path": "meta-elements"
+          }
+        },
+        {
+          "id": "OptimizedImages",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "timespan",
+                  "navigation"
+                ],
+                "dependencies": {}
+              },
+              "_encodingStartAt": 0
+            },
+            "path": "dobetterweb/optimized-images"
+          },
+          "dependencies": {
+            "DevtoolsLog": {
+              "id": "DevtoolsLog"
+            }
+          }
+        },
+        {
+          "id": "PasswordInputsWithPreventedPaste",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "snapshot",
+                  "navigation"
+                ]
+              }
+            },
+            "path": "dobetterweb/password-inputs-with-prevented-paste"
+          }
+        },
+        {
+          "id": "ResponseCompression",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "timespan",
+                  "navigation"
+                ],
+                "dependencies": {}
+              }
+            },
+            "path": "dobetterweb/response-compression"
+          },
+          "dependencies": {
+            "DevtoolsLog": {
+              "id": "DevtoolsLog"
+            }
+          }
+        },
+        {
+          "id": "RobotsTxt",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "snapshot",
+                  "navigation"
+                ]
+              }
+            },
+            "path": "seo/robots-txt"
+          }
+        },
+        {
+          "id": "ServiceWorker",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "navigation"
+                ]
+              }
+            },
+            "path": "service-worker"
+          }
+        },
+        {
+          "id": "Scripts",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "timespan",
+                  "navigation"
+                ]
+              },
+              "_scriptParsedEvents": [],
+              "_scriptContents": [],
+              "_mainSessionId": null
+            },
+            "path": "scripts"
+          }
+        },
+        {
+          "id": "SourceMaps",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "timespan",
+                  "navigation"
+                ]
+              },
+              "_scriptParsedEvents": []
+            },
+            "path": "source-maps"
+          }
+        },
+        {
+          "id": "Stacks",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "snapshot",
+                  "navigation"
+                ]
+              }
+            },
+            "path": "stacks"
+          }
+        },
+        {
+          "id": "TagsBlockingFirstPaint",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "navigation"
+                ],
+                "dependencies": {}
+              }
+            },
+            "path": "dobetterweb/tags-blocking-first-paint"
+          },
+          "dependencies": {
+            "DevtoolsLog": {
+              "id": "DevtoolsLog"
+            }
+          }
+        },
+        {
+          "id": "TapTargets",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "snapshot",
+                  "navigation"
+                ]
+              }
+            },
+            "path": "seo/tap-targets"
+          }
+        },
+        {
+          "id": "TraceElements",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "timespan",
+                  "navigation"
+                ],
+                "dependencies": {}
+              },
+              "animationIdToName": {}
+            },
+            "path": "trace-elements"
+          },
+          "dependencies": {
+            "Trace": {
+              "id": "Trace"
+            }
+          }
+        },
+        {
+          "id": "ViewportDimensions",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "snapshot",
+                  "timespan",
+                  "navigation"
+                ]
+              }
+            },
+            "path": "viewport-dimensions"
+          }
+        },
+        {
+          "id": "WebAppManifest",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "snapshot",
+                  "navigation"
+                ]
+              }
+            },
+            "path": "web-app-manifest"
+          }
+        },
+        {
+          "id": "devtoolsLogs",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "timespan",
+                  "navigation"
+                ],
+                "dependencies": {}
+              }
+            },
+            "path": "devtools-log-compat"
+          },
+          "dependencies": {
+            "DevtoolsLog": {
+              "id": "DevtoolsLog"
+            }
+          }
+        },
+        {
+          "id": "traces",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "timespan",
+                  "navigation"
+                ],
+                "dependencies": {}
+              }
+            },
+            "path": "trace-compat"
+          },
+          "dependencies": {
+            "Trace": {
+              "id": "Trace"
+            }
+          }
+        },
+        {
+          "id": "FullPageScreenshot",
+          "gatherer": {
+            "instance": {
+              "meta": {
+                "supportedModes": [
+                  "snapshot",
+                  "timespan",
+                  "navigation"
+                ]
+              }
+            },
+            "path": "full-page-screenshot"
+          }
+        }
+      ]
+    }
+  ],
+  "audits": [
+    {
+      "path": "is-on-https",
+      "options": {}
+    },
+    {
+      "path": "service-worker",
+      "options": {}
+    },
+    {
+      "path": "viewport",
+      "options": {}
+    },
+    {
+      "path": "metrics/first-contentful-paint",
+      "options": {}
+    },
+    {
+      "path": "metrics/largest-contentful-paint",
+      "options": {}
+    },
+    {
+      "path": "metrics/first-meaningful-paint",
+      "options": {}
+    },
+    {
+      "path": "metrics/speed-index",
+      "options": {}
+    },
+    {
+      "path": "screenshot-thumbnails",
+      "options": {}
+    },
+    {
+      "path": "final-screenshot",
+      "options": {}
+    },
+    {
+      "path": "metrics/total-blocking-time",
+      "options": {}
+    },
+    {
+      "path": "metrics/max-potential-fid",
+      "options": {}
+    },
+    {
+      "path": "metrics/cumulative-layout-shift",
+      "options": {}
+    },
+    {
+      "path": "errors-in-console",
+      "options": {}
+    },
+    {
+      "path": "server-response-time",
+      "options": {}
+    },
+    {
+      "path": "metrics/interactive",
+      "options": {}
+    },
+    {
+      "path": "user-timings",
+      "options": {}
+    },
+    {
+      "path": "critical-request-chains",
+      "options": {}
+    },
+    {
+      "path": "redirects",
+      "options": {}
+    },
+    {
+      "path": "installable-manifest",
+      "options": {}
+    },
+    {
+      "path": "splash-screen",
+      "options": {}
+    },
+    {
+      "path": "themed-omnibox",
+      "options": {}
+    },
+    {
+      "path": "maskable-icon",
+      "options": {}
+    },
+    {
+      "path": "content-width",
+      "options": {}
+    },
+    {
+      "path": "image-aspect-ratio",
+      "options": {}
+    },
+    {
+      "path": "image-size-responsive",
+      "options": {}
+    },
+    {
+      "path": "preload-fonts",
+      "options": {}
+    },
+    {
+      "path": "deprecations",
+      "options": {}
+    },
+    {
+      "path": "mainthread-work-breakdown",
+      "options": {}
+    },
+    {
+      "path": "bootup-time",
+      "options": {}
+    },
+    {
+      "path": "uses-rel-preload",
+      "options": {}
+    },
+    {
+      "path": "uses-rel-preconnect",
+      "options": {}
+    },
+    {
+      "path": "font-display",
+      "options": {}
+    },
+    {
+      "path": "diagnostics",
+      "options": {}
+    },
+    {
+      "path": "network-requests",
+      "options": {}
+    },
+    {
+      "path": "network-rtt",
+      "options": {}
+    },
+    {
+      "path": "network-server-latency",
+      "options": {}
+    },
+    {
+      "path": "main-thread-tasks",
+      "options": {}
+    },
+    {
+      "path": "metrics",
+      "options": {}
+    },
+    {
+      "path": "performance-budget",
+      "options": {}
+    },
+    {
+      "path": "timing-budget",
+      "options": {}
+    },
+    {
+      "path": "resource-summary",
+      "options": {}
+    },
+    {
+      "path": "third-party-summary",
+      "options": {}
+    },
+    {
+      "path": "third-party-facades",
+      "options": {}
+    },
+    {
+      "path": "largest-contentful-paint-element",
+      "options": {}
+    },
+    {
+      "path": "lcp-lazy-loaded",
+      "options": {}
+    },
+    {
+      "path": "layout-shift-elements",
+      "options": {}
+    },
+    {
+      "path": "long-tasks",
+      "options": {}
+    },
+    {
+      "path": "no-unload-listeners",
+      "options": {}
+    },
+    {
+      "path": "non-composited-animations",
+      "options": {}
+    },
+    {
+      "path": "unsized-images",
+      "options": {}
+    },
+    {
+      "path": "valid-source-maps",
+      "options": {}
+    },
+    {
+      "path": "preload-lcp-image",
+      "options": {}
+    },
+    {
+      "path": "csp-xss",
+      "options": {}
+    },
+    {
+      "path": "full-page-screenshot",
+      "options": {}
+    },
+    {
+      "path": "script-treemap-data",
+      "options": {}
+    },
+    {
+      "path": "manual/pwa-cross-browser",
+      "options": {}
+    },
+    {
+      "path": "manual/pwa-page-transitions",
+      "options": {}
+    },
+    {
+      "path": "manual/pwa-each-page-has-url",
+      "options": {}
+    },
+    {
+      "path": "accessibility/accesskeys",
+      "options": {}
+    },
+    {
+      "path": "accessibility/aria-allowed-attr",
+      "options": {}
+    },
+    {
+      "path": "accessibility/aria-command-name",
+      "options": {}
+    },
+    {
+      "path": "accessibility/aria-hidden-body",
+      "options": {}
+    },
+    {
+      "path": "accessibility/aria-hidden-focus",
+      "options": {}
+    },
+    {
+      "path": "accessibility/aria-input-field-name",
+      "options": {}
+    },
+    {
+      "path": "accessibility/aria-meter-name",
+      "options": {}
+    },
+    {
+      "path": "accessibility/aria-progressbar-name",
+      "options": {}
+    },
+    {
+      "path": "accessibility/aria-required-attr",
+      "options": {}
+    },
+    {
+      "path": "accessibility/aria-required-children",
+      "options": {}
+    },
+    {
+      "path": "accessibility/aria-required-parent",
+      "options": {}
+    },
+    {
+      "path": "accessibility/aria-roles",
+      "options": {}
+    },
+    {
+      "path": "accessibility/aria-toggle-field-name",
+      "options": {}
+    },
+    {
+      "path": "accessibility/aria-tooltip-name",
+      "options": {}
+    },
+    {
+      "path": "accessibility/aria-treeitem-name",
+      "options": {}
+    },
+    {
+      "path": "accessibility/aria-valid-attr-value",
+      "options": {}
+    },
+    {
+      "path": "accessibility/aria-valid-attr",
+      "options": {}
+    },
+    {
+      "path": "accessibility/button-name",
+      "options": {}
+    },
+    {
+      "path": "accessibility/bypass",
+      "options": {}
+    },
+    {
+      "path": "accessibility/color-contrast",
+      "options": {}
+    },
+    {
+      "path": "accessibility/definition-list",
+      "options": {}
+    },
+    {
+      "path": "accessibility/dlitem",
+      "options": {}
+    },
+    {
+      "path": "accessibility/document-title",
+      "options": {}
+    },
+    {
+      "path": "accessibility/duplicate-id-active",
+      "options": {}
+    },
+    {
+      "path": "accessibility/duplicate-id-aria",
+      "options": {}
+    },
+    {
+      "path": "accessibility/form-field-multiple-labels",
+      "options": {}
+    },
+    {
+      "path": "accessibility/frame-title",
+      "options": {}
+    },
+    {
+      "path": "accessibility/heading-order",
+      "options": {}
+    },
+    {
+      "path": "accessibility/html-has-lang",
+      "options": {}
+    },
+    {
+      "path": "accessibility/html-lang-valid",
+      "options": {}
+    },
+    {
+      "path": "accessibility/image-alt",
+      "options": {}
+    },
+    {
+      "path": "accessibility/input-image-alt",
+      "options": {}
+    },
+    {
+      "path": "accessibility/label",
+      "options": {}
+    },
+    {
+      "path": "accessibility/link-name",
+      "options": {}
+    },
+    {
+      "path": "accessibility/list",
+      "options": {}
+    },
+    {
+      "path": "accessibility/listitem",
+      "options": {}
+    },
+    {
+      "path": "accessibility/meta-refresh",
+      "options": {}
+    },
+    {
+      "path": "accessibility/meta-viewport",
+      "options": {}
+    },
+    {
+      "path": "accessibility/object-alt",
+      "options": {}
+    },
+    {
+      "path": "accessibility/tabindex",
+      "options": {}
+    },
+    {
+      "path": "accessibility/td-headers-attr",
+      "options": {}
+    },
+    {
+      "path": "accessibility/th-has-data-cells",
+      "options": {}
+    },
+    {
+      "path": "accessibility/valid-lang",
+      "options": {}
+    },
+    {
+      "path": "accessibility/video-caption",
+      "options": {}
+    },
+    {
+      "path": "accessibility/manual/custom-controls-labels",
+      "options": {}
+    },
+    {
+      "path": "accessibility/manual/custom-controls-roles",
+      "options": {}
+    },
+    {
+      "path": "accessibility/manual/focus-traps",
+      "options": {}
+    },
+    {
+      "path": "accessibility/manual/focusable-controls",
+      "options": {}
+    },
+    {
+      "path": "accessibility/manual/interactive-element-affordance",
+      "options": {}
+    },
+    {
+      "path": "accessibility/manual/logical-tab-order",
+      "options": {}
+    },
+    {
+      "path": "accessibility/manual/managed-focus",
+      "options": {}
+    },
+    {
+      "path": "accessibility/manual/offscreen-content-hidden",
+      "options": {}
+    },
+    {
+      "path": "accessibility/manual/use-landmarks",
+      "options": {}
+    },
+    {
+      "path": "accessibility/manual/visual-order-follows-dom",
+      "options": {}
+    },
+    {
+      "path": "byte-efficiency/uses-long-cache-ttl",
+      "options": {}
+    },
+    {
+      "path": "byte-efficiency/total-byte-weight",
+      "options": {}
+    },
+    {
+      "path": "byte-efficiency/offscreen-images",
+      "options": {}
+    },
+    {
+      "path": "byte-efficiency/render-blocking-resources",
+      "options": {}
+    },
+    {
+      "path": "byte-efficiency/unminified-css",
+      "options": {}
+    },
+    {
+      "path": "byte-efficiency/unminified-javascript",
+      "options": {}
+    },
+    {
+      "path": "byte-efficiency/unused-css-rules",
+      "options": {}
+    },
+    {
+      "path": "byte-efficiency/unused-javascript",
+      "options": {}
+    },
+    {
+      "path": "byte-efficiency/modern-image-formats",
+      "options": {}
+    },
+    {
+      "path": "byte-efficiency/uses-optimized-images",
+      "options": {}
+    },
+    {
+      "path": "byte-efficiency/uses-text-compression",
+      "options": {}
+    },
+    {
+      "path": "byte-efficiency/uses-responsive-images",
+      "options": {}
+    },
+    {
+      "path": "byte-efficiency/efficient-animated-content",
+      "options": {}
+    },
+    {
+      "path": "byte-efficiency/duplicated-javascript",
+      "options": {}
+    },
+    {
+      "path": "byte-efficiency/legacy-javascript",
+      "options": {}
+    },
+    {
+      "path": "dobetterweb/doctype",
+      "options": {}
+    },
+    {
+      "path": "dobetterweb/charset",
+      "options": {}
+    },
+    {
+      "path": "dobetterweb/dom-size",
+      "options": {}
+    },
+    {
+      "path": "dobetterweb/geolocation-on-start",
+      "options": {}
+    },
+    {
+      "path": "dobetterweb/inspector-issues",
+      "options": {}
+    },
+    {
+      "path": "dobetterweb/no-document-write",
+      "options": {}
+    },
+    {
+      "path": "dobetterweb/no-vulnerable-libraries",
+      "options": {}
+    },
+    {
+      "path": "dobetterweb/js-libraries",
+      "options": {}
+    },
+    {
+      "path": "dobetterweb/notification-on-start",
+      "options": {}
+    },
+    {
+      "path": "dobetterweb/password-inputs-can-be-pasted-into",
+      "options": {}
+    },
+    {
+      "path": "dobetterweb/uses-http2",
+      "options": {}
+    },
+    {
+      "path": "dobetterweb/uses-passive-event-listeners",
+      "options": {}
+    },
+    {
+      "path": "seo/meta-description",
+      "options": {}
+    },
+    {
+      "path": "seo/http-status-code",
+      "options": {}
+    },
+    {
+      "path": "seo/font-size",
+      "options": {}
+    },
+    {
+      "path": "seo/link-text",
+      "options": {}
+    },
+    {
+      "path": "seo/crawlable-anchors",
+      "options": {}
+    },
+    {
+      "path": "seo/is-crawlable",
+      "options": {}
+    },
+    {
+      "path": "seo/robots-txt",
+      "options": {}
+    },
+    {
+      "path": "seo/tap-targets",
+      "options": {}
+    },
+    {
+      "path": "seo/hreflang",
+      "options": {}
+    },
+    {
+      "path": "seo/plugins",
+      "options": {}
+    },
+    {
+      "path": "seo/canonical",
+      "options": {}
+    },
+    {
+      "path": "seo/manual/structured-data",
+      "options": {}
+    }
+  ],
+  "categories": {
+    "performance": {
+      "title": {
+        "i18nId": "core/config/default-config.js | performanceCategoryTitle",
+        "formattedDefault": "Performance"
+      },
+      "supportedModes": [
+        "navigation",
+        "timespan",
+        "snapshot"
+      ],
+      "auditRefs": [
+        {
+          "id": "first-contentful-paint",
+          "weight": 10,
+          "group": "metrics",
+          "acronym": "FCP",
+          "relevantAudits": [
+            "server-response-time",
+            "render-blocking-resources",
+            "redirects",
+            "critical-request-chains",
+            "uses-text-compression",
+            "uses-rel-preconnect",
+            "uses-rel-preload",
+            "font-display",
+            "unminified-javascript",
+            "unminified-css",
+            "unused-css-rules"
+          ]
+        },
+        {
+          "id": "interactive",
+          "weight": 10,
+          "group": "metrics",
+          "acronym": "TTI"
+        },
+        {
+          "id": "speed-index",
+          "weight": 10,
+          "group": "metrics",
+          "acronym": "SI"
+        },
+        {
+          "id": "total-blocking-time",
+          "weight": 30,
+          "group": "metrics",
+          "acronym": "TBT",
+          "relevantAudits": [
+            "long-tasks",
+            "third-party-summary",
+            "third-party-facades",
+            "bootup-time",
+            "mainthread-work-breakdown",
+            "dom-size",
+            "duplicated-javascript",
+            "legacy-javascript",
+            "viewport"
+          ]
+        },
+        {
+          "id": "largest-contentful-paint",
+          "weight": 25,
+          "group": "metrics",
+          "acronym": "LCP",
+          "relevantAudits": [
+            "server-response-time",
+            "render-blocking-resources",
+            "redirects",
+            "critical-request-chains",
+            "uses-text-compression",
+            "uses-rel-preconnect",
+            "uses-rel-preload",
+            "font-display",
+            "unminified-javascript",
+            "unminified-css",
+            "unused-css-rules",
+            "largest-contentful-paint-element",
+            "preload-lcp-image",
+            "unused-javascript",
+            "efficient-animated-content",
+            "total-byte-weight"
+          ]
+        },
+        {
+          "id": "cumulative-layout-shift",
+          "weight": 15,
+          "group": "metrics",
+          "acronym": "CLS",
+          "relevantAudits": [
+            "layout-shift-elements",
+            "non-composited-animations",
+            "unsized-images"
+          ]
+        },
+        {
+          "id": "max-potential-fid",
+          "weight": 0,
+          "group": "hidden"
+        },
+        {
+          "id": "first-meaningful-paint",
+          "weight": 0,
+          "acronym": "FMP",
+          "group": "hidden"
+        },
+        {
+          "id": "render-blocking-resources",
+          "weight": 0
+        },
+        {
+          "id": "uses-responsive-images",
+          "weight": 0
+        },
+        {
+          "id": "offscreen-images",
+          "weight": 0
+        },
+        {
+          "id": "unminified-css",
+          "weight": 0
+        },
+        {
+          "id": "unminified-javascript",
+          "weight": 0
+        },
+        {
+          "id": "unused-css-rules",
+          "weight": 0
+        },
+        {
+          "id": "unused-javascript",
+          "weight": 0
+        },
+        {
+          "id": "uses-optimized-images",
+          "weight": 0
+        },
+        {
+          "id": "modern-image-formats",
+          "weight": 0
+        },
+        {
+          "id": "uses-text-compression",
+          "weight": 0
+        },
+        {
+          "id": "uses-rel-preconnect",
+          "weight": 0
+        },
+        {
+          "id": "server-response-time",
+          "weight": 0
+        },
+        {
+          "id": "redirects",
+          "weight": 0
+        },
+        {
+          "id": "uses-rel-preload",
+          "weight": 0
+        },
+        {
+          "id": "uses-http2",
+          "weight": 0
+        },
+        {
+          "id": "efficient-animated-content",
+          "weight": 0
+        },
+        {
+          "id": "duplicated-javascript",
+          "weight": 0
+        },
+        {
+          "id": "legacy-javascript",
+          "weight": 0
+        },
+        {
+          "id": "preload-lcp-image",
+          "weight": 0
+        },
+        {
+          "id": "total-byte-weight",
+          "weight": 0
+        },
+        {
+          "id": "uses-long-cache-ttl",
+          "weight": 0
+        },
+        {
+          "id": "dom-size",
+          "weight": 0
+        },
+        {
+          "id": "critical-request-chains",
+          "weight": 0
+        },
+        {
+          "id": "user-timings",
+          "weight": 0
+        },
+        {
+          "id": "bootup-time",
+          "weight": 0
+        },
+        {
+          "id": "mainthread-work-breakdown",
+          "weight": 0
+        },
+        {
+          "id": "font-display",
+          "weight": 0
+        },
+        {
+          "id": "resource-summary",
+          "weight": 0
+        },
+        {
+          "id": "third-party-summary",
+          "weight": 0
+        },
+        {
+          "id": "third-party-facades",
+          "weight": 0
+        },
+        {
+          "id": "largest-contentful-paint-element",
+          "weight": 0
+        },
+        {
+          "id": "lcp-lazy-loaded",
+          "weight": 0
+        },
+        {
+          "id": "layout-shift-elements",
+          "weight": 0
+        },
+        {
+          "id": "uses-passive-event-listeners",
+          "weight": 0
+        },
+        {
+          "id": "no-document-write",
+          "weight": 0
+        },
+        {
+          "id": "long-tasks",
+          "weight": 0
+        },
+        {
+          "id": "non-composited-animations",
+          "weight": 0
+        },
+        {
+          "id": "unsized-images",
+          "weight": 0
+        },
+        {
+          "id": "viewport",
+          "weight": 0
+        },
+        {
+          "id": "no-unload-listeners",
+          "weight": 0
+        },
+        {
+          "id": "performance-budget",
+          "weight": 0,
+          "group": "budgets"
+        },
+        {
+          "id": "timing-budget",
+          "weight": 0,
+          "group": "budgets"
+        },
+        {
+          "id": "network-requests",
+          "weight": 0,
+          "group": "hidden"
+        },
+        {
+          "id": "network-rtt",
+          "weight": 0,
+          "group": "hidden"
+        },
+        {
+          "id": "network-server-latency",
+          "weight": 0,
+          "group": "hidden"
+        },
+        {
+          "id": "main-thread-tasks",
+          "weight": 0,
+          "group": "hidden"
+        },
+        {
+          "id": "diagnostics",
+          "weight": 0,
+          "group": "hidden"
+        },
+        {
+          "id": "metrics",
+          "weight": 0,
+          "group": "hidden"
+        },
+        {
+          "id": "screenshot-thumbnails",
+          "weight": 0,
+          "group": "hidden"
+        },
+        {
+          "id": "final-screenshot",
+          "weight": 0,
+          "group": "hidden"
+        },
+        {
+          "id": "script-treemap-data",
+          "weight": 0,
+          "group": "hidden"
+        }
+      ]
+    },
+    "accessibility": {
+      "title": {
+        "i18nId": "core/config/default-config.js | a11yCategoryTitle",
+        "formattedDefault": "Accessibility"
+      },
+      "description": {
+        "i18nId": "core/config/default-config.js | a11yCategoryDescription",
+        "formattedDefault": "These checks highlight opportunities to [improve the accessibility of your web app](https://web.dev/lighthouse-accessibility/). Only a subset of accessibility issues can be automatically detected so manual testing is also encouraged."
+      },
+      "manualDescription": {
+        "i18nId": "core/config/default-config.js | a11yCategoryManualDescription",
+        "formattedDefault": "These items address areas which an automated testing tool cannot cover. Learn more in our guide on [conducting an accessibility review](https://web.dev/how-to-review/)."
+      },
+      "supportedModes": [
+        "navigation",
+        "snapshot"
+      ],
+      "auditRefs": [
+        {
+          "id": "accesskeys",
+          "weight": 3,
+          "group": "a11y-navigation"
+        },
+        {
+          "id": "aria-allowed-attr",
+          "weight": 10,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "aria-command-name",
+          "weight": 3,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "aria-hidden-body",
+          "weight": 10,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "aria-hidden-focus",
+          "weight": 3,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "aria-input-field-name",
+          "weight": 3,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "aria-meter-name",
+          "weight": 3,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "aria-progressbar-name",
+          "weight": 3,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "aria-required-attr",
+          "weight": 10,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "aria-required-children",
+          "weight": 10,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "aria-required-parent",
+          "weight": 10,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "aria-roles",
+          "weight": 10,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "aria-toggle-field-name",
+          "weight": 3,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "aria-tooltip-name",
+          "weight": 3,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "aria-treeitem-name",
+          "weight": 3,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "aria-valid-attr-value",
+          "weight": 10,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "aria-valid-attr",
+          "weight": 10,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "button-name",
+          "weight": 10,
+          "group": "a11y-names-labels"
+        },
+        {
+          "id": "bypass",
+          "weight": 3,
+          "group": "a11y-navigation"
+        },
+        {
+          "id": "color-contrast",
+          "weight": 3,
+          "group": "a11y-color-contrast"
+        },
+        {
+          "id": "definition-list",
+          "weight": 3,
+          "group": "a11y-tables-lists"
+        },
+        {
+          "id": "dlitem",
+          "weight": 3,
+          "group": "a11y-tables-lists"
+        },
+        {
+          "id": "document-title",
+          "weight": 3,
+          "group": "a11y-names-labels"
+        },
+        {
+          "id": "duplicate-id-active",
+          "weight": 3,
+          "group": "a11y-navigation"
+        },
+        {
+          "id": "duplicate-id-aria",
+          "weight": 10,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "form-field-multiple-labels",
+          "weight": 2,
+          "group": "a11y-names-labels"
+        },
+        {
+          "id": "frame-title",
+          "weight": 3,
+          "group": "a11y-names-labels"
+        },
+        {
+          "id": "heading-order",
+          "weight": 2,
+          "group": "a11y-navigation"
+        },
+        {
+          "id": "html-has-lang",
+          "weight": 3,
+          "group": "a11y-language"
+        },
+        {
+          "id": "html-lang-valid",
+          "weight": 3,
+          "group": "a11y-language"
+        },
+        {
+          "id": "image-alt",
+          "weight": 10,
+          "group": "a11y-names-labels"
+        },
+        {
+          "id": "input-image-alt",
+          "weight": 10,
+          "group": "a11y-names-labels"
+        },
+        {
+          "id": "label",
+          "weight": 10,
+          "group": "a11y-names-labels"
+        },
+        {
+          "id": "link-name",
+          "weight": 3,
+          "group": "a11y-names-labels"
+        },
+        {
+          "id": "list",
+          "weight": 3,
+          "group": "a11y-tables-lists"
+        },
+        {
+          "id": "listitem",
+          "weight": 3,
+          "group": "a11y-tables-lists"
+        },
+        {
+          "id": "meta-refresh",
+          "weight": 10,
+          "group": "a11y-best-practices"
+        },
+        {
+          "id": "meta-viewport",
+          "weight": 10,
+          "group": "a11y-best-practices"
+        },
+        {
+          "id": "object-alt",
+          "weight": 3,
+          "group": "a11y-names-labels"
+        },
+        {
+          "id": "tabindex",
+          "weight": 3,
+          "group": "a11y-navigation"
+        },
+        {
+          "id": "td-headers-attr",
+          "weight": 3,
+          "group": "a11y-tables-lists"
+        },
+        {
+          "id": "th-has-data-cells",
+          "weight": 3,
+          "group": "a11y-tables-lists"
+        },
+        {
+          "id": "valid-lang",
+          "weight": 3,
+          "group": "a11y-language"
+        },
+        {
+          "id": "video-caption",
+          "weight": 10,
+          "group": "a11y-audio-video"
+        },
+        {
+          "id": "logical-tab-order",
+          "weight": 0
+        },
+        {
+          "id": "focusable-controls",
+          "weight": 0
+        },
+        {
+          "id": "interactive-element-affordance",
+          "weight": 0
+        },
+        {
+          "id": "managed-focus",
+          "weight": 0
+        },
+        {
+          "id": "focus-traps",
+          "weight": 0
+        },
+        {
+          "id": "custom-controls-labels",
+          "weight": 0
+        },
+        {
+          "id": "custom-controls-roles",
+          "weight": 0
+        },
+        {
+          "id": "visual-order-follows-dom",
+          "weight": 0
+        },
+        {
+          "id": "offscreen-content-hidden",
+          "weight": 0
+        },
+        {
+          "id": "use-landmarks",
+          "weight": 0
+        }
+      ]
+    },
+    "best-practices": {
+      "title": {
+        "i18nId": "core/config/default-config.js | bestPracticesCategoryTitle",
+        "formattedDefault": "Best Practices"
+      },
+      "supportedModes": [
+        "navigation",
+        "timespan",
+        "snapshot"
+      ],
+      "auditRefs": [
+        {
+          "id": "is-on-https",
+          "weight": 1,
+          "group": "best-practices-trust-safety"
+        },
+        {
+          "id": "geolocation-on-start",
+          "weight": 1,
+          "group": "best-practices-trust-safety"
+        },
+        {
+          "id": "notification-on-start",
+          "weight": 1,
+          "group": "best-practices-trust-safety"
+        },
+        {
+          "id": "no-vulnerable-libraries",
+          "weight": 1,
+          "group": "best-practices-trust-safety"
+        },
+        {
+          "id": "csp-xss",
+          "weight": 0,
+          "group": "best-practices-trust-safety"
+        },
+        {
+          "id": "password-inputs-can-be-pasted-into",
+          "weight": 1,
+          "group": "best-practices-ux"
+        },
+        {
+          "id": "image-aspect-ratio",
+          "weight": 1,
+          "group": "best-practices-ux"
+        },
+        {
+          "id": "image-size-responsive",
+          "weight": 1,
+          "group": "best-practices-ux"
+        },
+        {
+          "id": "preload-fonts",
+          "weight": 1,
+          "group": "best-practices-ux"
+        },
+        {
+          "id": "doctype",
+          "weight": 1,
+          "group": "best-practices-browser-compat"
+        },
+        {
+          "id": "charset",
+          "weight": 1,
+          "group": "best-practices-browser-compat"
+        },
+        {
+          "id": "js-libraries",
+          "weight": 0,
+          "group": "best-practices-general"
+        },
+        {
+          "id": "deprecations",
+          "weight": 1,
+          "group": "best-practices-general"
+        },
+        {
+          "id": "errors-in-console",
+          "weight": 1,
+          "group": "best-practices-general"
+        },
+        {
+          "id": "valid-source-maps",
+          "weight": 0,
+          "group": "best-practices-general"
+        },
+        {
+          "id": "inspector-issues",
+          "weight": 1,
+          "group": "best-practices-general"
+        }
+      ]
+    },
+    "seo": {
+      "title": {
+        "i18nId": "core/config/default-config.js | seoCategoryTitle",
+        "formattedDefault": "SEO"
+      },
+      "description": {
+        "i18nId": "core/config/default-config.js | seoCategoryDescription",
+        "formattedDefault": "These checks ensure that your page is following basic search engine optimization advice. There are many additional factors Lighthouse does not score here that may affect your search ranking, including performance on [Core Web Vitals](https://web.dev/learn-web-vitals/). [Learn more](https://support.google.com/webmasters/answer/35769)."
+      },
+      "manualDescription": {
+        "i18nId": "core/config/default-config.js | seoCategoryManualDescription",
+        "formattedDefault": "Run these additional validators on your site to check additional SEO best practices."
+      },
+      "supportedModes": [
+        "navigation",
+        "snapshot"
+      ],
+      "auditRefs": [
+        {
+          "id": "viewport",
+          "weight": 1,
+          "group": "seo-mobile"
+        },
+        {
+          "id": "document-title",
+          "weight": 1,
+          "group": "seo-content"
+        },
+        {
+          "id": "meta-description",
+          "weight": 1,
+          "group": "seo-content"
+        },
+        {
+          "id": "http-status-code",
+          "weight": 1,
+          "group": "seo-crawl"
+        },
+        {
+          "id": "link-text",
+          "weight": 1,
+          "group": "seo-content"
+        },
+        {
+          "id": "crawlable-anchors",
+          "weight": 1,
+          "group": "seo-crawl"
+        },
+        {
+          "id": "is-crawlable",
+          "weight": 1,
+          "group": "seo-crawl"
+        },
+        {
+          "id": "robots-txt",
+          "weight": 1,
+          "group": "seo-crawl"
+        },
+        {
+          "id": "image-alt",
+          "weight": 1,
+          "group": "seo-content"
+        },
+        {
+          "id": "hreflang",
+          "weight": 1,
+          "group": "seo-content"
+        },
+        {
+          "id": "canonical",
+          "weight": 1,
+          "group": "seo-content"
+        },
+        {
+          "id": "font-size",
+          "weight": 1,
+          "group": "seo-mobile"
+        },
+        {
+          "id": "plugins",
+          "weight": 1,
+          "group": "seo-content"
+        },
+        {
+          "id": "tap-targets",
+          "weight": 1,
+          "group": "seo-mobile"
+        },
+        {
+          "id": "structured-data",
+          "weight": 0
+        }
+      ]
+    },
+    "pwa": {
+      "title": {
+        "i18nId": "core/config/default-config.js | pwaCategoryTitle",
+        "formattedDefault": "PWA"
+      },
+      "description": {
+        "i18nId": "core/config/default-config.js | pwaCategoryDescription",
+        "formattedDefault": "These checks validate the aspects of a Progressive Web App. [Learn more](https://web.dev/pwa-checklist/)."
+      },
+      "manualDescription": {
+        "i18nId": "core/config/default-config.js | pwaCategoryManualDescription",
+        "formattedDefault": "These checks are required by the baseline [PWA Checklist](https://web.dev/pwa-checklist/) but are not automatically checked by Lighthouse. They do not affect your score but it's important that you verify them manually."
+      },
+      "supportedModes": [
+        "navigation"
+      ],
+      "auditRefs": [
+        {
+          "id": "installable-manifest",
+          "weight": 2,
+          "group": "pwa-installable"
+        },
+        {
+          "id": "service-worker",
+          "weight": 1,
+          "group": "pwa-optimized"
+        },
+        {
+          "id": "splash-screen",
+          "weight": 1,
+          "group": "pwa-optimized"
+        },
+        {
+          "id": "themed-omnibox",
+          "weight": 1,
+          "group": "pwa-optimized"
+        },
+        {
+          "id": "content-width",
+          "weight": 1,
+          "group": "pwa-optimized"
+        },
+        {
+          "id": "viewport",
+          "weight": 2,
+          "group": "pwa-optimized"
+        },
+        {
+          "id": "maskable-icon",
+          "weight": 1,
+          "group": "pwa-optimized"
+        },
+        {
+          "id": "pwa-cross-browser",
+          "weight": 0
+        },
+        {
+          "id": "pwa-page-transitions",
+          "weight": 0
+        },
+        {
+          "id": "pwa-each-page-has-url",
+          "weight": 0
+        }
+      ]
+    }
+  },
+  "groups": {
+    "metrics": {
+      "title": {
+        "i18nId": "core/config/default-config.js | metricGroupTitle",
+        "formattedDefault": "Metrics"
+      }
+    },
+    "load-opportunities": {
+      "title": {
+        "i18nId": "core/config/default-config.js | loadOpportunitiesGroupTitle",
+        "formattedDefault": "Opportunities"
+      },
+      "description": {
+        "i18nId": "core/config/default-config.js | loadOpportunitiesGroupDescription",
+        "formattedDefault": "These suggestions can help your page load faster. They don't [directly affect](https://web.dev/performance-scoring/) the Performance score."
+      }
+    },
+    "budgets": {
+      "title": {
+        "i18nId": "core/config/default-config.js | budgetsGroupTitle",
+        "formattedDefault": "Budgets"
+      },
+      "description": {
+        "i18nId": "core/config/default-config.js | budgetsGroupDescription",
+        "formattedDefault": "Performance budgets set standards for the performance of your site."
+      }
+    },
+    "diagnostics": {
+      "title": {
+        "i18nId": "core/config/default-config.js | diagnosticsGroupTitle",
+        "formattedDefault": "Diagnostics"
+      },
+      "description": {
+        "i18nId": "core/config/default-config.js | diagnosticsGroupDescription",
+        "formattedDefault": "More information about the performance of your application. These numbers don't [directly affect](https://web.dev/performance-scoring/) the Performance score."
+      }
+    },
+    "pwa-installable": {
+      "title": {
+        "i18nId": "core/config/default-config.js | pwaInstallableGroupTitle",
+        "formattedDefault": "Installable"
+      }
+    },
+    "pwa-optimized": {
+      "title": {
+        "i18nId": "core/config/default-config.js | pwaOptimizedGroupTitle",
+        "formattedDefault": "PWA Optimized"
+      }
+    },
+    "a11y-best-practices": {
+      "title": {
+        "i18nId": "core/config/default-config.js | a11yBestPracticesGroupTitle",
+        "formattedDefault": "Best practices"
+      },
+      "description": {
+        "i18nId": "core/config/default-config.js | a11yBestPracticesGroupDescription",
+        "formattedDefault": "These items highlight common accessibility best practices."
+      }
+    },
+    "a11y-color-contrast": {
+      "title": {
+        "i18nId": "core/config/default-config.js | a11yColorContrastGroupTitle",
+        "formattedDefault": "Contrast"
+      },
+      "description": {
+        "i18nId": "core/config/default-config.js | a11yColorContrastGroupDescription",
+        "formattedDefault": "These are opportunities to improve the legibility of your content."
+      }
+    },
+    "a11y-names-labels": {
+      "title": {
+        "i18nId": "core/config/default-config.js | a11yNamesLabelsGroupTitle",
+        "formattedDefault": "Names and labels"
+      },
+      "description": {
+        "i18nId": "core/config/default-config.js | a11yNamesLabelsGroupDescription",
+        "formattedDefault": "These are opportunities to improve the semantics of the controls in your application. This may enhance the experience for users of assistive technology, like a screen reader."
+      }
+    },
+    "a11y-navigation": {
+      "title": {
+        "i18nId": "core/config/default-config.js | a11yNavigationGroupTitle",
+        "formattedDefault": "Navigation"
+      },
+      "description": {
+        "i18nId": "core/config/default-config.js | a11yNavigationGroupDescription",
+        "formattedDefault": "These are opportunities to improve keyboard navigation in your application."
+      }
+    },
+    "a11y-aria": {
+      "title": {
+        "i18nId": "core/config/default-config.js | a11yAriaGroupTitle",
+        "formattedDefault": "ARIA"
+      },
+      "description": {
+        "i18nId": "core/config/default-config.js | a11yAriaGroupDescription",
+        "formattedDefault": "These are opportunities to improve the usage of ARIA in your application which may enhance the experience for users of assistive technology, like a screen reader."
+      }
+    },
+    "a11y-language": {
+      "title": {
+        "i18nId": "core/config/default-config.js | a11yLanguageGroupTitle",
+        "formattedDefault": "Internationalization and localization"
+      },
+      "description": {
+        "i18nId": "core/config/default-config.js | a11yLanguageGroupDescription",
+        "formattedDefault": "These are opportunities to improve the interpretation of your content by users in different locales."
+      }
+    },
+    "a11y-audio-video": {
+      "title": {
+        "i18nId": "core/config/default-config.js | a11yAudioVideoGroupTitle",
+        "formattedDefault": "Audio and video"
+      },
+      "description": {
+        "i18nId": "core/config/default-config.js | a11yAudioVideoGroupDescription",
+        "formattedDefault": "These are opportunities to provide alternative content for audio and video. This may improve the experience for users with hearing or vision impairments."
+      }
+    },
+    "a11y-tables-lists": {
+      "title": {
+        "i18nId": "core/config/default-config.js | a11yTablesListsVideoGroupTitle",
+        "formattedDefault": "Tables and lists"
+      },
+      "description": {
+        "i18nId": "core/config/default-config.js | a11yTablesListsVideoGroupDescription",
+        "formattedDefault": "These are opportunities to improve the experience of reading tabular or list data using assistive technology, like a screen reader."
+      }
+    },
+    "seo-mobile": {
+      "title": {
+        "i18nId": "core/config/default-config.js | seoMobileGroupTitle",
+        "formattedDefault": "Mobile Friendly"
+      },
+      "description": {
+        "i18nId": "core/config/default-config.js | seoMobileGroupDescription",
+        "formattedDefault": "Make sure your pages are mobile friendly so users don’t have to pinch or zoom in order to read the content pages. [Learn more](https://developers.google.com/search/mobile-sites/)."
+      }
+    },
+    "seo-content": {
+      "title": {
+        "i18nId": "core/config/default-config.js | seoContentGroupTitle",
+        "formattedDefault": "Content Best Practices"
+      },
+      "description": {
+        "i18nId": "core/config/default-config.js | seoContentGroupDescription",
+        "formattedDefault": "Format your HTML in a way that enables crawlers to better understand your app’s content."
+      }
+    },
+    "seo-crawl": {
+      "title": {
+        "i18nId": "core/config/default-config.js | seoCrawlingGroupTitle",
+        "formattedDefault": "Crawling and Indexing"
+      },
+      "description": {
+        "i18nId": "core/config/default-config.js | seoCrawlingGroupDescription",
+        "formattedDefault": "To appear in search results, crawlers need access to your app."
+      }
+    },
+    "best-practices-trust-safety": {
+      "title": {
+        "i18nId": "core/config/default-config.js | bestPracticesTrustSafetyGroupTitle",
+        "formattedDefault": "Trust and Safety"
+      }
+    },
+    "best-practices-ux": {
+      "title": {
+        "i18nId": "core/config/default-config.js | bestPracticesUXGroupTitle",
+        "formattedDefault": "User Experience"
+      }
+    },
+    "best-practices-browser-compat": {
+      "title": {
+        "i18nId": "core/config/default-config.js | bestPracticesBrowserCompatGroupTitle",
+        "formattedDefault": "Browser Compatibility"
+      }
+    },
+    "best-practices-general": {
+      "title": {
+        "i18nId": "core/config/default-config.js | bestPracticesGeneralGroupTitle",
+        "formattedDefault": "General"
+      }
+    },
+    "hidden": {
+      "title": ""
+    }
+  },
+  "settings": {
+    "output": "json",
+    "maxWaitForFcp": 30000,
+    "maxWaitForLoad": 45000,
+    "formFactor": "mobile",
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    },
+    "throttlingMethod": "simulate",
+    "screenEmulation": {
+      "mobile": true,
+      "width": 360,
+      "height": 640,
+      "deviceScaleFactor": 2.625,
+      "disabled": false
+    },
+    "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 7.0; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4695.0 Mobile Safari/537.36 Chrome-Lighthouse",
+    "auditMode": false,
+    "gatherMode": false,
+    "disableStorageReset": false,
+    "debugNavigation": false,
+    "channel": "node",
+    "budgets": null,
+    "locale": "en-US",
+    "blockedUrlPatterns": null,
+    "additionalTraceCategories": null,
+    "extraHeaders": null,
+    "precomputedLanternData": null,
+    "onlyAudits": null,
+    "onlyCategories": null,
+    "skipAudits": null
+  }
+}

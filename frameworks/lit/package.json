@@ -43,6 +43,7 @@
   "author": "Google LLC",
   "license": "BSD-3-Clause",
   "dependencies": {
+    "@popperjs/core": "^2.11.6",
     "@rollup/plugin-typescript": "^8.3.4",
     "compression": "^1.7.4",
     "concurrently": "^7.3.0",

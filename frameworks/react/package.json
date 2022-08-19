@@ -4,6 +4,7 @@
   "port": 6012,
   "private": true,
   "dependencies": {
+    "@popperjs/core": "^2.11.6",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
