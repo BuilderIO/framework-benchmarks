@@ -146,29 +146,30 @@ Ordered by TTI, ascending:
 
 #### SSR times:
 
-Time it took to server-side render the [/dashboard page](#Dashboard:). Smaller  numbers are better.
+Time it took to server-side render the [/dashboard page](#Dashboard:) in milliseconds. Smaller  numbers are better.
 
 ```
-┌─────────┬────────────┬───────────┐
-│ (index) │    Name    │ Time (ms) │
-├─────────┼────────────┼───────────┤
-│    0    │  'marko'   │    4.5    │
-│    1    │  'fresh'   │     5     │
-│    2    │  'svelte'  │    6.5    │
-│    3    │  'solid'   │    6.5    │
-│    4    │  'remix'   │    7.5    │
-│    5    │  'nuxt2'   │    7.5    │
-│    6    │ 'hydrogen' │    7.5    │
-│    7    │  'astro'   │    7.5    │
-│    8    │  'gatsby'  │    10     │
-│    9    │ 'next-bun' │    20     │
-│   10    │   'next'   │   20.5    │
-└─────────┴────────────┴───────────┘
+┌─────────┬────────────┬─────┬──────┬─────┬───────┬─────┬────────┬─────────┬─────┬─────┐
+│ (index) │    name    │ 1%  │ 2.5% │ 50% │ 97.5% │ 99% │  Avg   │ Std Dev │ Min │ Max │
+├─────────┼────────────┼─────┼──────┼─────┼───────┼─────┼────────┼─────────┼─────┼─────┤
+│    0    │  'marko'   │  1  │  1   │  1  │   3   │  4  │  1.29  │   0.8   │  1  │ 39  │
+│    1    │  'fresh'   │  4  │  4   │  4  │   5   │  6  │  4.19  │  0.88   │  1  │ 50  │
+│    2    │ 'hydrogen' │  4  │  4   │  5  │  12   │ 14  │  5.63  │  4.39   │  2  │ 181 │
+│    3    │  'svelte'  │  6  │  6   │  7  │  16   │ 18  │  8.17  │  3.12   │  4  │ 61  │
+│    4    │  'solid'   │  6  │  6   │  8  │  18   │ 22  │  8.77  │   3.8   │  3  │ 71  │
+│    5    │  'nuxt2'   │ 11  │  11  │ 14  │  25   │ 32  │ 15.04  │  4.89   │  3  │ 105 │
+│    6    │  'astro'   │ 11  │  11  │ 14  │  31   │ 38  │ 16.56  │  5.98   │  9  │ 75  │
+│    7    │  'remix'   │ 12  │  13  │ 18  │  47   │ 62  │  20.3  │  8.87   │  2  │ 93  │
+│    8    │  'gatsby'  │ 27  │  28  │ 33  │  78   │ 103 │  36.9  │  12.86  │ 26  │ 153 │
+│    9    │   'next'   │ 35  │  35  │ 40  │  95   │ 113 │ 46.96  │  19.06  │ 34  │ 220 │
+│   10    │ 'next-bun' │ 35  │  36  │ 42  │  92   │ 117 │ 47.16  │  17.02  │ 33  │ 175 │
+│   11    │ 'angular'  │ 113 │ 116  │ 127 │  268  │ 400 │ 141.73 │  47.64  │ 42  │ 408 │
+└─────────┴────────────┴─────┴──────┴─────┴───────┴─────┴────────┴─────────┴─────┴─────┘
 ```
 
 #### SSR throughput (req/second):
 
-Of the dashboard page, measured by [autocannon](https://github.com/mcollina/autocannon),sorted by 99% percentile descending. Larger numbers are better.
+SSR throughput of the dashboard page, measured by [autocannon](https://github.com/mcollina/autocannon),sorted by 99% percentile descending. Larger numbers are better.
 
 ```
 ┌─────────┬────────────┬──────┬──────┬──────┬───────┬──────┬─────────┬─────────┬──────┬──────┐

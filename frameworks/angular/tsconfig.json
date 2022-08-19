@@ -15,6 +15,7 @@
     "importHelpers": true,
     "target": "es2020",
     "module": "es2020",
+    "types": ["node"],
     "lib": ["es2020", "dom"],
     "paths": {
       "@angular/*": ["./node_modules/@angular/*"]

@@ -7,7 +7,7 @@ import AppHeader from './generated-components/components/app-header';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, AppHeader],
+  imports: [BrowserModule.withServerTransition({ appId: 'serverApp' }), AppRoutingModule, AppHeader],
   providers: [],
   bootstrap: [AppComponent],
 })

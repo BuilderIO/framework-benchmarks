@@ -21,7 +21,6 @@ export const ssrPathMap: Record<string, PathMap | undefined> = {
 
 // These frameowrks do not use SSR right now
 const IGNORE_FRAMEWORKS = [
-  'angular', // currently SPA only
   'lit', // currently client side only
   'react', // client side only
   'vue3', // client side only
