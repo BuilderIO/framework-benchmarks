@@ -2,7 +2,7 @@
 
 Test each framework for it's performance, particularly common Lighthouse and CWV metrics as applications scale
 
-**Important**: This is not a measure of "is framework x better than y". There are many tradeoffs to weigh when choosing the best framework for you - such as DX, features, familiarity, ecosystem, documentation, etc. These benchmarks only show a part of the picture.
+**Important: This is not a measure of "is framework x better than y". There are many tradeoffs to weigh when choosing the best framework for you - such as DX, features, familiarity, ecosystem, documentation, etc. These benchmarks only show a part of the picture.**
 
 ### Goals
 
@@ -61,7 +61,7 @@ Alphabetically:
 
 ### Sample output
 
-**Important:**: This project is still in initial development. Do not put too much weight on these current results, there is still much more to do to ensure accuracy, consistency, and fairness.
+**Important:** This project is still in initial development. Do not put too much weight on these current results, there is still much more to do to ensure accuracy, consistency, and fairness.
 
 #### Dashboard:
 
