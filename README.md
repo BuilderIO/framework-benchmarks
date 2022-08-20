@@ -54,6 +54,7 @@ Alphabetically:
 - [nuxt3](https://v3.nuxtjs.org/) - generated via their official CLI (in beta)
 - [qwik](https://qwik.builder.io/) - generated with Qwik City (meta framework)
 - [react](https://reactjs.org/) - generated from create-react-app with react-router-dom added for routing
+- [remix](https://remix.run/) - generated from create-remix. Currently excluded from Lighthouse tests by request from the team, from concerns about the code being too non-idiomatic
 - [solid](https://www.solidjs.com/) - generated with Solid Start (meta framework)
 - [svelte](https://svelte.dev/) - generated with Svelte Kit (meta framework)
 - [vue3](https://vuejs.org/) - generated via their official CLI, with routing

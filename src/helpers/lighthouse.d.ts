@@ -10,7 +10,7 @@ declare module 'lighthouse' {
 }
 
 declare module 'lighthouse/report/generator/report-generator.js' {
-  function generateReport(lhr: LH.LHResult, type: string): string;
-
-  export { generateReport };
+  export class ReportGenerator {
+    static generateReport(lhr: LH.LHResult, type: string): string;
+  }
 }

@@ -8,17 +8,22 @@ type ResultsMap = Record<string, SimpleReport>;
 type PathResultsMap = Record<string, ResultsMap>;
 const pathResultsMap: PathResultsMap = {};
 
+const IGNORE_FRAMEWORKS = process.env.IGNORE_FRAMEWORKS?.split(',') || [];
+
 await Promise.all(
   reports.map(async (path) => {
-    const json = JSON.parse(await fs.readFile(path, 'utf8')) as LH.Result;
-    const newFilePath = path.replace('.json', '_simple.ts');
-    const simpleReport = getSimpleReport(json);
     const pathSplit = path.split('/');
     let routePathPart = pathSplit.at(-2)!;
     if (routePathPart === 'reports') {
       routePathPart = 'hello-world';
     }
     const framework = pathSplit.at(-1)!.split('.json')[0];
+    if (IGNORE_FRAMEWORKS.includes(framework)) {
+      return;
+    }
+    const json = JSON.parse(await fs.readFile(path, 'utf8')) as LH.Result;
+    const newFilePath = path.replace('.json', '_simple.ts');
+    const simpleReport = getSimpleReport(json);
 
     if (!pathResultsMap[routePathPart]) {
       pathResultsMap[routePathPart] = {};
