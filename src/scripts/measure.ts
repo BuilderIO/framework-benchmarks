@@ -10,7 +10,13 @@ import { getTable } from '../helpers/get-table.js';
 import { killAll } from '../helpers/kill-process.js';
 import { preview } from '../helpers/preview.js';
 
-const frameworks = await getFrameworks();
+// Removing remix at requst of the remix team due to concerns of the code not
+// being idiomatic enough
+const IGNORE_FRAMEWORKS = ['remix'];
+
+const frameworks = (await getFrameworks()).filter(
+  (fw) => !IGNORE_FRAMEWORKS.includes(fw)
+);
 
 const path = process.env.URL || '/todo';
 

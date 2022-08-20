@@ -2,13 +2,7 @@ import { fs } from 'zx';
 
 const FRAMEWORKS = process.env.FRAMEWORKS?.split(',');
 
-const IGNORE_FRAMEWORKS = (
-  [
-    // Removing remix, as to fully handle Remix properly we'll need to support more idiomatic code
-    // like here: https://github.com/kentcdodds/remix-todomvc
-    // 'remix',
-  ] as string[]
-).concat(
+const IGNORE_FRAMEWORKS = ([] as string[]).concat(
   process.env.IGNORE_FRAMEWORKS ? process.env.IGNORE_FRAMEWORKS.split(',') : []
 );
 
