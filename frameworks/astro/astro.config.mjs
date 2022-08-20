@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import solid from '@astrojs/solid-js';
-import compress from 'vite-plugin-compress';
+import viteCompress from 'vite-plugin-compress';
+import compress from 'astro-compress';
 import node from '@astrojs/node';
 
 // https://astro.build/config
@@ -9,9 +10,9 @@ export default defineConfig({
     port: 6001,
   },
   vite: {
-    plugins: [compress.default()],
+    plugins: [viteCompress.default()],
   },
-  integrations: [solid()],
+  integrations: [solid(),compress()],
   adapter: node(),
   output: 'server',
 });
