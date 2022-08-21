@@ -6,7 +6,7 @@ import AppHeader from './generated-components/components/app-header.vue';
 
 <template>
   <div>
-    <AppHeader name="vue3" :path="path" />
+    <AppHeader framework="vue3" :path="path" />
     <RouterView />
   </div>
 </template>

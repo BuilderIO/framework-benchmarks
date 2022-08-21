@@ -7,7 +7,7 @@
     "start": "ng serve --port 4200",
     "dev": "npm start",
     "build:client": "ng build",
-    "build": "npm run build:ssr",
+    "build": "npm run build:client && npm run build:ssr",
     "preview": "npm run serve:ssr",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
