@@ -67,13 +67,13 @@ Alphabetically:
 
 Jump to:
 
-- [Dashboard:](#dashboard-)
-- [Todo App:](#todo-app-)
-- [Hello World:](#hello-world-)
-- [SSR times:](#ssr-times-)
-- [SSR throughput (req/second):](#ssr-throughput--req-second--)
-- [React SSR times:](#react-ssr-times-)
-- [Build times:](#build-times-)
+- [Dashboard](#dashboard)
+- [Todo App](#todo-app)
+- [Hello World](#hello-world)
+- [SSR times](#ssr-times)
+- [SSR throughput (req/second)](#ssr-throughput-reqsecond)
+- [React SSR times](#react-ssr-times)
+- [Build times](#build-times)
 
 #### Dashboard:
 
