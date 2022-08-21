@@ -49,11 +49,13 @@ Alphabetically:
 - [lit](https://lit.dev/) - generated via their official [starter](https://github.com/lit/lit-element-starter-ts)
 - [marko](https://markojs.com/) - generated via their official CLI
 - [next](https://nextjs.org/) - generated via their official CLI
-- next-bun - Next.js with [Bun](https://bun.sh/), via `bun create next`
 - [nuxt2](https://nuxtjs.org/) - generated via their official CLI
 - [nuxt3](https://v3.nuxtjs.org/) - generated via their official CLI (in beta)
 - [qwik](https://qwik.builder.io/) - generated with Qwik City (meta framework)
 - [react](https://reactjs.org/) - generated from create-react-app with react-router-dom added for routing
+- react-ssr-node - Ultra simple Node server to server-side render react
+- react-ssr-deno - Ultra simple Deno server to server-side render react
+- react-ssr-bun - Ultra simple Bun server to server-side render react
 - [remix](https://remix.run/) - generated from create-remix. Currently excluded from Lighthouse tests by request from the team, from concerns about the code being too non-idiomatic
 - [solid](https://www.solidjs.com/) - generated with Solid Start (meta framework)
 - [svelte](https://svelte.dev/) - generated with Svelte Kit (meta framework)
@@ -163,8 +165,7 @@ Time it took to server-side render the [/dashboard page](#Dashboard:) in millise
 │    7    │  'remix'   │ 12  │  13  │ 18  │  47   │ 62  │  20.3  │  8.87   │  2  │ 93  │
 │    8    │  'gatsby'  │ 27  │  28  │ 33  │  78   │ 103 │  36.9  │  12.86  │ 26  │ 153 │
 │    9    │   'next'   │ 35  │  35  │ 40  │  95   │ 113 │ 46.96  │  19.06  │ 34  │ 220 │
-│   10    │ 'next-bun' │ 35  │  36  │ 42  │  92   │ 117 │ 47.16  │  17.02  │ 33  │ 175 │
-│   11    │ 'angular'  │ 113 │ 116  │ 127 │  268  │ 400 │ 141.73 │  47.64  │ 42  │ 408 │
+│   10    │ 'angular'  │ 113 │ 116  │ 127 │  268  │ 400 │ 141.73 │  47.64  │ 42  │ 408 │
 └─────────┴────────────┴─────┴──────┴─────┴───────┴─────┴────────┴─────────┴─────┴─────┘
 ```
 
@@ -185,10 +186,24 @@ SSR throughput of the dashboard page, measured by [autocannon](https://github.co
 │    6    │  'nuxt2'   │ 384  │ 384  │ 550  │  588  │ 588  │  539.8  │  54.2   │ 384  │ 588  │
 │    7    │  'remix'   │ 264  │ 264  │ 371  │  485  │ 485  │  387.9  │  69.16  │ 264  │ 485  │
 │    8    │  'gatsby'  │ 158  │ 158  │ 233  │  277  │ 277  │  239.6  │  34.64  │ 158  │ 277  │
-│    9    │ 'next-bun' │ 145  │ 145  │ 207  │  234  │ 234  │  205.8  │  23.6   │ 145  │ 234  │
-│   10    │   'next'   │ 142  │ 142  │ 206  │  233  │ 233  │  203.7  │  24.71  │ 142  │ 233  │
-│   11    │ 'angular'  │  45  │  45  │  72  │  76   │  76  │  69.91  │  8.61   │  45  │  76  │
+│    9    │   'next'   │ 142  │ 142  │ 206  │  233  │ 233  │  203.7  │  24.71  │ 142  │ 233  │
+│   10    │ 'angular'  │  45  │  45  │  72  │  76   │  76  │  69.91  │  8.61   │  45  │  76  │
 └─────────┴────────────┴──────┴──────┴──────┴───────┴──────┴─────────┴─────────┴──────┴──────┘
+```
+
+#### React SSR times:
+
+Test Node vs Bun vs Deno at React SSR of a non trivial (the dashboard) app
+
+_Note: currently having an issue with Deno, looking into_
+
+```
+┌─────────┬──────────────────┬─────┬─────┬─────┬───────┬─────────┐
+│ (index) │       name       │ 1%  │ 50% │ 99% │  Avg  │ Std Dev │
+├─────────┼──────────────────┼─────┼─────┼─────┼───────┼─────────┤
+│    0    │ 'react-ssr-bun'  │ 758 │ 824 │ 847 │ 822.7 │  24.06  │
+│    1    │ 'react-ssr-node' │ 350 │ 430 │ 444 │ 424.1 │  25.5   │
+└─────────┴──────────────────┴─────┴─────┴─────┴───────┴─────────┘
 ```
 
 #### Build times:
