@@ -1,7 +1,7 @@
 {
   "tasks": {
     "start": "deno run -A --watch=static/,routes/ dev.ts",
-    "preview": "deno run -A main.ts"
+    "preview": "DENO_DEPLOYMENT_ID=abc deno run -A main.ts"
   },
   "importMap": "./import_map.json"
 }

@@ -2,11 +2,13 @@ import type { Todo } from './todo-app.lite';
 
 export type TodoItemProps = {
   item: Todo;
+  index: number;
 };
 
 export default function TodoItem(props: TodoItemProps) {
   return (
     <li
+      data-index={props.index}
       style={{
         textDecoration: props.item.completed ? 'line-through' : 'none',
       }}

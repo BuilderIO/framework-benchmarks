@@ -4,7 +4,7 @@
   "port": 6013,
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check build-only",
+    "build": "npm run build-only",
     "preview": "vite preview --port 6013",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit"

@@ -1,7 +1,7 @@
 {
   "port": 6016,
   "scripts": {
-    "build": "echo 'No need to build :)",
+    "build": "echo 'No need to build :)'",
     "preview": "bun http.js --jsx-production"
   },
   "dependencies": {

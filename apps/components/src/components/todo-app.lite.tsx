@@ -92,8 +92,8 @@ export default function ToDoApp() {
             borderRadius: 'var(--round)',
           }}
         >
-          {state.list.map((item) => (
-            <TodoItem item={item} />
+          {state.list.map((item, index) => (
+            <TodoItem key={index} item={item} index={index} />
           ))}
         </ul>
         {state.list.length && (

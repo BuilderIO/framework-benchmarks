@@ -12,6 +12,9 @@ import { sortBy } from '../helpers/sort-by.js';
 
 const reports: LH.FlowResult[] = [];
 
+// TODO: implement runs and computeMedianRun
+const RUNS = Number(process.env.RUNS || 1);
+
 async function captureTodoReport(url: string, framework: string) {
   const page = await browser.newPage();
 
@@ -30,7 +33,7 @@ async function captureTodoReport(url: string, framework: string) {
   await page.waitForSelector(todoButtonSelector);
   await page.type('form input', 'new todo!', { delay: 20 });
   await page.click(todoButtonSelector);
-  const newItemSelector = 'li:nth-of-type(3)';
+  const newItemSelector = 'li[data-index="2"]';
   await page.waitForSelector(newItemSelector);
   await flow.endTimespan();
   await flow.snapshot({ stepName: 'Added Todo Item' });

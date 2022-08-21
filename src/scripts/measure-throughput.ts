@@ -11,9 +11,6 @@ export const ssrPathMap: Record<string, PathMap | undefined> = {
   next: {
     '/dashboard': '/dashboard-ssr',
   },
-  'next-bun': {
-    '/dashboard': '/dashboard-ssr',
-  },
   gatsby: {
     '/dashboard': '/dashboard-ssr',
   },

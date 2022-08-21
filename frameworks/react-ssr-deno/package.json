@@ -2,6 +2,6 @@
   "port": 6015,
   "scripts": {
     "preview": "deno task preview",
-    "build": "echo 'No need to build"
+    "build": "echo 'No need to build'"
   }
 }
