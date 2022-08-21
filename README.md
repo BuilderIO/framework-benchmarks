@@ -65,6 +65,16 @@ Alphabetically:
 
 **Important:** This project is still in initial development. Do not put too much weight on these current results, there is still much more to do to ensure accuracy, consistency, and fairness.
 
+Jump to:
+
+- [Dashboard:](#dashboard-)
+- [Todo App:](#todo-app-)
+- [Hello World:](#hello-world-)
+- [SSR times:](#ssr-times-)
+- [SSR throughput (req/second):](#ssr-throughput--req-second--)
+- [React SSR times:](#react-ssr-times-)
+- [Build times:](#build-times-)
+
 #### Dashboard:
 
 A more feature rich app for displaying table data, sorting, filtering, etc. Uses more JS, more like a [median website](https://almanac.httparchive.org/en/2021/javascript). [Source](https://github.com/BuilderIO/framework-benchmarks/blob/main/apps/components/src/components/dashboard.lite.tsx)

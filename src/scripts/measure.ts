@@ -10,15 +10,18 @@ import { getTable } from '../helpers/get-table.js';
 import { killAll } from '../helpers/kill-process.js';
 import { preview } from '../helpers/preview.js';
 
-// Removing remix at requst of the remix team due to concerns of the code not
+const path = process.env.URL || '/todo';
+
+// Removing remix from the Todo app at requst of the remix team due to concerns of the code not
 // being idiomatic enough
-const IGNORE_FRAMEWORKS = ['remix'];
+const IGNORE_FRAMEWORKS = (path === '/todo' ? ['remix'] : []).concat(
+  // SSR-only examples
+  ['react-ssr-node', 'react-ssr-bun', 'react-ssr-deno']
+);
 
 const frameworks = (await getFrameworks()).filter(
   (fw) => !IGNORE_FRAMEWORKS.includes(fw)
 );
-
-const path = process.env.URL || '/todo';
 
 // Kill any currently running servers
 await killAll(frameworks);
@@ -73,5 +76,5 @@ async function measure(framework: string) {
 
   // Don't throw an error when we kill the process below
   runningProcess.catch(() => null);
-  runningProcess.kill();
+  await runningProcess.kill();
 }

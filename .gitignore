@@ -4,3 +4,6 @@ debug.json
 report.json
 report.js
 **/generated-components/**
+
+flow.report.json
+flow.report.html

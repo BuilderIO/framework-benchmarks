@@ -14,6 +14,7 @@
     "measure": "ts-node-esm --transpileOnly ./src/scripts/measure",
     "measure-ssr": "ts-node-esm --transpileOnly ./src/scripts/measure-ssr",
     "measure-throughput": "ts-node-esm --transpileOnly ./src/scripts/measure-throughput",
+    "measure-flow": "ts-node-esm --transpileOnly ./src/scripts/measure-flow",
     "report": "ts-node-esm --transpileOnly ./src/scripts/gen-simple-reports"
   },
   "engines": {
@@ -26,6 +27,7 @@
     "chrome-launcher": "^0.15.1",
     "lighthouse": "^9.5.0-dev.20220818",
     "node-fetch": "^3.2.10",
+    "open": "^8.4.0",
     "puppeteer": "^16.1.0",
     "solid-styled-components": "^0.28.4",
     "ts-node": "^10.9.1",

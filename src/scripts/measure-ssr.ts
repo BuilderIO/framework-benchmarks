@@ -72,7 +72,7 @@ async function measure(framework: string) {
 
   // Don't throw an error when we kill the process below
   runningProcess.catch(() => null);
-  runningProcess.kill();
+  await runningProcess.kill();
 }
 
 async function measureTimeForRequests(url: string) {
