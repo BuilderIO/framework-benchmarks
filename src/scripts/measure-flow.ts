@@ -7,7 +7,7 @@ import {
 import { getFrameworks } from '../helpers/get-frameworks.js';
 import { killAll } from '../helpers/kill-process.js';
 import { preview } from '../helpers/preview.js';
-import { sleep, fs } from 'zx';
+import { sleep, fs, chalk } from 'zx';
 import { sortBy } from '../helpers/sort-by.js';
 
 const reports: LH.FlowResult[] = [];
@@ -29,11 +29,14 @@ async function captureTodoReport(url: string, framework: string) {
   await flow.snapshot({ stepName: 'Page loaded' });
 
   const todoButtonSelector = 'form button';
-  await flow.startTimespan({ stepName: 'Add Todo' });
   await page.waitForSelector(todoButtonSelector);
-  await page.type('form input', 'new todo!', { delay: 20 });
+  await page.type('form input', 'new todo!');
+  await flow.startTimespan({ stepName: 'Add Todo' });
   await page.click(todoButtonSelector);
-  const newItemSelector = 'li[data-index="2"]';
+  await page.click(todoButtonSelector);
+  await page.click(todoButtonSelector);
+  await page.click(todoButtonSelector);
+  const newItemSelector = 'li[data-index="5"]';
   await page.waitForSelector(newItemSelector);
   await flow.endTimespan();
   await flow.snapshot({ stepName: 'Added Todo Item' });
@@ -46,6 +49,12 @@ async function captureTodoReport(url: string, framework: string) {
   const report = await flow.generateReport();
   await fs.writeFile('flow.report.html', report);
   await fs.writeFile('flow.report.json', JSON.stringify(flowResult, null, 2));
+  console.info(
+    chalk.green(
+      `${framework} flow report generated. INP:`,
+      getInp(flowResult).displayValue
+    )
+  );
 }
 
 const omit = (obj: any, omitKeys: string[]) => {
@@ -54,11 +63,16 @@ const omit = (obj: any, omitKeys: string[]) => {
   return newObj;
 };
 
+function getInp(report: LH.FlowResult) {
+  const inpAudit =
+    report.steps[1].lhr.audits['experimental-interaction-to-next-paint'];
+  return inpAudit;
+}
+
 function getTable(reports: LH.FlowResult[]) {
   const table = reports
     .map((report) => {
-      const inpAudit =
-        report.steps[1].lhr.audits['experimental-interaction-to-next-paint'];
+      const inpAudit = getInp(report);
       return {
         name: report.name,
         INP: inpAudit.displayValue,
