@@ -42,24 +42,24 @@ We are also experimenting with looking at other metrics, such as [build times](#
 
 Alphabetically:
 
-- [astro](https://astro.build/) - generated via their official CLI, with Solid for the interactive parts
-- [fresh](https://fresh.deno.dev/) - generated via their official CLI
-- [gatsby](https://www.gatsbyjs.com/) - contributed by the Gatsby team
-- [hydrogen](https://hydrogen.shopify.dev/) - generated via their [official CLI](https://shopify.dev/custom-storefronts/hydrogen/getting-started/quickstart)
-- [lit](https://lit.dev/) - generated via their official [starter](https://github.com/lit/lit-element-starter-ts)
-- [marko](https://markojs.com/) - generated via their official CLI
-- [next](https://nextjs.org/) - generated via their official CLI
-- [nuxt2](https://nuxtjs.org/) - generated via their official CLI
-- [nuxt3](https://v3.nuxtjs.org/) - generated via their official CLI (in beta)
-- [qwik](https://qwik.builder.io/) - generated with Qwik City (meta framework)
-- [react](https://reactjs.org/) - generated from create-react-app with react-router-dom added for routing
-- react-ssr-node - Ultra simple Node server to server-side render react
-- react-ssr-deno - Ultra simple Deno server to server-side render react
-- react-ssr-bun - Ultra simple Bun server to server-side render react
-- [remix](https://remix.run/) - generated from create-remix. Currently excluded from Lighthouse tests by request from the team, from concerns about the code being too non-idiomatic
-- [solid](https://www.solidjs.com/) - generated with Solid Start (meta framework)
-- [svelte](https://svelte.dev/) - generated with Svelte Kit (meta framework)
-- [vue3](https://vuejs.org/) - generated via their official CLI, with routing
+- [astro](https://astro.build/) - generated via their official CLI, with Solid for the interactive parts. [Source](frameworks/astro)
+- [fresh](https://fresh.deno.dev/) - generated via their official CLI. [Source](frameworks/fresh)
+- [gatsby](https://www.gatsbyjs.com/) - contributed by the Gatsby team. [Source](frameworks/gatsby)
+- [hydrogen](https://hydrogen.shopify.dev/) - generated via their [official CLI](https://shopify.dev/custom-storefronts/hydrogen/getting-started/quickstart). [Source](frameworks/hydrogen)
+- [lit](https://lit.dev/) - generated via their official [starter](https://github.com/lit/lit-element-starter-ts). [Source](frameworks/lit)
+- [marko](https://markojs.com/) - generated via their official CLI. [Source](frameworks/marko)
+- [next](https://nextjs.org/) - generated via their official CLI. [Source](frameworks/next)
+- [nuxt2](https://nuxtjs.org/) - generated via their official CLI. [Source](frameworks/nuxt2)
+- [nuxt3](https://v3.nuxtjs.org/) - generated via their official CLI (in beta). [Source](frameworks/nuxt3)
+- [qwik](https://qwik.builder.io/) - generated with Qwik City (meta framework). [Source](frameworks/qwik)
+- [react](https://reactjs.org/) - generated from create-react-app with react-router-dom added for routing. [Source](frameworks/react)
+- react-ssr-node - Ultra simple Node server to server-side render react. [Source](frameworks/react-ssr-node)
+- react-ssr-deno - Ultra simple Deno server to server-side render react. [Source](frameworks/react-ssr-deno)
+- react-ssr-bun - Ultra simple Bun server to server-side render react. [Source](frameworks/react-ssr-bun)
+- [remix](https://remix.run/) - generated from create-remix. Currently excluded from Lighthouse tests by request from the team, from concerns about the code being too non-idiomatic. [Source](frameworks/remix)
+- [solid](https://www.solidjs.com/) - generated with Solid Start (meta framework). [Source](frameworks/solid)
+- [svelte](https://svelte.dev/) - generated with Svelte Kit (meta framework). [Source](frameworks/svelte)
+- [vue3](https://vuejs.org/) - generated via their official CLI, with routing. [Source](frameworks/vue3)
 
 ### Sample output
 
