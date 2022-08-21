@@ -84,6 +84,18 @@ export const frameworks: Framework[] = [
     name: 'vue3',
     url: getUrl(6013),
   },
+  {
+    name: 'react-ssr-node',
+    url: getUrl(6014),
+  },
+  {
+    name: 'react-ssr-deno',
+    url: getUrl(6015),
+  },
+  {
+    name: 'react-ssr-bun',
+    url: getUrl(6016),
+  },
 ];
 
 export const examples: Example[] = [

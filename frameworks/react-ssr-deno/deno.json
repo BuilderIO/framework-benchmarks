@@ -1,0 +1,6 @@
+{
+  "tasks": {
+    "preview": "deno run -A http.jsx"
+  },
+  "importMap": "./import_map.json"
+}

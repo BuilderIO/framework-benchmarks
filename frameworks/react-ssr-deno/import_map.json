@@ -1,0 +1,8 @@
+{
+  "imports": {
+    "fuse.js": "https://esm.sh/fuse.js",
+    "fuse.js/": "https://esm.sh/fuse.js/",
+    "react": "https://esm.run/react",
+    "react/": "https://esm.run/react/"
+  }
+}

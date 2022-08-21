@@ -86,6 +86,21 @@ const paths: Path[] = [
     src: 'apps/components/output/react/src',
     dest: 'frameworks/react/src/generated-components',
   },
+  // react-ssr-bun
+  {
+    src: 'apps/components/output/react/src',
+    dest: 'frameworks/react-ssr-bun/generated-components',
+  },
+  // react-ssr-deno
+  {
+    src: 'apps/components/output/react/src',
+    dest: 'frameworks/react-ssr-deno/generated-components',
+  },
+  // react-ssr-node
+  {
+    src: 'apps/components/output/react/src',
+    dest: 'frameworks/react-ssr-node/generated-components',
+  },
   // Svelte
   {
     src: 'apps/components/output/svelte/src',

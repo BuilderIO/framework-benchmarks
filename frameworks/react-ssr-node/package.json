@@ -1,0 +1,16 @@
+{
+  "port": 6014,
+  "dependencies": {
+    "fuse.js": "^6.6.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "preview": "node dist/http.js"
+  }
+}
