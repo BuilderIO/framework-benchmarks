@@ -48,14 +48,10 @@ console.table(
     .map(([framework, result]) => ({
       name: framework,
       '1%': result.requests.p1,
-      '2.5%': result.requests.p2_5,
       '50%': result.requests.p50,
-      '97.5%': result.requests.p97_5,
       '99%': result.requests.p99,
       Avg: result.requests.average,
       'Std Dev': result.requests.stddev,
-      Min: result.requests.min,
-      Max: result.requests.max,
     }))
     .sort(sortBy('99%'))
     .reverse()

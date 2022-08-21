@@ -48,14 +48,10 @@ console.table(
     .map(([framework, result]) => ({
       name: framework,
       '1%': result.latency.p1,
-      '2.5%': result.latency.p2_5,
       '50%': result.latency.p50,
-      '97.5%': result.latency.p97_5,
       '99%': result.latency.p99,
       Avg: result.latency.average,
       'Std Dev': result.latency.stddev,
-      Min: result.latency.min,
-      Max: result.latency.max,
     }))
     .sort(sortBy('99%'))
 );

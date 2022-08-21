@@ -1,7 +1,9 @@
 /**
  * Originally from: https://github.com/oven-sh/bun/blob/e55d6eed2bf9a5db30250fdd8b9be063dc949054/bench/react-hello-world/react-hello-world.jsx
  */
-import { renderToReadableStream } from 'react-dom/server.browser';
+// import { renderToReadableStream } from 'react-dom/server.browser';
+var { renderToReadableStream } = import.meta.require('./react-dom.bun.js');
+
 import Dashboard from './generated-components/components/dashboard';
 import AppHeader from './generated-components/components/app-header';
 
