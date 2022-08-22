@@ -1,5 +1,6 @@
 import { useStore } from '@builder.io/mitosis';
-import { sortBy } from '../utils/sort.js';
+import { mapValues } from '../../utils/map-keys.js';
+import { sortBy, sortByNumeric } from '../utils/sort.js';
 import Tooltip from './lite-tooltip.lite';
 
 export interface ColumnInfo {
@@ -64,7 +65,7 @@ export default function LiteTable(props: TableProps) {
       if (!sortKey) {
         return rows;
       }
-      const sorted = rows.sort(sortBy(sortKey));
+      const sorted = rows.sort(sortByNumeric(sortKey));
       if (state.sortDirection === 'desc') {
         return sorted.reverse();
       }
@@ -75,7 +76,6 @@ export default function LiteTable(props: TableProps) {
     <table
       css={{
         borderCollapse: 'collapse',
-        margin: '25px 0',
         fontSize: '0.9em',
         borderRadius: '$round',
         overflow: 'hidden',
@@ -114,6 +114,23 @@ export default function LiteTable(props: TableProps) {
                 />
               ) : (
                 <span>{state.getColumnInfo(key).name}</span>
+              )}
+
+              {state.getSortKey() === key && (
+                <span
+                  css={{
+                    marginLeft: '$s2',
+                    display: 'inline-block',
+                  }}
+                  style={{
+                    transform:
+                      state.sortDirection === 'asc'
+                        ? 'rotateZ(90deg)'
+                        : 'rotateZ(-90deg)',
+                  }}
+                >
+                  ›
+                </span>
               )}
             </th>
           ))}

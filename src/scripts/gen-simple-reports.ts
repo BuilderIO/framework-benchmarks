@@ -30,7 +30,9 @@ await Promise.all(
     }
     pathResultsMap[routePathPart][framework] = simpleReport;
 
-    const newFile = `export default ${JSON.stringify(simpleReport, null, 2)}`;
+    const newFile = `
+// Generated from benchmark data
+export default ${JSON.stringify(simpleReport, null, 2)}`;
     await fs.writeFile(newFilePath, newFile);
   })
 );
