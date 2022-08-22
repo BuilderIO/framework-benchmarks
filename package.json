@@ -15,6 +15,7 @@
     "measure-ssr": "ts-node-esm --transpileOnly ./src/scripts/measure-ssr",
     "measure-throughput": "ts-node-esm --transpileOnly ./src/scripts/measure-throughput",
     "measure-flow": "ts-node-esm --transpileOnly ./src/scripts/measure-flow",
+    "measure-navigation": "ts-node-esm --transpileOnly ./src/scripts/measure-navigation",
     "report": "ts-node-esm --transpileOnly ./src/scripts/gen-simple-reports"
   },
   "engines": {

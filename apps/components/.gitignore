@@ -1,2 +1,9 @@
 output/**/src
-reports
+**/reports/*.json
+**/reports/*.js
+**/reports/*.ts
+!**/reports/*_simple.ts
+**/reports/*/*.json
+**/reports/*/*.js
+**/reports/*/*.ts
+!**/reports/*/*_simple.ts
