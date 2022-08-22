@@ -37,7 +37,7 @@ const dollarVarsPlugin = (options) => () => ({
  *  cssReplacePlugin({ '@mobile': '@media screen and (max-width: 640px)' })
  *
  * will replace:
- *  '@mobil': { ... }
+ *  '@mobile': { ... }
  * with:
  *  '@media screen and (max-width: 640px)': { .. }
  */
@@ -84,7 +84,6 @@ const transpilerOptions = {
 const vueConfig = {
   ...baseOptions,
   transpiler: transpilerOptions,
-  asyncComponentImports: true,
 };
 
 /**
