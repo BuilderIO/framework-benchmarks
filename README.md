@@ -199,9 +199,9 @@ SSR throughput of the dashboard page, measured by [autocannon](https://github.co
 └─────────┴────────────┴──────┴──────┴──────┴───────┴──────┴─────────┴─────────┴──────┴──────┘
 ```
 
-#### React SSR times:
+#### React SSR throughput:
 
-Test Node vs Bun vs Deno at React SSR of a non trivial (the dashboard) app. The below is requests per second. Larger numbers are better.
+Measure Node vs Bun vs Deno at SSR speed of a non trivial (the dashboard) React app. The below is requests per second. Larger numbers are better.
 
 ##### Results using the same react-dom/server:
 
