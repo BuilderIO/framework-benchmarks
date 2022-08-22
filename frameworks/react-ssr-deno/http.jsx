@@ -2,7 +2,7 @@
  * Originally from: https://github.com/oven-sh/bun/blob/e55d6eed2bf9a5db30250fdd8b9be063dc949054/bench/react-hello-world/react-hello-world.deno.jsx
  */
 
-import { renderToReadableStream } from 'https://esm.run/react-dom/server';
+import { renderToReadableStream } from 'https://esm.sh/v92/react-dom/server';
 import { serve } from 'https://deno.land/std@0.146.0/http/server.ts';
 import * as React from 'react';
 import Dashboard from './generated-components/components/dashboard.js';
