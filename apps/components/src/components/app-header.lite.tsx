@@ -51,8 +51,9 @@ export default function AppHeader(props: HeaderProps) {
             },
           }}
         >
-          {frameworks.map((link) => (
+          {frameworks.map((link, index) => (
             <a
+              key={index}
               css={{
                 padding: '$s1',
                 fontWeight: '$font-medium',
@@ -84,8 +85,9 @@ export default function AppHeader(props: HeaderProps) {
             },
           }}
         >
-          {examples.map((example) => (
+          {examples.map((example, index) => (
             <a
+              key={index}
               css={{
                 padding: '$s1',
                 fontWeight: '$font-medium',

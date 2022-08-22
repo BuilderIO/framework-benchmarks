@@ -201,16 +201,31 @@ SSR throughput of the dashboard page, measured by [autocannon](https://github.co
 
 #### React SSR times:
 
-Test Node vs Bun vs Deno at React SSR of a non trivial (the dashboard) app
+Test Node vs Bun vs Deno at React SSR of a non trivial (the dashboard) app. The below is requests per second and various percentiles. Larger numbers are better.
 
-_Note: currently having an issue with Deno, looking into_
+##### Results using the same react-dom/server:
 
 ```
 ┌─────────┬──────────────────┬─────┬─────┬─────┬───────┬─────────┐
 │ (index) │       name       │ 1%  │ 50% │ 99% │  Avg  │ Std Dev │
 ├─────────┼──────────────────┼─────┼─────┼─────┼───────┼─────────┤
-│    0    │ 'react-ssr-bun'  │ 758 │ 824 │ 847 │ 822.7 │  24.06  │
-│    1    │ 'react-ssr-node' │ 350 │ 430 │ 444 │ 424.1 │  25.5   │
+│    0    │ 'react-ssr-deno' │ 440 │ 550 │ 628 │  546  │  56.23  │
+│    1    │ 'react-ssr-bun'  │ 276 │ 386 │ 476 │ 391.9 │  57.61  │
+│    2    │ 'react-ssr-node' │ 328 │ 408 │ 420 │ 400.6 │  25.44  │
+└─────────┴──────────────────┴─────┴─────┴─────┴───────┴─────────┘
+```
+
+##### Results including Bun using a Bun-optimized react-dom/server
+
+In Bun's benchmarks they use a fork of react-dom/server optimized for Bun. This is the results of that:
+
+```
+┌─────────┬──────────────────┬─────┬─────┬─────┬───────┬─────────┐
+│ (index) │       name       │ 1%  │ 50% │ 99% │  Avg  │ Std Dev │
+├─────────┼──────────────────┼─────┼─────┼─────┼───────┼─────────┤
+│    0    │ 'react-ssr-bun'  │ 598 │ 681 │ 737 │ 680.9 │  47.96  │
+│    1    │ 'react-ssr-deno' │ 460 │ 610 │ 660 │  591  │  69.64  │
+│    2    │ 'react-ssr-node' │ 340 │ 416 │ 430 │ 404.2 │  25.44  │
 └─────────┴──────────────────┴─────┴─────┴─────┴───────┴─────────┘
 ```
 
