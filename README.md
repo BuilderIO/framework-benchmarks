@@ -72,7 +72,7 @@ Jump to:
 - [Hello World](#hello-world)
 - [SSR times](#ssr-times)
 - [SSR throughput (req/second)](#ssr-throughput-reqsecond)
-- [React SSR times](#react-ssr-times)
+- [React SSR throughput](#react-ssr-throughput)
 - [Build times](#build-times)
 
 #### Dashboard:
