@@ -1,19 +1,30 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import ToDoApp from './generated-components/components/todo-app';
-import HelloWorld from './generated-components/components/hello-world';
-import Dashboard from './generated-components/components/dashboard';
 
 const routes: Routes = [
-  { path: '', component: HelloWorld },
-  { path: 'todo', component: ToDoApp },
-  { path: 'dashboard', component: Dashboard },
+  {
+    path: '',
+    loadComponent: async () =>
+      (await import('./generated-components/components/hello-world')).default,
+  },
+  {
+    path: 'todo',
+    loadComponent: async () =>
+      (await import('./generated-components/components/todo-app')).default,
+  },
+  {
+    path: 'dashboard',
+    loadComponent: async () =>
+      (await import('./generated-components/components/dashboard')).default,
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabledBlocking'
-})],
+  imports: [
+    RouterModule.forRoot(routes, {
+      initialNavigation: 'enabledBlocking',
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

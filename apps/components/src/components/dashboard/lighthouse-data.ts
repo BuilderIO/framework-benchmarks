@@ -113,6 +113,7 @@ export const helloWorldDataList: LighthouseDataWithName[] = Object.keys(
 
 export interface ReportData {
   ttiNumber?: number;
+  tbtNumber?: number;
   lcpNumber?: number;
   fcpNumber?: number;
   FCP?: string;
