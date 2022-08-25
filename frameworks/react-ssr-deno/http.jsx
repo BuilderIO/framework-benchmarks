@@ -3,7 +3,6 @@
  */
 
 import { renderToReadableStream } from 'https://esm.sh/v92/react-dom/server';
-import { serve } from 'https://deno.land/std@0.146.0/http/server.ts';
 import * as React from 'react';
 import Dashboard from './generated-components/components/dashboard.js';
 import AppHeader from './generated-components/components/app-header.js';
@@ -26,11 +25,14 @@ const headers = {
 
 const port = Number(Deno.env.get('PORT')) || 6015;
 
-console.info(`Listening at http://localhost:${port}`);
-
-await serve(
+await Deno.serve(
   async (req) => {
     return new Response(await renderToReadableStream(<App />), headers);
   },
-  { port: port }
+  { 
+    port: port, 
+    onListen: function({ hostname, port }) {
+      console.info(`Listening at http://localhost:${port}`);
+    },
+  }
 );
