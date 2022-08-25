@@ -213,7 +213,7 @@ Measure Node vs Bun vs Deno at SSR speed of a non trivial (the dashboard) React 
 └─────────┴──────────────────┴─────┴─────┴─────┴───────┴─────────┘
 ```
 
-The above uses Bun version `0.1.10`, Deno version `1.25.0`, Node.s version `16.14.0`. Run on an `2.6 GHz 6-Core Intel Core i7`.
+The above uses Bun version `0.1.10`, Deno version `1.25.0`, Node.js version `16.14.0`. Run on a `2.6 GHz 6-Core Intel Core i7`.
 
 #### Build times:
 
