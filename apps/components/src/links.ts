@@ -52,10 +52,10 @@ export const frameworks: Framework[] = [
     url: getUrl(6006),
   },
   // TODO: add back when we can generate more idiomatic remix code
-  // {
-  //   name: 'remix',
-  //   url: getUrl(6007),
-  // },
+  {
+    name: 'remix',
+    url: getUrl(6007),
+  },
   {
     name: 'solid',
     url: getUrl(6008),

@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6",
+    "color-hash": "^2.0.1",
     "fuse.js": "^6.6.2",
     "gatsby": "^4.20.0",
     "highlight.js": "^11.6.0",

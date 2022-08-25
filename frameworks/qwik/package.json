@@ -39,6 +39,7 @@
   "dependencies": {
     "@popperjs/core": "^2.11.6",
     "@types/compression": "^1.7.2",
+    "color-hash": "^2.0.1",
     "compression": "^1.7.4",
     "fuse.js": "^6.6.2",
     "highlight.js": "^11.6.0"

@@ -12,6 +12,7 @@
     "@builder.io/mitosis": "^0.0.56-100",
     "@builder.io/mitosis-cli": "^0.0.17-91",
     "@popperjs/core": "^2.11.6",
+    "color-hash": "^2.0.1",
     "fuse.js": "^6.6.2",
     "highlight.js": "^11.6.0",
     "lighthouse": "^9.6.5",

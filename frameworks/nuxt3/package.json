@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6",
+    "color-hash": "^2.0.1",
     "fuse.js": "^6.6.2",
     "highlight.js": "^11.6.0",
     "vite-plugin-compress": "^2.1.1"

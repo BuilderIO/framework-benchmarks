@@ -5,6 +5,7 @@
     "preview": "bun http.js --jsx-production"
   },
   "dependencies": {
+    "color-hash": "^2.0.1",
     "@popperjs/core": "^2.11.6",
     "fuse.js": "^6.6.2",
     "react": "^18.2.0",

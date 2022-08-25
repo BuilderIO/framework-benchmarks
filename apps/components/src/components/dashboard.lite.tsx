@@ -4,6 +4,7 @@ import {
   todoDataList,
   helloWorldDataList,
 } from './dashboard/lighthouse-data.js';
+import LhReportChart from './general/lh-report-chart.lite';
 import LhReportTable from './general/lh-report-table.lite';
 
 export default function Dashboard() {
@@ -20,16 +21,19 @@ export default function Dashboard() {
         data={dashboardDataList}
         source="https://github.com/BuilderIO/framework-benchmarks/blob/main/apps/components/src/components/dashboard.lite.tsx"
       />
+      <LhReportChart data={dashboardDataList} />
       <LhReportTable
         title="Todo App"
         data={todoDataList}
         source="https://github.com/BuilderIO/framework-benchmarks/blob/main/apps/components/src/components/todo-app.lite.tsx"
       />
+      <LhReportChart data={todoDataList} />
       <LhReportTable
         title="Hello World App"
         data={helloWorldDataList}
         source="https://github.com/BuilderIO/framework-benchmarks/blob/main/apps/components/src/components/hello-world.lite.tsx"
       />
+      <LhReportChart data={helloWorldDataList} />
     </div>
   );
 }

@@ -12,6 +12,7 @@
     "@remix-run/node": "^1.6.7",
     "@remix-run/react": "^1.6.7",
     "@remix-run/serve": "^1.6.7",
+    "color-hash": "^2.0.1",
     "fuse.js": "^6.6.2",
     "highlight.js": "^11.6.0",
     "react": "^17.0.2",

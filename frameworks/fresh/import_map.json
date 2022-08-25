@@ -12,6 +12,7 @@
     "fuse.js/": "https://esm.sh/fuse.js/",
     "@popperjs/core": "https://esm.sh/@popperjs/core",
     "@popperjs/core/": "https://esm.sh/@popperjs/core/",
-    "twind/": "https://esm.sh/twind@0.16.17/"
+    "twind/": "https://esm.sh/twind@0.16.17/",
+    "color-hash": "https://deno.land/x/color_hash@v2.0.0/mod.ts"
   }
 }

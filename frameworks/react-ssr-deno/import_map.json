@@ -4,6 +4,7 @@
     "fuse.js/": "https://esm.sh/v92/fuse.js/",
     "react": "https://esm.sh/v92/react",
     "react/": "https://esm.sh/v92/react/",
+    "color-hash": "https://deno.land/x/color_hash@v2.0.0/mod.ts",
     "@popperjs/core": "https://esm.sh/v92/@popperjs/core",
     "@popperjs/core/": "https://esm.sh/v92/@popperjs/core/"
   }

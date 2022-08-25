@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6",
+    "color-hash": "^2.0.1",
     "fuse.js": "^6.6.2",
     "vite-plugin-compress": "^2.1.1",
     "vue": "^3.2.37",

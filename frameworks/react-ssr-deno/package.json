@@ -3,5 +3,8 @@
   "scripts": {
     "preview": "deno task preview",
     "build": "echo 'No need to build'"
+  },
+  "dependencies": {
+    "color-hash": "^2.0.1"
   }
 }
