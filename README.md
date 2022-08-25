@@ -207,11 +207,13 @@ Measure Node vs Bun vs Deno at SSR speed of a non trivial (the dashboard) React 
 ┌─────────┬──────────────────┬─────┬─────┬─────┬───────┬─────────┐
 │ (index) │       name       │ 1%  │ 50% │ 99% │  Avg  │ Std Dev │
 ├─────────┼──────────────────┼─────┼─────┼─────┼───────┼─────────┤
-│    0    │ 'react-ssr-bun'  │ 598 │ 681 │ 737 │ 680.9 │  47.96  │
-│    1    │ 'react-ssr-deno' │ 440 │ 550 │ 628 │  546  │  56.23  │
-│    2    │ 'react-ssr-node' │ 328 │ 408 │ 420 │ 400.6 │  25.44  │
+│    0    │ 'react-ssr-bun'  │ 500 │ 669 │ 718 │ 650.8 │  71.7   │
+│    1    │ 'react-ssr-deno' │ 550 │ 600 │ 630 │  601  │  20.89  │
+│    2    │ 'react-ssr-node' │ 267 │ 375 │ 394 │ 366.5 │  35.04  │
 └─────────┴──────────────────┴─────┴─────┴─────┴───────┴─────────┘
 ```
+
+The above uses Bun version `0.1.10`, Deno version `1.25.0`, Node.s version `16.14.0`. Run on an `2.6 GHz 6-Core Intel Core i7`.
 
 #### Build times:
 

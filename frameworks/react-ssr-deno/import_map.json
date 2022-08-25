@@ -3,6 +3,8 @@
     "fuse.js": "https://esm.sh/v92/fuse.js",
     "fuse.js/": "https://esm.sh/v92/fuse.js/",
     "react": "https://esm.sh/v92/react",
-    "react/": "https://esm.sh/v92/react/"
+    "react/": "https://esm.sh/v92/react/",
+    "@popperjs/core": "https://esm.sh/v92/@popperjs/core",
+    "@popperjs/core/": "https://esm.sh/v92/@popperjs/core/"
   }
 }
