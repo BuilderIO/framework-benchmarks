@@ -1,19 +1,16 @@
 {
   "private": true,
-  "port": 6005,
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev -p 6005",
     "generate": "nuxt generate",
-    "preview": "PORT=6005 nuxt preview -p 6005"
+    "preview": "PORT=6005 nuxt preview"
   },
-  "dependencies": {
+  "devDependencies": {
     "@popperjs/core": "^2.11.6",
     "fuse.js": "^6.6.2",
     "highlight.js": "^11.6.0",
-    "vite-plugin-compress": "^2.1.1"
+    "nuxt": "npm:nuxt3@3.0.0-rc.8-27697847.a520185"
   },
-  "devDependencies": {
-    "nuxt": "npm:nuxt3@3.0.0-rc.8-27677607.a3a8706"
-  }
+  "port": 6005
 }
