@@ -4,14 +4,13 @@
     "build": "nuxt build",
     "dev": "nuxt dev -p 6005",
     "generate": "nuxt generate",
-    "preview": "PORT=6005 serve .output/public"
+    "preview": "PORT=6005 nuxt preview"
   },
   "devDependencies": {
     "@popperjs/core": "^2.11.6",
     "fuse.js": "^6.6.2",
     "highlight.js": "^11.6.0",
-    "nuxt": "npm:nuxt3@3.0.0-rc.8-27697847.a520185",
-    "serve": "^14.0.1"
+    "nuxt": "npm:nuxt3@3.0.0-rc.8-27697847.a520185"
   },
   "port": 6005
 }
