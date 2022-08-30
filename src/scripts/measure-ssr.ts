@@ -14,6 +14,9 @@ export const ssrPathMap: Record<string, PathMap | undefined> = {
   gatsby: {
     '/dashboard': '/dashboard-ssr',
   },
+  nuxt3: {
+    '/dashboard': '/dashboard-ssr',
+  },
 };
 
 // These frameowrks do not use SSR right now
@@ -21,7 +24,6 @@ const IGNORE_FRAMEWORKS = [
   'lit', // currently client side only
   'react', // client side only
   'vue3', // client side only
-  'nuxt3', // currently not buliding
   'qwik', // currently having issues being looked into
 ];
 
