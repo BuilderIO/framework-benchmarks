@@ -1,8 +1,10 @@
 import { defineConfig } from 'astro/config';
 import solid from '@astrojs/solid-js';
 import viteCompress from 'vite-plugin-compress';
-import compress from 'astro-compress';
 import node from '@astrojs/node';
+// This throws an error: 
+// Error [ERR_UNSUPPORTED_DIR_IMPORT]: Directory import 'node_modules/astro-compress/dist/options'
+// import compress from 'astro-compress';
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,7 +14,7 @@ export default defineConfig({
   vite: {
     plugins: [viteCompress.default()],
   },
-  integrations: [solid(),compress()],
+  integrations: [solid()],
   adapter: node(),
   output: 'server',
 });

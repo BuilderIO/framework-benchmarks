@@ -7,6 +7,7 @@
     "autocannon": "autocannon",
     "fw-install": "ts-node-esm --transpileOnly ./src/scripts/install",
     "build": "ts-node-esm --transpileOnly ./src/scripts/build",
+    "clean": "ts-node-esm --transpileOnly ./src/scripts/clean",
     "copy": "ts-node-esm --transpileOnly ./src/scripts/copy",
     "serve": "ts-node-esm --transpileOnly ./src/scripts/serve",
     "dev": "ts-node-esm --transpileOnly ./src/scripts/dev",

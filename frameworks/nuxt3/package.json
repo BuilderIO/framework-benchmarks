@@ -12,5 +12,8 @@
     "highlight.js": "^11.6.0",
     "nuxt": "npm:nuxt3@3.0.0-rc.8-27697847.a520185"
   },
-  "port": 6005
+  "port": 6005,
+  "dependencies": {
+    "color-hash": "^2.0.1"
+  }
 }

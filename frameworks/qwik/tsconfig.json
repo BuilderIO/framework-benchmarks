@@ -20,5 +20,6 @@
       "~/*": ["./src/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["**/generated-components/**/*.js"]
 }

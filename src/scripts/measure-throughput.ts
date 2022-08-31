@@ -14,6 +14,9 @@ export const ssrPathMap: Record<string, PathMap | undefined> = {
   gatsby: {
     '/dashboard': '/dashboard-ssr',
   },
+  nuxt3: {
+    '/dashboard': '/dashboard-ssr',
+  },
 };
 
 // These frameowrks do not use SSR right now
