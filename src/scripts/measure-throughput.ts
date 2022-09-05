@@ -24,7 +24,6 @@ const IGNORE_FRAMEWORKS = [
   'lit', // currently client side only
   'react', // client side only
   'vue3', // client side only
-  'nuxt3', // currently not buliding
   'qwik', // currently having issues being looked into
 ];
 
