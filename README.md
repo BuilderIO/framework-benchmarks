@@ -56,6 +56,7 @@ Alphabetically:
 - react-ssr-node - Ultra simple Node server to server-side render react. [Source](frameworks/react-ssr-node)
 - react-ssr-deno - Ultra simple Deno server to server-side render react. [Source](frameworks/react-ssr-deno)
 - react-ssr-bun - Ultra simple Bun server to server-side render react. [Source](frameworks/react-ssr-bun)
+- preact-ssr-node - Ultra simple Node server to server-side render preact. [Source](frameworks/preact-ssr-node)
 - [remix](https://remix.run/) - generated from create-remix. Currently excluded from Lighthouse tests by request from the team, from concerns about the code being too non-idiomatic. [Source](frameworks/remix)
 - [solid](https://www.solidjs.com/) - generated with Solid Start (meta framework). [Source](frameworks/solid)
 - [svelte](https://svelte.dev/) - generated with Svelte Kit (meta framework). [Source](frameworks/svelte)
