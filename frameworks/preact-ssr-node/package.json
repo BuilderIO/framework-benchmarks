@@ -1,0 +1,17 @@
+{
+  "port": 6017,
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "fuse.js": "^6.6.2",
+    "preact": "^10.10.6",
+    "preact-render-to-string": "^5.2.3"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "preview": "node dist/http.js"
+  }
+}

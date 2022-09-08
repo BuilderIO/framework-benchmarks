@@ -96,6 +96,11 @@ const paths: Path[] = [
     src: 'apps/components/output/react/src',
     dest: 'frameworks/react-ssr-node/generated-components',
   },
+  // react-ssr-node
+  {
+    src: 'apps/components/output/preact/src',
+    dest: 'frameworks/preact-ssr-node/generated-components',
+  },
   // Svelte
   {
     src: 'apps/components/output/svelte/src',
