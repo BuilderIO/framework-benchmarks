@@ -1,0 +1,22 @@
+{
+  "port": 6018,
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "fuse.js": "^6.6.2",
+    "solid-js": "^1.5.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@rollup/plugin-babel": "5.3.0",
+    "@rollup/plugin-commonjs": "21.0.1",
+    "@rollup/plugin-node-resolve": "13.1.2",
+    "babel-preset-solid": "^1.5.4",
+    "express": "^4.17.1",
+    "rollup": "^2.75.5"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c",
+    "preview": "node dist/http.js"
+  }
+}

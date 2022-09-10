@@ -1,5 +1,5 @@
 {
-  "name": "solid",
+  "name": "solid-start",
   "port": 6008,
   "scripts": {
     "dev": "solid-start dev --port 6008",
@@ -16,9 +16,9 @@
   "devDependencies": {
     "@solidjs/meta": "^0.28.0",
     "@solidjs/router": "^0.4.2",
-    "solid-js": "^1.5.0-beta.4",
-    "solid-start": "0.1.0-alpha.99",
-    "solid-start-node": "0.1.0-alpha.99",
+    "solid-js": "^1.5.4",
+    "solid-start": "0.1.0-alpha.102",
+    "solid-start-node": "0.1.0-alpha.102",
     "typescript": "^4.4.3",
     "undici": "^5.8.0",
     "vite": "^3.0.4"
