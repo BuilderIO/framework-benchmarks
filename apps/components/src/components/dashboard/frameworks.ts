@@ -10,7 +10,7 @@ export type Framework =
   | 'nuxt2'
   | 'nuxt3'
   | 'qwik'
-  | 'solid'
+  | 'solid-start'
   | 'svelte';
 
 export const frameworks: Framework[] = [
@@ -25,6 +25,6 @@ export const frameworks: Framework[] = [
   'nuxt2',
   'nuxt3',
   'qwik',
-  'solid',
+  'solid-start',
   'svelte',
 ];

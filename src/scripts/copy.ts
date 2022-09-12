@@ -21,10 +21,15 @@ const paths: Path[] = [
     src: 'apps/components/output/lit/src',
     dest: 'frameworks/lit/src/generated-components',
   },
-  // Solid
+  // SolidStart
   {
     src: 'apps/components/output/solid/src',
-    dest: 'frameworks/solid/src/generated-components',
+    dest: 'frameworks/solid-start/src/generated-components',
+  },
+  // solid-ssr-node
+  {
+    src: 'apps/components/output/solid/src',
+    dest: 'frameworks/solid-ssr-node/generated-components',
   },
   // Fresh
   {
