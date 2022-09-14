@@ -94,7 +94,9 @@ const frameworks = (await getFrameworks()).filter(
 
 const path = '/todo';
 
-const browser = await puppeteer.launch({ headless: false });
+const chrome = await puppeteer.launch({ headless: false });
+const browser = await chrome.createIncognitoBrowserContext();
+
 await killAll(frameworks);
 for (const framework of frameworks) {
   const { process: runningProcess, port } = await preview(framework);
@@ -111,4 +113,4 @@ for (const framework of frameworks) {
 
 console.table(getTable(reports));
 
-await browser.close();
+await chrome.close();

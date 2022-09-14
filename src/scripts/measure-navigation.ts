@@ -16,7 +16,7 @@ const reports: LH.FlowResult[] = [];
 const RUNS = Number(process.env.RUNS || 1);
 
 async function captureTodoReport(url: string, framework: string) {
-  const page = await browser.newPage();
+  const page = await browser.newPage()
 
   const flow = await startFlow(page, {
     name: framework,
@@ -98,7 +98,8 @@ const frameworks = (await getFrameworks()).filter(
 
 const path = '/todo';
 
-const browser = await puppeteer.launch({ headless: false });
+const chrome = await puppeteer.launch({ headless: false  });
+const browser = await chrome.createIncognitoBrowserContext();
 await killAll(frameworks);
 for (const framework of frameworks) {
   const { process: runningProcess, port } = await preview(framework);
@@ -115,4 +116,4 @@ for (const framework of frameworks) {
 
 console.table(getTable(reports));
 
-await browser.close();
+await chrome.close();
